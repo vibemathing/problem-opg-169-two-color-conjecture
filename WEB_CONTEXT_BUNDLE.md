@@ -208,72 +208,101 @@ This file is generated from repository truth and bounded for the web channel. It
     "acceptance": {
       "policy": "solution-admission-v1"
     },
-    "aliases": [],
+    "aliases": [
+      "Open Problem Garden OPG-169"
+    ],
     "allowed_axioms": [
-      "none"
+      "finite-digraph-basic",
+      "planar-graph-basic",
+      "finite-combinatorics"
     ],
     "assumptions": [
-      "This record must never be treated as an active research problem."
+      "All graphs and digraphs are finite and simple unless the statement explicitly says otherwise."
     ],
     "constraints": {
       "allowed_adapters": [
-        "template-validation-v1"
+        "planar-digraph-enumerator-v1",
+        "acyclic-two-color-sat-v1",
+        "lean-obligation-v1"
       ],
       "allowed_methods": [
-        "discovery"
+        "discovery",
+        "derivation",
+        "computation",
+        "proof",
+        "formalization"
       ],
-      "max_attempts": 1,
+      "max_attempts": 20,
       "runtime": {
-        "max_output_bytes": 65536,
-        "max_retries": 1,
-        "max_transitions": 10,
-        "timeout_seconds": 60
+        "max_output_bytes": 5242880,
+        "max_retries": 3,
+        "max_transitions": 300,
+        "timeout_seconds": 1800
       }
     },
-    "created_at": "2026-09-06T00:00:00Z",
+    "created_at": "2026-09-06T03:30:00Z",
     "definitions": [
       {
-        "definition": "A non-admitted draft record used only to validate the physical public repository template.",
-        "term": "template placeholder"
+        "definition": "A digraph obtained by assigning one direction to every edge of a simple graph.",
+        "term": "orientation"
+      },
+      {
+        "definition": "A directed graph containing no directed cycle.",
+        "term": "acyclic digraph"
+      },
+      {
+        "definition": "The digraph on X containing every arc of G whose endpoints both lie in X.",
+        "term": "induced digraph G[X]"
       }
     ],
     "domain": {
-      "description": "Template-only placeholder domain; not a mathematical research question.",
+      "description": "Orientations of finite simple planar graphs.",
       "objects": [
-        "template-placeholder"
+        "planar digraph",
+        "vertex 2-coloring",
+        "acyclic induced digraph"
       ]
     },
-    "lifecycle": "draft",
+    "lifecycle": "active",
     "msc": [
-      "00A00"
+      "05C20",
+      "05C15"
     ],
-    "problem_id": "problem:template-placeholder",
+    "problem_id": "problem:opg-169-two-color-conjecture",
     "quantifiers": [
       {
-        "domain": "a reviewed public canonical ProblemContract supplied by the repository builder",
-        "kind": "find",
+        "domain": "orientations of finite simple planar graphs",
+        "kind": "forall",
         "variables": [
-          "replacement_problem"
+          "G"
+        ]
+      },
+      {
+        "domain": "partitions V(G)=X₁⊔X₂",
+        "kind": "exists",
+        "variables": [
+          "X₁",
+          "X₂"
         ]
       }
     ],
     "schema_version": "1.0.0",
     "sources": [
       {
-        "retrieved_at": "2026-09-06T00:00:00Z",
-        "source": "Vibe Mathing public Web Harness",
-        "source_record_id": "public-template-placeholder-v1",
-        "url": "https://github.com/vibemathing/vibe-mathing-problem-public-template"
+        "retrieved_at": "2026-09-02T00:06:43Z",
+        "source": "UnsolvedMath",
+        "source_record_id": "unsolvedmath-opg-169-203611002f24",
+        "url": "https://www.unsolvedmath.com/problems/OPG-169"
       }
     ],
     "statement": {
       "language": "en",
-      "text": "This is a non-research placeholder. Replace it with exactly one reviewed public ProblemContract before creating a public problem repository.",
+      "text": "For every orientation G of a finite simple planar graph, can V(G) be partitioned into X₁ and X₂ so that each induced digraph G[Xᵢ] is acyclic?",
       "version": 1
     },
-    "title": "Vibe Mathing public problem repository template placeholder",
-    "updated_at": "2026-09-06T00:00:00Z"
+    "title": "The Two Color Conjecture for planar digraphs",
+    "updated_at": "2026-09-06T03:30:00Z"
   },
-  "problem_contract_sha256": "e64cd03254e03dd661eade23243c3c21793fc2d8bffa2d33c172cf8ed2e7f940"
+  "problem_contract_sha256": "719230edd088c52a5468eed8090579e5eef1bf85d8a56e633350063108f345ec"
 }
 ```
