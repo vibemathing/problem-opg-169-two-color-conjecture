@@ -10,9 +10,9 @@
 - ProblemContract SHA-256: `719230edd088c52a5468eed8090579e5eef1bf85d8a56e633350063108f345ec`
 - Problem lifecycle: `active`
 - Problem admission: `canonical_admitted`
-- Harness suite: `harness-source:web-research-full` `1.1.1`
-- Suite manifest SHA-256: `c615d53afae447ea46d8ec53b442c9514e87948676c8c448ecafb68b8f41175b`
-- Harness snapshot SHA-256: `506a114a363a8e581bbaf75e9f547004c23de2a7d7f9db9946ad8ca113941ea3`
+- Harness suite: `harness-source:web-research-full` `1.1.2`
+- Suite manifest SHA-256: `97499c98e0774ef58c0be06ff8f3035c89cda1dffb6f9a9d222fb281b049cdb4`
+- Harness snapshot SHA-256: `3dee994dc9b7dc43c16268d648b04a239b8451f197c81f74af74782e9d25c585`
 - Channel: `chatgpt-web-github-issue-pr-writer`
 
 ## Required read order
