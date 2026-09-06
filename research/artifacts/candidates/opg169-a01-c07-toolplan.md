@@ -17,7 +17,7 @@ Formalization constraints: math-formalization.
 ## Frozen input and exact scope
 
 Source: research/artifacts/candidates/opg169-a01-c07-core.lean
-Source SHA-256: 13792336186770f7d3847a8d62d5d03c6d1b7f97b6e4e6b38e757514042a3624
+Source SHA-256: 9022324ae1963c173cbe55e4880362043d9637b48b21f9b9cbd889061d666d5b
 The input is a draft, not the output of a Lean execution.
 
 The principal intended declaration is
