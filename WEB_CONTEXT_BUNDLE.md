@@ -74,7 +74,27 @@ This file is generated from repository truth and bounded for the web channel. It
       "web_status": "active"
     }
   ],
-  "attempts": [],
+  "attempts": [
+    {
+      "artifacts": [],
+      "attempt_id": "attempt:web-20260906-opg169-a01",
+      "claims": [],
+      "completed_at": null,
+      "generator": "chatgpt-web-github",
+      "inputs": [
+        "problem-library/records/canonical-problems.jsonl",
+        "research/records/failed-routes.jsonl"
+      ],
+      "lifecycle": "running",
+      "method": "proof",
+      "objective": "严格证明：若 Two Color Conjecture 存在按顶点数最小的反例 G，则 G 强连通，且其 underlying graph 的最小度至少为 3。",
+      "obligation_graph_id": "graph:opg169-initial-v1",
+      "problem_contract_sha256": "719230edd088c52a5468eed8090579e5eef1bf85d8a56e633350063108f345ec",
+      "problem_id": "problem:opg-169-two-color-conjecture",
+      "route_id": "route:minimal-counterexample-structure-v1",
+      "started_at": "2026-09-06T05:03:30Z"
+    }
+  ],
   "failed_routes": [],
   "knowledge_operators": [
     {
@@ -203,7 +223,40 @@ This file is generated from repository truth and bounded for the web channel. It
       "source_id": "sagemath"
     }
   ],
-  "obligation_graphs": [],
+  "obligation_graphs": [
+    {
+      "attempt_id": "attempt:web-20260906-opg169-a01",
+      "graph_id": "graph:opg169-initial-v1",
+      "obligations": [
+        {
+          "dependencies": [
+            "obligation:opg169-strong-min-degree-three"
+          ],
+          "kind": "root_claim",
+          "obligation_id": "obligation:opg169-root",
+          "statement": {
+            "formal_declaration": null,
+            "language": "en",
+            "text": "For every orientation G of a finite simple planar graph, can V(G) be partitioned into X₁ and X₂ so that each induced digraph G[Xᵢ] is acyclic?"
+          },
+          "statement_sha256": "384e13c90c28fc7af0281753a421a641625fb4024165358eb4bd0a799a664756"
+        },
+        {
+          "dependencies": [],
+          "kind": "lemma",
+          "obligation_id": "obligation:opg169-strong-min-degree-three",
+          "statement": {
+            "formal_declaration": null,
+            "language": "zh",
+            "text": "严格证明：若 Two Color Conjecture 存在按顶点数最小的反例 G，则 G 强连通，且其 underlying graph 的最小度至少为 3。"
+          },
+          "statement_sha256": "e5d7b7d2903018956d3e5c66f61cd5d33ef699e068931d2e97a13a1fbaeda4da"
+        }
+      ],
+      "root_obligation_id": "obligation:opg169-root",
+      "route_id": "route:minimal-counterexample-structure-v1"
+    }
+  ],
   "problem_contract": {
     "acceptance": {
       "policy": "solution-admission-v1"
