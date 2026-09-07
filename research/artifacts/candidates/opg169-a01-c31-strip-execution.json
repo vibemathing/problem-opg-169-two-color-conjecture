@@ -1,0 +1,34 @@
+{
+  "command": [
+    "python3",
+    "research/artifacts/candidates/opg169-a01-c31-strip-check.py"
+  ],
+  "elapsed_seconds": 0.97752,
+  "executable_sha256": "17b78e0a93175e86f9ac03141924fd7a7f0c0c52e66b34bfa0de20ffef989df1",
+  "exit_code": 0,
+  "lean_probe": {
+    "axiom_report": null,
+    "elaboration": "not_run",
+    "elan_found": false,
+    "lean_found": false
+  },
+  "limits": {
+    "cpu_affinity_count": 1,
+    "cpu_seconds": 20,
+    "memory_bytes": 536870912,
+    "network": "seccomp denied socket/socketpair/connect",
+    "output_file_bytes": 65536,
+    "parent_timeout_seconds": 30,
+    "wall_alarm_seconds": 25
+  },
+  "record_kind": "generator_execution",
+  "runtime": "3.13.5",
+  "source_sha256": "e2f87fa034caf65a298326ebc47db967933c989e7323d06527f80ce61322c2c4",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_bytes": 12443,
+  "stdout_sha256": "ce47b83af9990a786030d5a5661ea6326228ab22d5d8897fc95b95a92e978db1",
+  "timeout": false,
+  "trusted_verifier_receipt": false,
+  "verdict": "candidate_only"
+}
