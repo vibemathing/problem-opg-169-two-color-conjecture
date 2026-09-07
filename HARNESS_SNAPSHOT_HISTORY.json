@@ -1,0 +1,26 @@
+{
+  "entries": [
+    {
+      "harness_snapshot_sha256": "3dee994dc9b7dc43c16268d648b04a239b8451f197c81f74af74782e9d25c585",
+      "harness_version": "1.1.2",
+      "importer_policy_sha256": "a7650a8ba5be3fef370914b24a49b1118f57dc12f41980f21b11ef2b0a8267c1",
+      "source_manifest_sha256": "97499c98e0774ef58c0be06ff8f3035c89cda1dffb6f9a9d222fb281b049cdb4",
+      "tree_sha256": "383fe57a2325ce5db8a6c845ca000fec171d7549186bce44a736d90489120ef9"
+    },
+    {
+      "harness_snapshot_sha256": "846d3c8ff448ae6e63e1b91d7dac5e1c6fe44f10eb7baeb7be0ad67f9b7db247",
+      "harness_version": "1.2.3",
+      "importer_policy_sha256": "a7650a8ba5be3fef370914b24a49b1118f57dc12f41980f21b11ef2b0a8267c1",
+      "source_manifest_sha256": "27a22779f4ea8418115002a4a180553b0f23425b69e4deb76f2bd6ae893b2993",
+      "tree_sha256": "3926dceea5f92a326a352b02580e93d5d9b2ce8703cc95e65c320470cc80eba7"
+    }
+  ],
+  "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+  "repository_identity": {
+    "database_id": 1358762784,
+    "default_branch": "main",
+    "node_id": "R_kgDOUP0TIA",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}
