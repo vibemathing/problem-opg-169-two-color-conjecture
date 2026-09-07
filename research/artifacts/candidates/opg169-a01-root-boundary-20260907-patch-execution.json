@@ -1,0 +1,30 @@
+{
+  "actual_runtime": "3.13.5",
+  "command": [
+    "python3",
+    "research/artifacts/candidates/opg169-a01-root-boundary-20260907-patch-checker.py",
+    "research/artifacts/candidates/opg169-a01-root-boundary-20260907-patch.json"
+  ],
+  "constrain_module_sha256": "7805f004cebd385b45932a8c3acb15b8a71b4f35b9846a02b08bcf5269629f5a",
+  "elapsed_seconds": 0.619682,
+  "exit_code": 0,
+  "input_sha256": "b5305848186372232ebb8c95c13c360ada4d2e4bd2ee81eef72a294d0873b523",
+  "limits": {
+    "cpu_affinity_count": 1,
+    "cpu_seconds": 20,
+    "memory_bytes": 536870912,
+    "network": "seccomp denied socket, socketpair, connect",
+    "output_file_bytes": 65536,
+    "wall_seconds": 25
+  },
+  "record_kind": "generator_execution_record",
+  "registered_verifier_receipt": false,
+  "source_sha256": "f62b7783d71b1894051e3685734c7baaa14950313b79c8dddaf32a1a04ada184",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_bytes": 1539,
+  "stdout_sha256": "2ac2ee47cba9dcfb77fb463bea999dd54f84f73759ce39aca31b6af144166c57",
+  "timeout": false,
+  "verdict": "candidate_only",
+  "wrapper_sha256": "9accfe89d258b7687618f378a2a3bb71c19c9f4829a924155c6715af258d26e4"
+}
