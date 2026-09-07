@@ -147,12 +147,12 @@ def main():
     report = {'verdict':'candidate_only','trusted_verifier_receipt':False,
               'complete':False,'runtime':platform.python_version(),
               'source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-              'range':{'path_vertices':[3,4,5,6,7,8,9],'first_types':[0,1]},
-              'cases':[],'replacements':[]}
+              'range':{'path_vertices':[2,3,4,5,6,7,8,9],'first_types':[0,1]},
+              'cases':[],'replacements':[],'inclusion_replacements':[]}
     profiles = {}
     try:
         for start in (0, 1):
-            for k in range(3, 10):
+            for k in range(2, 10):
                 A, B = graph(k, start)
                 need(all(x != y and (y, x) not in A for x, y in A), 'orientation')
                 rot, faces = embedding(A, k)
@@ -172,11 +172,23 @@ def main():
                     need(prof == profiles[small, start], 'short-strip equivalence')
                     report['replacements'].append({'long':k,'short':small,'first_type':start,
                                                   'all_states_equal':True,'states':len(prof)})
-        # Required regime that an odd path of length three cannot realize.
+                if k >= 4:
+                    smaller = 2 if k % 2 == 0 else 3
+                    need(profiles[smaller,start] <= prof,'one-sided profile lift')
+                    report['inclusion_replacements'].append({'long':k,'short':smaller,
+                        'first_type':start,'all_smaller_states_lift':True,
+                        'extra_guard':'no exterior b-to-a arc' if smaller == 2 else 'none'})
+        # Missing long-patch state prevents equality, NOT the one-sided lift.
         missing = ((0, 1, 0, 1), ((0, 2),))
-        need(missing in profiles[5, 0] and missing not in profiles[3, 0], 'three-vertex false shortcut')
-        report['five_not_three_witness'] = {'boundary_colours':missing[0],'positive_relation':missing[1]}
-        report['complete_profiles'] = {str(k)+'-'+str(s):sorted(profiles[k,s]) for k in (3,4,5) for s in (0,1)}
+        need(missing in profiles[5, 0] and missing not in profiles[3, 0], 'non-equality control')
+        report['five_not_three_equal_profile_witness'] = {'boundary_colours':missing[0],'positive_relation':missing[1]}
+        need(profiles[3,0] < profiles[5,0],'strict inclusion still permits lifting')
+        report['three_profile_subset_five'] = True
+        a2, b2 = graph(2,0)
+        opposite = a2 | {(b2[3],b2[1])}
+        need(any((y,x) in opposite for x,y in opposite),'boundary reverse-arc mutation')
+        report['short_even_reverse_arc_conflict'] = True
+        report['complete_profiles'] = {str(k)+'-'+str(s):sorted(profiles[k,s]) for k in (2,3,4,5) for s in (0,1)}
         report['complete'],report['status'] = True,'bounded_strip_controls_passed'
         code = 0
     except (ValueError,KeyError,TypeError) as e:
