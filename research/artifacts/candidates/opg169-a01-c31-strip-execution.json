@@ -1,0 +1,36 @@
+{
+  "command": [
+    "python3",
+    "research/artifacts/candidates/opg169-a01-c31-strip-check.py"
+  ],
+  "elapsed_seconds": 2.688498,
+  "executable_sha256": "17b78e0a93175e86f9ac03141924fd7a7f0c0c52e66b34bfa0de20ffef989df1",
+  "exit_code": 0,
+  "lean_probe": {
+    "axiom_report": null,
+    "elaboration": "not_run",
+    "elan_found": false,
+    "lean_found": false
+  },
+  "limits": {
+    "cpu_affinity_count": 1,
+    "cpu_seconds": 20,
+    "memory_bytes": 536870912,
+    "network": "seccomp denied socket/socketpair/connect",
+    "output_file_bytes": 65536,
+    "parent_timeout_seconds": 30,
+    "wall_alarm_seconds": 25
+  },
+  "published_summary_sha256": "afacb266954ab1eb32e9221d39582b412560623501784cfa32a3a624ad7b38c3",
+  "record_kind": "generator_execution",
+  "runtime": "3.13.5",
+  "source_sha256": "c0e31f0a2eee4e15666e4b17d82bc194e8fbfb442bb35473fdef6a12084211b1",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_bytes": 15276,
+  "stdout_sha256": "4ec2f75956eb0dbaedce854b3f4b806b78723e0a4ce8ebda7dd4cae334f1f623",
+  "timeout": false,
+  "trusted_verifier_receipt": false,
+  "verdict": "candidate_only",
+  "wrapper_sha256": "806ac07302d60f3d710ebe537e92d0720518a4a9850a7df7b32586f816cd60e1"
+}
