@@ -13,6 +13,13 @@
       "importer_policy_sha256": "a7650a8ba5be3fef370914b24a49b1118f57dc12f41980f21b11ef2b0a8267c1",
       "source_manifest_sha256": "27a22779f4ea8418115002a4a180553b0f23425b69e4deb76f2bd6ae893b2993",
       "tree_sha256": "3926dceea5f92a326a352b02580e93d5d9b2ce8703cc95e65c320470cc80eba7"
+    },
+    {
+      "harness_snapshot_sha256": "7a2742cba5465b04c12b939e43143ddaff67bbd355eaacb5c7cab9ed674ff47c",
+      "harness_version": "1.2.4",
+      "importer_policy_sha256": "a7650a8ba5be3fef370914b24a49b1118f57dc12f41980f21b11ef2b0a8267c1",
+      "source_manifest_sha256": "fedd664f1ac16c5232eb05076b73f2bab566ed672840e7f2af851c77253813b3",
+      "tree_sha256": "234a5783aa1060f243a29a53bf523c66b1ad4d00664d150e78ffd4c5b57dd2ea"
     }
   ],
   "repository": "vibemathing/problem-opg-169-two-color-conjecture",
