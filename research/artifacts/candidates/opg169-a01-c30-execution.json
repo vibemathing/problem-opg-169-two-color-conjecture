@@ -1,0 +1,36 @@
+{
+  "command": [
+    "python3",
+    "research/artifacts/candidates/opg169-a01-c30-dynamic-check.py",
+    "research/artifacts/candidates/opg169-a01-c30-dynamic-input.json"
+  ],
+  "elapsed_seconds": 1.652395,
+  "executable_sha256": "17b78e0a93175e86f9ac03141924fd7a7f0c0c52e66b34bfa0de20ffef989df1",
+  "exit_code": 0,
+  "input_sha256": "22e2efb28730a267e6e1fdf5df216b804a184947ea5b796598b4f6331b045f88",
+  "lean_probe": {
+    "axiom_report": null,
+    "elaboration": "not_run",
+    "elan_found": false,
+    "lean_found": false
+  },
+  "limits": {
+    "cpu_affinity_count": 1,
+    "cpu_seconds": 35,
+    "memory_bytes": 536870912,
+    "network": "seccomp denied socket/socketpair/connect",
+    "output_file_bytes": 65536,
+    "wall_seconds": 40
+  },
+  "record_kind": "generator_execution",
+  "runtime": "3.13.5",
+  "source_sha256": "0f3cd926f1e21939d4807c5a6a2310f5ab820023dc14a2d31bd7c7927e5db13b",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_bytes": 9884,
+  "stdout_sha256": "2922a0045e6443228726a1d2f39c46631c7e264500784e49abb7d482743347b7",
+  "timeout": false,
+  "trusted_verifier_receipt": false,
+  "verdict": "candidate_only",
+  "wrapper_sha256": "2e8451c61f023ba69efffef44a3b3587426ed324cfaad591c1c64035c313cc37"
+}
