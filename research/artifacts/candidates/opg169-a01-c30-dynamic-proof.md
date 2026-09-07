@@ -81,11 +81,12 @@ Two states are equivalent at the next round precisely when these complete
 signatures agree. Use a SET of successor types; multiplicity of equivalent
 choices is irrelevant to existence of a matching move.
 
-Every round refines the preceding partition because the old type is a
-signature component. If it changes, the number of nonempty blocks strictly
-increases. It is at most N, so at most N-1 strict refinements occur (and
-fewer if the initial partition has more blocks). A stable partition ~*
-therefore exists for each finite P. This is an algorithmic termination
+If N=0, the empty partition is already stable and no refinement is needed.
+For N>=1, every round refines the preceding partition because the old type
+is a signature component. If it changes, the number of nonempty blocks
+strictly increases. It is at most N, so at most N-1 strict refinements
+occur (and fewer if the initial partition has more blocks). A stable
+partition ~* therefore exists for each finite P. This is an algorithmic termination
 proof, not induction from finite experiments. The implementation stops
 only when refinement causes no split, not after a preset number of rounds.
 
