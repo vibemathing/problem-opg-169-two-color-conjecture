@@ -1,0 +1,328 @@
+{
+  "H_arcs": [
+    [
+      2,
+      0
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      7
+    ]
+  ],
+  "H_topological_orders": {
+    "0": [
+      2,
+      4,
+      0,
+      6
+    ],
+    "1": [
+      3,
+      1,
+      5,
+      7
+    ]
+  },
+  "boundary": [
+    0,
+    2,
+    1,
+    7
+  ],
+  "boundary_colours": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "boundary_positive_returns": [
+    [
+      2,
+      0
+    ],
+    [
+      1,
+      7
+    ]
+  ],
+  "claim_scope": "Obstruction to universally repairing an arbitrary deletion colouring by legal single-vertex changes and whole uncoloured-SCC palette swaps; not a root counterexample.",
+  "deleted_vertex": 8,
+  "expected": {
+    "G_faces": 14,
+    "G_valid_colourings": 62,
+    "H_extendible_colourings": 44,
+    "H_faces": 11,
+    "H_frozen_masks": [
+      85,
+      170
+    ],
+    "H_single_flip_component_sizes": [
+      1,
+      1,
+      52
+    ],
+    "H_valid_colourings": 54,
+    "initial_orbit_single_plus_whole_SCC": [
+      85,
+      170
+    ],
+    "minimum_flip_distance_to_extendible": 2
+  },
+  "format": "r08-frozen-patch-candidate-v1",
+  "full_G_topological_orders": {
+    "0": [
+      4,
+      6,
+      7,
+      8,
+      2
+    ],
+    "1": [
+      0,
+      3,
+      1,
+      5
+    ]
+  },
+  "full_G_valid_ones": [
+    0,
+    1,
+    3,
+    5
+  ],
+  "initial_ones": [
+    1,
+    3,
+    5,
+    7
+  ],
+  "minimality": "Four boundary neighbours are necessary for two blocked colours. Nine vertices are NOT claimed globally minimum for this stronger recolouring obstruction.",
+  "other_state_legal_flip": 0,
+  "rotation": {
+    "0": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "1": [
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2
+    ],
+    "2": [
+      0,
+      8,
+      1,
+      3
+    ],
+    "3": [
+      0,
+      2,
+      1,
+      4
+    ],
+    "4": [
+      0,
+      3,
+      1,
+      5
+    ],
+    "5": [
+      0,
+      4,
+      1,
+      6
+    ],
+    "6": [
+      0,
+      5,
+      1,
+      7
+    ],
+    "7": [
+      0,
+      6,
+      1,
+      8
+    ],
+    "8": [
+      0,
+      7,
+      1,
+      2
+    ]
+  },
+  "same_boundary_state_other_ones": [
+    1,
+    4,
+    7
+  ],
+  "simultaneous_escape_pair": [
+    0,
+    7
+  ],
+  "single_flip_cycles": {
+    "0": [
+      0,
+      3,
+      1,
+      7,
+      0
+    ],
+    "1": [
+      1,
+      2,
+      0,
+      6,
+      1
+    ],
+    "2": [
+      2,
+      3,
+      1,
+      2
+    ],
+    "3": [
+      3,
+      4,
+      0,
+      3
+    ],
+    "4": [
+      4,
+      1,
+      5,
+      4
+    ],
+    "5": [
+      5,
+      4,
+      0,
+      5
+    ],
+    "6": [
+      6,
+      1,
+      5,
+      6
+    ],
+    "7": [
+      7,
+      0,
+      6,
+      7
+    ]
+  },
+  "v_arcs": [
+    [
+      0,
+      8
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      7,
+      8
+    ]
+  ],
+  "v_blocking_cycles": {
+    "0": [
+      8,
+      2,
+      0,
+      8
+    ],
+    "1": [
+      8,
+      1,
+      7,
+      8
+    ]
+  },
+  "verdict": "candidate_only",
+  "vertices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ]
+}
