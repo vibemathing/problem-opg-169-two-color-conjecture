@@ -139,7 +139,7 @@ bit1 at10, bit2 at11. All other vertices retain their specified colours.
 Every row is checked from the full arcs: both P colour classes are DAGs, sigma
 is unchanged and ALL positive boundary returns in P equal those in Q. The
 finite vector is a complete certificate, not a probabilistic sample or merely
-a list of good projections. Kahn/closure generation and a different DFS/BFS
+a list of good projections. Positive-closure generation and a different DFS/BFS
 consumer both check it, with the latter importing no generator predicates.
 The certificate retains the full colour vectors, original rotation and faces.
 
