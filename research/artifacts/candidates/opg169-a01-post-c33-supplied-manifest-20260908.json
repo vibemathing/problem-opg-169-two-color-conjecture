@@ -1,0 +1,38 @@
+{
+  "archive_header": {
+    "decoded_bytes": 589770,
+    "decoded_sha256": "f479d3fd026aa4b01b1b1aea8d0ea6d44d1fe2a6e98e5796a223a2d3d2546430",
+    "description": "Exact supplied post-C33 bundle; historical UNSENT status and null draft PR are retained as history, not active state. Extract only into a separate local directory. The active packet is the current c34 root packet, not the embedded draft. No archived execution is relabelled as a new run.",
+    "file_count": 27,
+    "format": "utf8-file-map-lzma-base64-v1",
+    "source_zip_sha256": "e3644f6234dce91bfa7b2a36c2a06a623c6b11be98fbce3402feedd752b1d1f3",
+    "verdict": "candidate_only"
+  },
+  "format": "segmented-archive-assembly-v1",
+  "output_bytes": 62905,
+  "output_path": "research/artifacts/candidates/opg169-a01-post-c33-supplied-archive-20260908.json",
+  "output_sha256": "a40144a42c813d14d1517a41ece6acf6a7d1c3351d55b79c74048c5565a06d92",
+  "parts": [
+    {
+      "bytes": 15579,
+      "path": "research/artifacts/candidates/opg169-a01-post-c33-supplied-part-0-20260908.txt",
+      "sha256": "747032666c2d09619fc2978916c4670d0c087a9812c888e870224437c7613049"
+    },
+    {
+      "bytes": 15579,
+      "path": "research/artifacts/candidates/opg169-a01-post-c33-supplied-part-1-20260908.txt",
+      "sha256": "6254493071d12dea34625cb9744fc273bbcc7c689055f23e7e9f470e045c9885"
+    },
+    {
+      "bytes": 15579,
+      "path": "research/artifacts/candidates/opg169-a01-post-c33-supplied-part-2-20260908.txt",
+      "sha256": "e28257c1b36e5bc0441a81c189dbf68867354bf74b12302ed68dcdecabc9479a"
+    },
+    {
+      "bytes": 15579,
+      "path": "research/artifacts/candidates/opg169-a01-post-c33-supplied-part-3-20260908.txt",
+      "sha256": "57a6c7c13c0dd2151dbf5596525b832d46b5b208f40385934621d9deea6a0901"
+    }
+  ],
+  "verdict": "candidate_only"
+}
