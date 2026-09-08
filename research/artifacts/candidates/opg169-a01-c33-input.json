@@ -1,0 +1,1 @@
+{"format":"c33-exterior-face-input-v1","base_revision":"b782deb5f1dd369587a2492907c1e26305e6a6c6","codes":[[1,78],[1,100],[3,43],[5,77]],"scope":"All one-new-third exterior face directions, old-boundary facial closures, and equal-third adjacent-face wraps. Distinct-third larger annuli are not classified. No root counterexample or trusted admission.","verdict":"candidate_only"}
