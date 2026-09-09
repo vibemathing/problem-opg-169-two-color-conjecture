@@ -11,7 +11,6 @@
     "d19_ledger_replay_exact_match": "pass",
     "encoded_artifact_decode_hashes": "pass",
     "json_parse": "pass",
-    "kernel_checked": false,
     "lake_available": false,
     "lean_available": false,
     "python_compile": "pass"
