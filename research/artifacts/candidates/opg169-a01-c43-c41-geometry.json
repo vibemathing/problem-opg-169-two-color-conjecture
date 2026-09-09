@@ -1,0 +1,149 @@
+{
+  "format": "opg169-c43-c41-geometry-v1",
+  "verdict": "candidate_only",
+  "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+  "base_revision": "dc6ee891ed7614602e88d48a57314416082dd022",
+  "parent": {
+    "candidate": "candidate:opg169-a01-c40-proof",
+    "source_path": "research/artifacts/candidates/opg169-a01-c40-proof.md",
+    "source_sha256": "e78c5d0519429c69b849cb546ea483ad63f849419afccfdbc19571638035dca4",
+    "parent_identity": "C40 residual 12/new/2, actual guard arc 8->12, both degree-four fan-end cyclic children"
+  },
+  "transport_recovery": {
+    "quarantined_branch": "web/attempt-opg169-a01-c42-dual-fan-20260910",
+    "quarantined_head": "b56521ec411d705450d3e375f4234a25799c9737",
+    "reason": "no packet or PR; its proof asserts a one-vertex lobe intersection contradicted by the canonical delete-hole calculation"
+  },
+  "vertices": [0,2,3,4,5,6,7,8,11,12,13,14,15,16,17],
+  "controlled_full_stars": {"0":5,"2":5,"3":5,"4":6,"7":6,"13":4,"14":4,"15":4},
+  "retained_boundary": [5,6,8,11,12,16,17],
+  "fixed_arcs": [[0,2],[0,4],[2,3],[2,6],[2,11],[3,0],[3,4],[3,7],[4,5],[4,8],[4,15],[5,0],[5,6],[5,12],[6,0],[7,2],[7,8],[7,13],[8,3],[8,12],[8,14],[8,16],[11,6],[11,7],[11,12],[12,4],[12,7],[13,8],[13,12],[14,15],[15,8],[15,12],[16,13]],
+  "direction_bits": [
+    "bit0=1: 12->14,14->17,17->12; bit0=0: 14->12,12->17,17->14",
+    "bit1=1: 12->16; bit1=0: 16->12",
+    "bit2=1: 8->17; bit2=0: 17->8"
+  ],
+  "ordered_faces": [[0,2,3],[0,6,2],[0,5,6],[0,4,5],[0,3,4],[2,7,3],[2,11,7],[2,6,11],[3,8,4],[3,7,8],[8,7,13],[13,7,12],[12,7,11],[5,4,12],[12,4,15],[15,4,8],[12,15,14],[14,15,8],[8,13,16],[16,13,12],[12,14,17],[17,14,8]],
+  "fan14_ordered_face_repair": {
+    "removed": [[8,14,17],[17,14,12]],
+    "added": [[12,14,17],[17,14,8]],
+    "unordered_face_sets_preserved": [[8,14,17],[12,14,17]],
+    "old_conflicts": [
+      "succ_14(8)=15 from (14,15,8), but succ_14(8)=17 from (8,14,17)",
+      "succ_12(14)=15 from (12,15,14), but succ_12(14)=17 from (17,14,12)"
+    ]
+  },
+  "canonical_controlled_rotations": {
+    "0":[2,6,5,4,3],"2":[0,3,7,11,6],"3":[0,4,8,7,2],"4":[0,5,12,15,8,3],
+    "7":[2,3,8,13,12,11],"13":[7,8,16,12],"14":[8,15,12,17],"15":[4,12,14,8]
+  },
+  "delete_holes": {"13":[7,8,16,12],"14":[8,15,12,17]},
+  "correct_region_intersection": [8,12],
+  "guard_arc": [8,12],
+  "guard_edge_face_status": "Neither incident face of edge 8-12 is among the 22 controlled faces; their third vertices and side placement require separate absorption data.",
+  "face_corner_multiplicity": {"0":5,"2":5,"3":5,"4":6,"5":3,"6":3,"7":6,"8":7,"11":3,"12":7,"13":4,"14":4,"15":4,"16":2,"17":2},
+  "ledger_total": {
+    "raw_22_face_sum": "-22 + 5*g0 + 5*g2 + 5*g3 + 6*g4 + 3*g5 + 3*g6 + 6*g7 + 7*g8 + 3*g11 + 7*g12 + 4*g13 + 4*g14 + 4*g15 + 2*g16 + 2*g17 + sum_{all 22 faces} h(f)",
+    "frozen_layer_substitutions": ["g0=g2=g3=1/5","g13=g14=g15=0"],
+    "specialized_22_face_sum": "-19 + 6*g4 + 3*g5 + 3*g6 + 6*g7 + 7*g8 + 3*g11 + 7*g12 + 2*g16 + 2*g17 + sum_{all 22 faces} h(f)",
+    "minus19_provenance": "The +3 comes from five corners each of the three degree-five t=0 vertices 0,2,3; it is not an unnamed payment normalization.",
+    "absorbed_guard_faces_raw_increment": "-2 + 2*g8 + 2*g12 + g_u + g_v + h(u,8,12)+h(12,8,v)",
+    "raw_24_face_sum": "raw_22_face_sum plus the absorbed_guard_faces_raw_increment"
+  },
+  "normal_form": {
+    "selection": "among minimum-order counterexamples choose one with maximum underlying edge count",
+    "consequences": ["underlying graph is maximal planar","underlying graph is 3-connected","every face is triangular"],
+    "non_consequence": "maximum edge count does not imply arc-criticality; deleting an arc need not make the digraph colourable",
+    "open_separator": "separating triangles remain possible"
+  },
+  "coverage": {
+    "canonical_C40_parent": {"structural":10,"unguarded":24,"guarded":22,"residual":14},
+    "S10_refinement_status": "quarantined_pending_per-parent Kuratowski and rotation compatibility certificates",
+    "S10_proposed_counts": {"structural":10,"unconditional":35,"conditional":11,"residual":14},
+    "S07_quotient_status": "candidate_handoff_only: residuals 6-9, all 16 orientations fail; 6/9 ordinary, 7/8 relation-only",
+    "S03_DC2R_status": "local leaf only; negative charge migration and global composition unproved"
+  },
+  "guard_edge_absorption": {
+    "maximal_planar_context": "In the selected minimum-order, maximum-edge representative, edge 8-12 has exactly two incident triangular faces.",
+    "ordered_face_sides": {"u":["u",8,12],"v":[12,8,"v"]},
+    "partial_rotation_chains": {"8":[16,13,7,3,4,15,14,17],"12":[[11,7,13,16],[17,14,15,4,5]]},
+    "side_aliases": {"u_existing":[11],"v_existing":[5],"fresh_allowed":true},
+    "joint_alias_types": [{"u":11,"v":"new_v"},{"u":"new_u","v":5},{"u":"new_u","v":"new_v"}],
+    "joint_old_old_exclusions": [{"u":11,"v":5,"vertices":15,"edges":40,"bound":39}],
+    "open_source_state": {
+      "state_id": "C43-GUARD-FACE-FRESH-FRESH",
+      "u": "new_u",
+      "v": "new_v",
+      "required_next_data": [
+        "orientations of u-8,u-12,v-8,v-12 consistent with fixed 8->12",
+        "complete stars when either third vertex has degree four",
+        "all aliases of their remaining facial neighbours",
+        "full-profile replacement or a quantified obstruction"
+      ]
+    },
+    "single_side_planar_exclusions": [
+      {"side":"u","alias":6,"vertices":15,"edges":40,"bound":39},
+      {"side":"v","alias":6,"vertices":15,"edges":40,"bound":39}
+    ]
+  },
+  "proof_dag_update": {
+    "normal_form": {
+      "status": "candidate_lemma",
+      "statement": "Choose a minimum-order counterexample maximizing underlying edge count; its underlying plane graph is maximal planar and 3-connected.",
+      "removes": "global cut-vertex and two-vertex-cut branches for the selected root representative",
+      "retains": ["separating triangles","all local replacement soundness obligations"],
+      "warning": "maximal-planar saturation is not arc-criticality"
+    },
+    "coverage": {
+      "authoritative_parent_partition": {"structural":10,"unguarded":24,"guarded":22,"residual":14},
+      "proposed_refinement": {"structural":10,"unconditional":35,"conditional":11,"residual":14},
+      "status": "not_adopted",
+      "gate": "per-parent Kuratowski/nonplanarity certificate and compatibility with the original rotation"
+    },
+    "quotient_negative": {
+      "scope": "C40 residual parents #6-#9, merged-{0,2} quotient, 16 orientations",
+      "reported_split": "#6/#9 ordinary failure; #7/#8 relation-only",
+      "status": "candidate_handoff_pending_source_digest",
+      "nonclaim": "does not refute other gadgets or the residual parent itself"
+    },
+    "dc2r_leaf": {
+      "scope": "one high-endpoint cell",
+      "status": "local_candidate_leaf",
+      "open": ["negative-charge migration","global no-double-payment composition","L_join"]
+    }
+  },
+  "controlled_face_complex": {
+    "vertices": 15,
+    "faces": 22,
+    "euler_characteristic": 0,
+    "oriented_boundary_walks": [[5,6,11,12],[12,16,8,17]],
+    "boundary_walk_intersection": [12],
+    "warning": "The 22-face complex uses 37 edges and has chi=0. The guard edge 8-12 is the 38th graph edge but is incident with none of these 22 faces. Its two facial sides are external source data. The two boundary walks are not the individual fan-centre deletion holes.",
+    "face_edges": 37,
+    "graph_edges_including_external_guard": 38
+  },
+  "corrected_two_hole_baseline": {
+    "delete": [13,14],
+    "hole_13": [7,8,16,12],
+    "hole_14": [8,15,12,17],
+    "intersection": [8,12],
+    "legal_local_diagonal_choices": {"hole_13":["none","7->16","16->7"],"hole_14":["none","15->17","17->15"]},
+    "existing_guard_edge_note": "8->12 already exists with a fixed embedding outside the two controlled hole interiors; it is not redrawn as a hole diagonal.",
+    "directions": 8,
+    "choices_per_direction": 9,
+    "pairs": 72,
+    "strong_profile_successes": 0,
+    "best_failure_by_direction": [
+      {"word":0,"diag13":2,"diag14":2,"q_valid":442,"fail":62,"ordinary":20,"relation_only":42,"equal":364,"strict":16,"first_q_bits":581,"first_boundary":16,"first_kind":"relation_only"},
+      {"word":1,"diag13":2,"diag14":0,"q_valid":636,"fail":72,"ordinary":24,"relation_only":48,"equal":540,"strict":24,"first_q_bits":581,"first_boundary":16,"first_kind":"relation_only"},
+      {"word":2,"diag13":2,"diag14":2,"q_valid":442,"fail":62,"ordinary":20,"relation_only":42,"equal":362,"strict":18,"first_q_bits":581,"first_boundary":16,"first_kind":"relation_only"},
+      {"word":3,"diag13":2,"diag14":0,"q_valid":636,"fail":72,"ordinary":24,"relation_only":48,"equal":538,"strict":26,"first_q_bits":581,"first_boundary":16,"first_kind":"relation_only"},
+      {"word":4,"diag13":2,"diag14":2,"q_valid":386,"fail":36,"ordinary":20,"relation_only":16,"equal":330,"strict":20,"first_q_bits":1605,"first_boundary":16,"first_kind":"relation_only"},
+      {"word":5,"diag13":2,"diag14":2,"q_valid":444,"fail":46,"ordinary":24,"relation_only":22,"equal":378,"strict":20,"first_q_bits":1605,"first_boundary":16,"first_kind":"relation_only"},
+      {"word":6,"diag13":2,"diag14":2,"q_valid":386,"fail":36,"ordinary":20,"relation_only":16,"equal":330,"strict":20,"first_q_bits":1605,"first_boundary":16,"first_kind":"relation_only"},
+      {"word":7,"diag13":2,"diag14":2,"q_valid":444,"fail":46,"ordinary":24,"relation_only":22,"equal":378,"strict":20,"first_q_bits":1605,"first_boundary":16,"first_kind":"relation_only"}
+    ],
+    "status": "bounded_failed_route_candidate_only",
+    "nonclaim": "This excludes only the corrected bare two-centre deletion with at most one legal diagonal in each actual quadrilateral hole, not arbitrary two-terminal gadgets or larger absorbed interfaces."
+  }
+}
