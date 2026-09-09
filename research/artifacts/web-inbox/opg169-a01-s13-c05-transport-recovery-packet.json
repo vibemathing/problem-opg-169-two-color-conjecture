@@ -1,8 +1,8 @@
 {
   "assumptions": [
-    "The preserved local ZIP is the exact bundle emitted in S13 Cycle 4.",
+    "The preserved local ZIP is the exact bundle emitted in S13 Cycle 4 against mathematical source revision dc6ee891ed7614602e88d48a57314416082dd022.",
     "The repository transport accepts UTF-8 text but does not provide a binary-file write argument.",
-    "The current protected base revision is dc6ee891ed7614602e88d48a57314416082dd022."
+    "The candidate branch was synchronized non-forcibly to transport base 13f35cd2a520babdec3e5052768b4b7ab5e63817 before final packet audit."
   ],
   "atomic_claims": [
     {
@@ -27,7 +27,7 @@
     }
   ],
   "attempt_id": "attempt:web-20260906-opg169-a01",
-  "base_revision": "dc6ee891ed7614602e88d48a57314416082dd022",
+  "base_revision": "13f35cd2a520babdec3e5052768b4b7ab5e63817",
   "candidate_artifacts": [
     {
       "candidate_id": "candidate:opg169-a01-s13-c05-capsule-part-01",
@@ -75,7 +75,7 @@
       "candidate_id": "candidate:opg169-a01-s13-c05-transport-recovery",
       "kind": "proof",
       "locator": "research/artifacts/candidates/opg169-a01-s13-c05-transport-recovery.md",
-      "sha256": "bac5f745fabe992902ed46a8a040a093e0a58ba985550fc907eab6450e9fb221"
+      "sha256": "b67c583459fd40b7c29a01d549614adcb98e7f1516c17b341d707f8fada1527f"
     }
   ],
   "channel": "chatgpt-web-github-issue-pr-writer",
@@ -122,31 +122,31 @@
       "path": "problem-library/records/canonical-problems.jsonl",
       "relation": "exact",
       "repository": "vibemathing/problem-opg-169-two-color-conjecture",
-      "revision": "dc6ee891ed7614602e88d48a57314416082dd022"
+      "revision": "13f35cd2a520babdec3e5052768b4b7ab5e63817"
     },
     {
       "path": "research/records/obligation-graphs.jsonl",
       "relation": "exact",
       "repository": "vibemathing/problem-opg-169-two-color-conjecture",
-      "revision": "dc6ee891ed7614602e88d48a57314416082dd022"
+      "revision": "13f35cd2a520babdec3e5052768b4b7ab5e63817"
     },
     {
       "path": "research/records/failed-routes.jsonl",
       "relation": "exact",
       "repository": "vibemathing/problem-opg-169-two-color-conjecture",
-      "revision": "dc6ee891ed7614602e88d48a57314416082dd022"
+      "revision": "13f35cd2a520babdec3e5052768b4b7ab5e63817"
     },
     {
       "path": "research/artifacts/candidates/opg169-a01-c37-proof.md",
       "relation": "prior_art",
       "repository": "vibemathing/problem-opg-169-two-color-conjecture",
-      "revision": "dc6ee891ed7614602e88d48a57314416082dd022"
+      "revision": "13f35cd2a520babdec3e5052768b4b7ab5e63817"
     },
     {
       "path": "research/artifacts/candidates/opg169-a01-c40-proof.md",
       "relation": "prior_art",
       "repository": "vibemathing/problem-opg-169-two-color-conjecture",
-      "revision": "dc6ee891ed7614602e88d48a57314416082dd022"
+      "revision": "13f35cd2a520babdec3e5052768b4b7ab5e63817"
     }
   ],
   "transport": {
