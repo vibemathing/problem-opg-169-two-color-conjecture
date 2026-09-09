@@ -144,8 +144,8 @@ Pressure checks retained in the table and independent consumer include:
 3. all sixteen complete smaller colourings;
 4. ordinary nonextension separated from relation-only failure;
 5. positive rather than reflexive reachability;
-6. full arc reversal and side relabelling as theorem symmetries, not extra
-   parent counts;
+6. side relabelling used only to transfer the generic wheel theorem to the
+   opposite guard face, not as an additional executed data set or parent count;
 7. exact one-vertex order decrease;
 8. no use of minimum semidegree in the smaller graph.
 
