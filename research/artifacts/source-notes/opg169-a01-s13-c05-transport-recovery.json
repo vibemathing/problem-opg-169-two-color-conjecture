@@ -1,0 +1,102 @@
+{
+  "base_revision": "dc6ee891ed7614602e88d48a57314416082dd022",
+  "branch": "web/attempt-opg169-a01-s13-c05-transport-recovery-20260910",
+  "candidate_artifacts": [
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-capsule-part-01",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-part01.txt",
+      "sha256": "38d002c85c9e15b9be6d5974478721048cc3806831a6d87f1e12e80a31ee4778"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-capsule-part-02",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-part02.txt",
+      "sha256": "01d37b0c9cf99d9a7c2f85db16ace8bd6fc65522d842f5ab2d97526b20111121"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-capsule-part-03",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-part03.txt",
+      "sha256": "7a8698c7dd62fda8a52cd1ebe321dd3965dc446893a05e4cb2967825b388c7fe"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-capsule-part-04",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-part04.txt",
+      "sha256": "bed773cec8907b422d1382644982cfe416f2a29203b7dfc65a19ed09dc2967bf"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-capsule-manifest",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-manifest.json",
+      "sha256": "0800210312aaf554ca7d21bd97eebea34596f0153d112ed13b15fcf7cfdd2903"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-cycle4-unpack",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-unpack.py",
+      "sha256": "0631f174d8e0d7595df2a1ad6375429d405fcdc071f42ef7b2bc709ab933144a"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-cycle4-unpack-output",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-unpack-output.json",
+      "sha256": "84cbfe37a600d9255be172a5bc3f3c0cda119c200b56d4f6ab7272b0b6431719"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-transport-recovery",
+      "kind": "proof",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-transport-recovery.md",
+      "sha256": "bac5f745fabe992902ed46a8a040a093e0a58ba985550fc907eab6450e9fb221"
+    }
+  ],
+  "created_at": "2026-09-10T06:42:45+08:00",
+  "format": "opg169-s13-cycle5-transport-recovery-note-v1",
+  "issue_number": 3,
+  "issue_url": "https://github.com/vibemathing/problem-opg-169-two-color-conjecture/issues/3",
+  "local_execution": {
+    "command": "python3 opg169-a01-s13-c05-cycle4-unpack.py <manifest> --root <candidate-dir> --extract <temp> --output <output>",
+    "exit_code": 0,
+    "output_sha256": "84cbfe37a600d9255be172a5bc3f3c0cda119c200b56d4f6ab7272b0b6431719",
+    "stderr_bytes": 0,
+    "stdout_sha256": "84cbfe37a600d9255be172a5bc3f3c0cda119c200b56d4f6ab7272b0b6431719",
+    "trust_domain": "generator transport self-check"
+  },
+  "nonclaims": [
+    "The text capsule is not a mathematical proof.",
+    "The local unpack execution is not independent verification.",
+    "PR checks and merge cannot admit a Result."
+  ],
+  "preserved_status": {
+    "Cycle4_verdict": "candidate_only",
+    "L_join": "not_certified",
+    "new_mathematical_claims": false,
+    "root_closed": false,
+    "universal_D19_proof_payload": false
+  },
+  "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+  "source_local_archive": {
+    "bytes": 44349,
+    "path": "/mnt/data/r08_s13_cycle4_bundle.zip",
+    "sha256": "407358260e8b690af86c20b951543e9ce8dc6eaee55d545b6b6619577f19d9eb",
+    "zip_test": "ok"
+  },
+  "transport": {
+    "pull_request_number": null,
+    "pull_request_url": null,
+    "required_checks": [
+      "web-harness-snapshot",
+      "web-attempt-packet",
+      "web-pr-diff-boundary"
+    ]
+  },
+  "transport_encoding": {
+    "base64_chars": 59132,
+    "capsule_manifest": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-manifest.json",
+    "chunks": 4,
+    "encoding": "base64",
+    "unpacker": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-unpack.py"
+  },
+  "verdict": "candidate_only"
+}
