@@ -80,7 +80,7 @@ Their catalogue sizes are
 ```
 6,760 total. All return no strong-profile rule. This blocks only the stated catalogue, not arbitrary gadgets or larger interfaces.
 
-The lossless audit archive stores all 70 rows, all 46 selected lift vectors, guards, and equal/strict counts.
+The lossless audit archive stores all 70 rows, all 46 selected lift vectors, guards, and equal/strict counts. A compact residual summary stores each of the 14 full search-output SHA-256 values, a canonical candidate-row digest, aggregate ordinary/relation failure counts, and the best catalogue member; the committed search program deterministically regenerates each full output.
 
 ## 5. First residual: degree-four outport absorption
 
@@ -163,11 +163,11 @@ Every `h` is the actual per-face receipt. Nothing here gives `residual=0` or a g
 
 ## 9. Reproduction and trust boundary
 
-`opg169-a01-c40-replay.py audit` decodes the frozen audit archive, verifies its size and SHA-256, runs the independent consumer, and checks the residual archive. The selected CPython 3.13.5 audit exited 0 with summary
+`opg169-a01-c40-replay.py audit` decodes the frozen audit archive, verifies its size and SHA-256, runs the independent consumer, and checks the compact residual summary against the execution-record hashes. The selected CPython 3.13.5 audit exited 0 with summary
 ```json
 {"coverage":{"guarded_reduction":22,"residual":14,"structural_semidegree":10,"unguarded_reduction":24},"degree4_outport_rows":7,"fan13_rows":8,"fan14_rows":8,"rows":70,"selected_rules":46,"status":"ok"}
 ```
-All 14 residual searches exited 0. `opg169-a01-c40-search.py` regenerates each output. Finite checks cover only the stated local domains.
+All 14 residual searches exited 0. Their full stdout files are not claimed committed; `opg169-a01-c40-search.py` regenerates each one and the summary binds both raw-output and canonical candidate-row digests. Finite checks cover only the stated local domains.
 
 The programs and tables share one generator trust domain. No Lean elaboration, axiom report, independent verifier acknowledgement, statement-faithfulness receipt, EvidenceLink, Result, or root closure exists.
 
