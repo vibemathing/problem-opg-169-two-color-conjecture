@@ -1,0 +1,119 @@
+{
+  "base64_chars": 59132,
+  "base_revision": "dc6ee891ed7614602e88d48a57314416082dd022",
+  "chunk_count": 4,
+  "chunks": [
+    {
+      "chars_without_newline": 14783,
+      "path": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-part01.txt",
+      "sha256": "38d002c85c9e15b9be6d5974478721048cc3806831a6d87f1e12e80a31ee4778"
+    },
+    {
+      "chars_without_newline": 14783,
+      "path": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-part02.txt",
+      "sha256": "01d37b0c9cf99d9a7c2f85db16ace8bd6fc65522d842f5ab2d97526b20111121"
+    },
+    {
+      "chars_without_newline": 14783,
+      "path": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-part03.txt",
+      "sha256": "7a8698c7dd62fda8a52cd1ebe321dd3965dc446893a05e4cb2967825b388c7fe"
+    },
+    {
+      "chars_without_newline": 14783,
+      "path": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-part04.txt",
+      "sha256": "bed773cec8907b422d1382644982cfe416f2a29203b7dfc65a19ed09dc2967bf"
+    }
+  ],
+  "expected_cycle4_digest_manifest_sha256": "3b87756c4cf919acdd7902445574b2284362207f19034f6b2ac72db33aa400f8",
+  "format": "opg169-s13-cycle4-text-capsule-v1",
+  "mathematical_status": {
+    "L_join": "not_certified",
+    "cycle4_verdict": "candidate_only",
+    "new_mathematical_claims": false,
+    "root_closed": false,
+    "universal_D19_import": "opaque mission-supplied candidate; no proof/certificate payload"
+  },
+  "members": [
+    {
+      "bytes": 58922,
+      "path": "r08_s13_cycle4_check_report.json",
+      "sha256": "f4af3a6522a15d2560511fac0c7ad9384880343db12db1abf829fbd5b881f0f1"
+    },
+    {
+      "bytes": 24081,
+      "path": "r08_s13_cycle4_checker.py",
+      "sha256": "7ab35db0f1c1df3583680ee0c11b6021d57e43991c7ef62ca2c1969da065448f"
+    },
+    {
+      "bytes": 1173,
+      "path": "r08_s13_cycle4_commands.txt",
+      "sha256": "ff13448ece445b0b64c54be2896fb79142eb9dceb086b9c23d8468e2e904e4a0"
+    },
+    {
+      "bytes": 10333,
+      "path": "r08_s13_cycle4_consumer.py",
+      "sha256": "e6fd141390dee09abd2c49661040c74608bd66d9fc996020e76e8576e0bd88de"
+    },
+    {
+      "bytes": 2126,
+      "path": "r08_s13_cycle4_consumer_output.json",
+      "sha256": "6b1684320846a713fda62bcfdc4b818cb3398f47e5c91c41b5663d75bf164887"
+    },
+    {
+      "bytes": 1384,
+      "path": "r08_s13_cycle4_digests.txt",
+      "sha256": "3b87756c4cf919acdd7902445574b2284362207f19034f6b2ac72db33aa400f8"
+    },
+    {
+      "bytes": 715,
+      "path": "r08_s13_cycle4_import.schema.json",
+      "sha256": "6b26519d2bd604105dc9bdc0554db8e117640a82587f526ce37da938116ce788"
+    },
+    {
+      "bytes": 3508,
+      "path": "r08_s13_cycle4_join_matrix.json",
+      "sha256": "3fd5b2d9013e96e31030ff7f858be9833863579788354a36bbfebcbc1775126a"
+    },
+    {
+      "bytes": 116758,
+      "path": "r08_s13_cycle4_registry.json",
+      "sha256": "44afadb72d1a8bb6d2b148e4acf6051c9a4bba355119f8d1ab8353741f6a0498"
+    },
+    {
+      "bytes": 771,
+      "path": "r08_s13_cycle4_registry.schema.json",
+      "sha256": "7f3aefd8de991df318c3724aa6a7704fc6ee8ce68da9bf4a519c0815eb1097f8"
+    },
+    {
+      "bytes": 8731,
+      "path": "r08_s13_cycle4_report.md",
+      "sha256": "0abae090983a9b23f6580899d34d367659b6d7dbb7e2928d8a276937adccd361"
+    },
+    {
+      "bytes": 658,
+      "path": "r08_s13_cycle4_schema_validation.json",
+      "sha256": "029a98969e9a80658806d4a388b4f43156262d4f0ed5574060ff374a205d37d0"
+    },
+    {
+      "bytes": 57827,
+      "path": "r08_s13_cycle4_source_states.json",
+      "sha256": "47d3e97f5d2810eb40cddf126570cb430a9aa145a528dcb0e91082cd1718c836"
+    },
+    {
+      "bytes": 585,
+      "path": "r08_s13_cycle4_source_states.schema.json",
+      "sha256": "edc43be42662758b6e0ed7f9097577e5c4615ff69429a6fd143b7eaa5e20a2b4"
+    },
+    {
+      "bytes": 5461,
+      "path": "r08_s13_cycle4_universal_d19_import.json",
+      "sha256": "8ec31ca4da995b709173422a378f1a9e048c6d327f360dedeaee4cb48398398c"
+    }
+  ],
+  "source_cycle": "S13 Cycle 4",
+  "transport_cycle": "S13 Cycle 5",
+  "verdict": "candidate_only",
+  "zip_bytes": 44349,
+  "zip_sha256": "407358260e8b690af86c20b951543e9ce8dc6eaee55d545b6b6619577f19d9eb",
+  "zip_test": "ok"
+}
