@@ -83,8 +83,8 @@
     "zip_test": "ok"
   },
   "transport": {
-    "pull_request_number": null,
-    "pull_request_url": null,
+    "pull_request_number": 54,
+    "pull_request_url": "https://github.com/vibemathing/problem-opg-169-two-color-conjecture/pull/54",
     "required_checks": [
       "web-harness-snapshot",
       "web-attempt-packet",
