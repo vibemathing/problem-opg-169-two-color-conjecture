@@ -2,7 +2,8 @@
 
 ```text
 verdict: candidate_only
-base_revision: dc6ee891ed7614602e88d48a57314416082dd022
+mathematical_source_revision: dc6ee891ed7614602e88d48a57314416082dd022
+transport_base_revision: 13f35cd2a520babdec3e5052768b4b7ab5e63817
 branch: web/attempt-opg169-a01-s13-c05-transport-recovery-20260910
 recovered_payload: exact S13 Cycle 4 bundle
 new_mathematical_claims: false
@@ -10,7 +11,7 @@ L_join: NOT_CERTIFIED
 root_closed: false
 ```
 
-Cycle 4 existed only as local user-facing files. This recovery transaction preserves the exact 44,349-byte ZIP as four UTF-8 base64 chunks, an immutable manifest, and a bounded unpack/audit program.
+Cycle 4 was produced against mathematical source revision `dc6ee891ed7614602e88d48a57314416082dd022` and existed only as local user-facing files. The recovery branch was synchronized to transport base `13f35cd2a520babdec3e5052768b4b7ab5e63817` before final packet audit. This recovery transaction preserves the exact 44,349-byte ZIP as four UTF-8 base64 chunks, an immutable manifest, and a bounded unpack/audit program.
 
 ## Recovered package
 
