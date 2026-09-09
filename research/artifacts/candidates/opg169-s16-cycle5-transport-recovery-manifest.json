@@ -1,9 +1,9 @@
 {
   "classification": "transport_only",
   "current_main_context": {
-    "latest_main_candidate": "C45 first residual degree-four endpoint",
-    "main_revision": "23df7d6625eafed849c8654c504c23da32b37b3c",
-    "relationship": "later main work is not incorporated into the historical S16 sources during this transport-only recovery"
+    "latest_main_candidate": "C46 degree-four octahedral guard child",
+    "main_revision": "a0b2908f88ef017d6bd58e7fb006a2c7135589ec",
+    "relationship": "later main work through C46 is not incorporated into the historical S16 sources during this transport-only recovery"
   },
   "format": "opg169-s16-cycle5-transport-recovery-v3",
   "fresh_local_integrity_replay": {
@@ -201,7 +201,7 @@
     "No Lean elaboration, axiom report, independent verification, EvidenceLink, Result, Solution, D/19 frontier completion, global unavoidability join, or root closure is claimed.",
     "Finite D/19 replay establishes only the frozen 70 = 10 + 24 + 22 + 14 labelled partition."
   ],
-  "transport_base_revision": "23df7d6625eafed849c8654c504c23da32b37b3c",
+  "transport_base_revision": "a0b2908f88ef017d6bd58e7fb006a2c7135589ec",
   "transport_helpers": [
     {
       "bytes": 2120,
