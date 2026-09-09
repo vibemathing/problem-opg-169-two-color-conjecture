@@ -3,17 +3,17 @@
 `verdict=candidate_only`; target `obligation:opg169-root`. The recovered
 computations use source snapshot
 `dc6ee891ed7614602e88d48a57314416082dd022`; this transport is based on fresh
-main `23df7d6625eafed849c8654c504c23da32b37b3c`.
+main `a0b2908f88ef017d6bd58e7fb006a2c7135589ec`.
 
 This packet recovers the essential Cycle 2 and Cycle 3 artifacts that were
 produced locally but never transported. It adds no truth-ledger entry,
 EvidenceLink, Result, or root closure.
 
-Fresh-main compatibility was checked before transport. C43--C45 concern the
+Fresh-main compatibility was checked before transport. C43--C46 concern the
 C40 first residual `12/new/2`, its external guard-edge faces, and a degree-four
 endpoint of that guard-face wheel. They do not alter the C39/C40 rotations,
 complete stars, or stable residual identities 10--14 used here. This recovery
-makes no claim about the C43--C45 branches.
+makes no claim about the C43--C46 branches.
 
 ## 1. Frozen scope
 
