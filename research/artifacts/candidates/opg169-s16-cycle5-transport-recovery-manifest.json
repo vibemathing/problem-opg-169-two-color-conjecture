@@ -196,7 +196,7 @@
   },
   "repository": "vibemathing/problem-opg-169-two-color-conjecture",
   "scope_boundaries": [
-    "Cycle 5 adds no mathematical lemma and does not rebase Cycle 2-4 mathematics onto C41-C45.",
+    "Cycle 5 adds no mathematical lemma and does not rebase Cycle 2-4 mathematics onto C41-C46.",
     "Candidate formalization metadata files are not trusted verifier receipts.",
     "No Lean elaboration, axiom report, independent verification, EvidenceLink, Result, Solution, D/19 frontier completion, global unavoidability join, or root closure is claimed.",
     "Finite D/19 replay establishes only the frozen 70 = 10 + 24 + 22 + 14 labelled partition."
