@@ -1,0 +1,12 @@
+{
+  "L_join": "not_certified",
+  "archive_bytes": 44349,
+  "archive_sha256": "407358260e8b690af86c20b951543e9ce8dc6eaee55d545b6b6619577f19d9eb",
+  "chunk_count": 4,
+  "inner_digest_manifest_checked": true,
+  "mathematical_verification_performed": false,
+  "members": 15,
+  "root_closed": false,
+  "status": "transport_capsule_ok",
+  "verdict": "candidate_only"
+}
