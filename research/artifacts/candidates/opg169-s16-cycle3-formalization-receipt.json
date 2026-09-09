@@ -1,0 +1,430 @@
+{
+  "schemaVersion": "opg169.s16.formalization-receipt.v2",
+  "generatedAt": "2026-09-10T04:35:00+08:00",
+  "mission": "S16 Cycle 3 — prove the substantive glue kernel under the one-node root cut",
+  "classification": "candidate_only",
+  "rootClosed": false,
+  "frozenInput": {
+    "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+    "mainCommit": "dc6ee891ed7614602e88d48a57314416082dd022",
+    "mainTree": "5b7e73be86099f971e37a15b7c9ec9a4e7e63723",
+    "problemId": "opg-169",
+    "problemContract": "problem-library/records/canonical-problems.jsonl",
+    "c13BoundaryAutomaton": "research/artifacts/candidates/opg169-a01-c13-boundary-automaton.md",
+    "c40Proof": "research/artifacts/candidates/opg169-a01-c40-proof.md",
+    "c40Checker": "research/artifacts/candidates/opg169-a01-c40-check.py",
+    "visibleC41Artifact": false
+  },
+  "artifacts": [
+    {
+      "path": "research/artifacts/candidates/opg169-s16-cycle3-substantive-glue-kernel.lean",
+      "sha256": "24957608b453a102e70ad87465c3780b75861de697fcb121b0e7ddf78e72fc14",
+      "bytes": 25669,
+      "lines": 671,
+      "imports": [
+        "Init"
+      ]
+    },
+    {
+      "path": "research/artifacts/candidates/opg169-s16-cycle3-proof-map.md",
+      "sha256": "eeb4b7c513d08595284d00093142a875ac6417e09719039b4a2282a8fc3c4c96",
+      "bytes": 7881,
+      "lines": 264
+    }
+  ],
+  "claimRequested": {
+    "cycleCompression": "prove, rather than assume, that any mixed closed walk compresses to a positive boundary closed walk",
+    "exactGluing": "prove one-colour whole acyclicity iff exact joined boundary reachability is acyclic",
+    "universalGlue": "R_P^+ subset R_Q^+ preserves compatibility with every unchanged exterior",
+    "replacementLift": "a strict complete-Q exterior-fixing exact-profile rule lifts any colouring of the smaller graph",
+    "minimality": "a vertex-minimal bad graph admits no such strict rule",
+    "rootGlue": "minimal reduction completeness fills the unique ShortestRootCut node"
+  },
+  "formalCandidate": {
+    "declarations": [
+      {
+        "kind": "inductive",
+        "name": "PosWalk",
+        "line": 36
+      },
+      {
+        "kind": "def",
+        "name": "Acyclic",
+        "line": 40
+      },
+      {
+        "kind": "theorem",
+        "name": "PosWalk.map",
+        "line": 43
+      },
+      {
+        "kind": "theorem",
+        "name": "PosWalk.expand",
+        "line": 51
+      },
+      {
+        "kind": "theorem",
+        "name": "PosWalk.firstEdge",
+        "line": 58
+      },
+      {
+        "kind": "theorem",
+        "name": "PosWalk.lastEdge",
+        "line": 64
+      },
+      {
+        "kind": "theorem",
+        "name": "acyclic_of_subrelation",
+        "line": 70
+      },
+      {
+        "kind": "inductive",
+        "name": "Walk0",
+        "line": 77
+      },
+      {
+        "kind": "theorem",
+        "name": "Walk0.append",
+        "line": 81
+      },
+      {
+        "kind": "inductive",
+        "name": "Side",
+        "line": 92
+      },
+      {
+        "kind": "def",
+        "name": "PieceRel",
+        "line": 97
+      },
+      {
+        "kind": "def",
+        "name": "BoundaryMacro",
+        "line": 102
+      },
+      {
+        "kind": "def",
+        "name": "MeetOnlyAtBoundary",
+        "line": 112
+      },
+      {
+        "kind": "theorem",
+        "name": "pieceWalk_to_macro",
+        "line": 120
+      },
+      {
+        "kind": "theorem",
+        "name": "switch_vertex_of_walks",
+        "line": 129
+      },
+      {
+        "kind": "inductive",
+        "name": "WalkDecomp",
+        "line": 145
+      },
+      {
+        "kind": "theorem",
+        "name": "WalkDecomp.append",
+        "line": 157
+      },
+      {
+        "kind": "theorem",
+        "name": "decompose_union_walk",
+        "line": 231
+      },
+      {
+        "kind": "theorem",
+        "name": "piece_acyclic",
+        "line": 243
+      },
+      {
+        "kind": "theorem",
+        "name": "no_closed_decomp",
+        "line": 253
+      },
+      {
+        "kind": "theorem",
+        "name": "acyclic_union_of_boundary_macro",
+        "line": 293
+      },
+      {
+        "kind": "structure",
+        "name": "BoundaryState",
+        "line": 305
+      },
+      {
+        "kind": "def",
+        "name": "Joined",
+        "line": 316
+      },
+      {
+        "kind": "def",
+        "name": "Compatible",
+        "line": 320
+      },
+      {
+        "kind": "def",
+        "name": "Refines",
+        "line": 323
+      },
+      {
+        "kind": "theorem",
+        "name": "joined_mono",
+        "line": 327
+      },
+      {
+        "kind": "theorem",
+        "name": "compatible_of_refines",
+        "line": 336
+      },
+      {
+        "kind": "theorem",
+        "name": "incompatible_of_opposite_returns",
+        "line": 344
+      },
+      {
+        "kind": "structure",
+        "name": "ExactColourGluing",
+        "line": 358
+      },
+      {
+        "kind": "theorem",
+        "name": "ExactColourGluing.actualMacro_sub_joined",
+        "line": 374
+      },
+      {
+        "kind": "theorem",
+        "name": "ExactColourGluing.joinedEdge_expands",
+        "line": 385
+      },
+      {
+        "kind": "theorem",
+        "name": "ExactColourGluing.acyclic_iff_joined",
+        "line": 402
+      },
+      {
+        "kind": "theorem",
+        "name": "ExactColourGluing.wholeAcyclic",
+        "line": 421
+      },
+      {
+        "kind": "structure",
+        "name": "PlaneOrientation",
+        "line": 432
+      },
+      {
+        "kind": "def",
+        "name": "MonoArc",
+        "line": 438
+      },
+      {
+        "kind": "def",
+        "name": "Good",
+        "line": 442
+      },
+      {
+        "kind": "def",
+        "name": "TwoColorable",
+        "line": 446
+      },
+      {
+        "kind": "def",
+        "name": "Root",
+        "line": 449
+      },
+      {
+        "kind": "def",
+        "name": "ShortestRootCut",
+        "line": 452
+      },
+      {
+        "kind": "structure",
+        "name": "StrongProfileReplacement",
+        "line": 466
+      },
+      {
+        "kind": "theorem",
+        "name": "StrongProfileReplacement.smaller_state_nonvacuous",
+        "line": 525
+      },
+      {
+        "kind": "theorem",
+        "name": "StrongProfileReplacement.lift_with_same_exterior",
+        "line": 540
+      },
+      {
+        "kind": "theorem",
+        "name": "StrongProfileReplacement.lift",
+        "line": 575
+      },
+      {
+        "kind": "structure",
+        "name": "StrictProfileReduction",
+        "line": 590
+      },
+      {
+        "kind": "theorem",
+        "name": "twoColorable_of_strictProfileReduction",
+        "line": 597
+      },
+      {
+        "kind": "def",
+        "name": "MinimalBad",
+        "line": 605
+      },
+      {
+        "kind": "theorem",
+        "name": "minimalBad_forbids_strictProfileReduction",
+        "line": 610
+      },
+      {
+        "kind": "def",
+        "name": "MinimalReductionComplete",
+        "line": 620
+      },
+      {
+        "kind": "theorem",
+        "name": "close_one_root_node",
+        "line": 624
+      },
+      {
+        "kind": "theorem",
+        "name": "shortestRootCut_of_minimalReductionComplete",
+        "line": 637
+      },
+      {
+        "kind": "theorem",
+        "name": "root_of_shortestRootCut",
+        "line": 642
+      },
+      {
+        "kind": "theorem",
+        "name": "root_of_minimalReductionComplete",
+        "line": 651
+      },
+      {
+        "kind": "theorem",
+        "name": "no_minimal_bad_of_minimalReductionComplete",
+        "line": 656
+      }
+    ],
+    "substantiveKernel": [
+      "WalkDecomp.append",
+      "decompose_union_walk",
+      "no_closed_decomp",
+      "acyclic_union_of_boundary_macro",
+      "ExactColourGluing.acyclic_iff_joined",
+      "compatible_of_refines"
+    ],
+    "rootChain": [
+      "StrongProfileReplacement.lift_with_same_exterior",
+      "StrongProfileReplacement.lift",
+      "twoColorable_of_strictProfileReduction",
+      "minimalBad_forbids_strictProfileReduction",
+      "close_one_root_node",
+      "shortestRootCut_of_minimalReductionComplete",
+      "root_of_shortestRootCut",
+      "root_of_minimalReductionComplete"
+    ],
+    "hiddenConclusionRemoved": "StrongProfileReplacement has no restoreGood field; restoreGluing supplies only primitive exact decomposition data",
+    "singleUnresolvedMathematicalPremise": "MinimalReductionComplete Plane := every MinimalBad Plane G has a Nonempty StrictProfileReduction Plane G",
+    "classicalUse": [
+      {
+        "declaration": "close_one_root_node",
+        "reason": "convert ¬TwoColorable into the minimal-bad witness at the current induction node"
+      }
+    ]
+  },
+  "provedSourceClaims": {
+    "walkCompression": "under MeetOnlyAtBoundary, local acyclicity plus boundary-macro acyclicity implies union acyclicity",
+    "exactOneColourGluing": "ExactColourGluing proves Acyclic whole ↔ Acyclic Joined",
+    "arbitraryExterior": "Refines p q and Compatible q e imply Compatible p e for the same unrestricted e",
+    "completeQNonvacuity": "a whole colouring of H and split produce an actual valid smaller local state",
+    "sameExteriorLift": "restoration uses the exact e extracted from the supplied whole colouring and preserves represented retained colours literally",
+    "conditionalRoot": "MinimalReductionComplete Plane implies ShortestRootCut Plane and Root Plane"
+  },
+  "faithfulnessObligationsNotDischargedByGenericKernel": [
+    "bind Plane to the concrete finite simple plane-graph embedding predicate",
+    "for each rule construct an actual strictly smaller PlaneOrientation",
+    "prove every valid whole smaller colouring splits into its actual complete Q state and full exterior witness",
+    "prove wholeExact for the restored monochromatic arc relation",
+    "prove patch and exterior meet only at the labelled boundary and each is acyclic",
+    "prove patch/exterior positive boundary reachability exact in both directions, including paths through other boundary vertices",
+    "prove retainedType covers every uncontrolled exterior vertex and the retained maps are the intended identification",
+    "audit aliases, rotations, shared boundary arcs, new arcs, loops, and antiparallel guards",
+    "close guard-failure children, catalogue residuals, and the dual-fan/high-degree branch",
+    "prove MinimalBad Plane G -> Nonempty (StrictProfileReduction Plane G)"
+  ],
+  "staticAudit": {
+    "utf8": true,
+    "nulBytes": false,
+    "tabs": false,
+    "nestedBlockCommentsBalanced": true,
+    "stringLiteralsBalanced": true,
+    "delimitersBalanced": true,
+    "placeholderScan": {
+      "sorry": [],
+      "admit": [],
+      "axiomDeclaration": [],
+      "unsafeDeclaration": [],
+      "tacticHole": []
+    },
+    "placeholderFree": true,
+    "explicitClassicalOccurrences": [
+      631
+    ]
+  },
+  "kernelReplay": {
+    "targetToolchain": "leanprover/lean4:v4.33.0",
+    "officialReleaseCommit": "d8b18978322de05a8f3dba51ef03cf5461676c17",
+    "commandsRequested": [
+      "lean --version",
+      "lean research/artifacts/candidates/opg169-s16-cycle3-substantive-glue-kernel.lean"
+    ],
+    "hostProbe": {
+      "lean": null,
+      "lake": null,
+      "elan": null
+    },
+    "attempts": [
+      {
+        "source": "official Lean v4.33.0 GitHub Actions Linux release artifact",
+        "artifactId": 9051059050,
+        "sizeBytes": 1464719549,
+        "result": "blocked",
+        "errorCategory": "connector_artifact_size_limit",
+        "connectorLimitBytes": 536870912
+      },
+      {
+        "source": "official Lean v4.33.0 Linux release archive",
+        "sha256Expected": "4b3fb03c29a1e0a253fb1d11f9bae3725f19a0dc6fc09b3ea16d2c9df3349e2c",
+        "result": "blocked",
+        "errorCategory": "binary_download_unavailable"
+      }
+    ],
+    "elaboration": "not_run",
+    "exitCode": null,
+    "kernelChecked": false,
+    "axiomOutput": null,
+    "errorCategory": "toolchain_unavailable"
+  },
+  "claimEstablished": {
+    "mathematicalStatus": "complete proof draft of the generic cycle-compression, exact-gluing, replacement-lifting, minimality, and conditional root implications",
+    "formalStatus": "placeholder-free Lean source candidate with static lexical audit; not elaborated",
+    "rootStatus": "conditional only; OPG-169 remains open because MinimalReductionComplete ConcretePlane is unproved"
+  },
+  "nonClaims": [
+    "C40 is not declared globally complete",
+    "no C41 theorem is assumed",
+    "no guarded parent, residual parent, or dual-fan branch is declared closed",
+    "no Lean elaboration or kernel acceptance is claimed",
+    "no axiom report is fabricated",
+    "no Result or root closure is created"
+  ],
+  "transportNormalization": {
+    "cycle": 5,
+    "classification": "transport_only",
+    "originalSha256": "e48b7d92785655f90f435594b3607781b0d366b6bde012a29d8127444f4bdfb5",
+    "change": "ephemeral host path prefixes were replaced by repository-relative candidate locators; mathematical text and blocked tool status were not strengthened"
+  }
+}
