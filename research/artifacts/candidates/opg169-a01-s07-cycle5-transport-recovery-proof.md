@@ -140,7 +140,7 @@ closure is claimed.
 
 ## 5. Reproduction and byte recovery
 
-The committed sixteen-part recovery capsule losslessly stores an 18-file map, including the 805,141-byte Cycle-4 certificate,
+The committed eighteen-part recovery capsule losslessly stores an 18-file map, including the 805,141-byte Cycle-4 certificate,
 decoded SHA-256
 
 `b1ce2a030f96b99bea1ade41dc9484552353bcc573434136026a7be221542ff5`.
@@ -152,7 +152,7 @@ python3 opg169-a01-s07-cycle5-unpack.py audit
 python3 opg169-a01-s07-cycle5-unpack.py reproduce
 ```
 
-`audit` checks all sixteen segment hashes, the assembled capsule, all 18 inner file hashes, and the decoded certificate.
+`audit` checks all eighteen segment hashes, the assembled capsule, all 18 inner file hashes, and the decoded certificate.
 `reproduce` extracts to a temporary directory, invokes the inner replay, reruns the Cycle-3 checker, the Cycle-4 separate consumer, and
 the degree 4–7 census semantics. Each full generator shard is separately bound
 by size and SHA-256 and can be replayed within a short foreground command: `python3
