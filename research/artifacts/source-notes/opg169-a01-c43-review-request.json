@@ -1,0 +1,48 @@
+{
+  "format": "opg169-c43-review-request-v1",
+  "verdict": "candidate_only",
+  "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+  "base_revision": "dc6ee891ed7614602e88d48a57314416082dd022",
+  "transport_fingerprint": "64d35f5fb4aaf8976335664222fd3b35af5941b44f0709b7a0658765f2785657",
+  "quarantined_partial_branch": {
+    "branch": "web/attempt-opg169-a01-c42-dual-fan-20260910",
+    "head": "b56521ec411d705450d3e375f4234a25799c9737",
+    "proof_blob": "5de12473a41ab374fb88f9fdc11873ece4c39cf5",
+    "reason": "fan-hole intersection and replacement-region conflation; no packet or PR"
+  },
+  "claims": [
+    "ordered fan14 face repair preserves unordered faces and yields conflict-free controlled rotations",
+    "delete holes H13 and H14 intersect in {8,12}, so the old one-terminal pinch extrapolation is withdrawn",
+    "corrected 72-case actual-hole diagonal catalogue has zero strong-profile rules",
+    "guard-edge facial third vertices have exactly three surviving alias classes",
+    "minimum-order maximum-edge normal form is maximal planar and 3-connected",
+    "raw 22-face ledger and specialized -19 provenance are separated",
+    "the split capsule audit and reproduction entry point replays both geometry implementations and all 72 corrected-hole rows"
+  ],
+  "artifacts": {
+    "research/artifacts/candidates/opg169-a01-c43-geometry-recovery-proof.md": "5d9baae3cc2e00f03f6b992613aa0a079146808c7e53d94c34ccf98c04aea1e9",
+    "research/artifacts/candidates/opg169-a01-c43-c41-geometry.json": "8236a3253a0f9c4d054b32bfc19c1b4bbd7ea3a41318880137026f8af57cade4",
+    "research/artifacts/candidates/opg169-a01-c43-capsule.json": "9ecaeacfaa6f15020dfb6bcd54863682c808e69db41c139b47b311d44178e0c9",
+    "research/artifacts/candidates/opg169-a01-c43-unpack.py": "0357e228a3e69a767d20c75d2b7c0e7e6718b7fe8190b2d126c00ae9c96f8de9",
+    "research/artifacts/candidates/opg169-a01-c43-capsule-audit-output.json": "c62f9e8cded47b964a3d128daa3203ff91f2777b501421b7b9cfdcb782fe6af0",
+    "research/artifacts/candidates/opg169-a01-c43-capsule-reproduce-output.json": "ea1f029f579a4c5d81c4ebf575548a5d2f6dcf2a0c6d4a551d9edd64def2b948"
+  },
+  "requested": [
+    "statement_faithfulness",
+    "independent_exact_replay",
+    "ordered_rotation_and_embedding_audit",
+    "full-Q profile audit",
+    "charge-ledger provenance audit"
+  ],
+  "limitations": [
+    "same-principal differential implementations",
+    "bounded corrected two-hole catalogue only",
+    "S10 10/35/11/14 refinement remains quarantined pending per-parent certificates",
+    "S07 and S03 handoffs have no source-bound digest in current repository state",
+    "no EvidenceLink, Result, Solution or root closure"
+  ],
+  "transport_notes": [
+    "Only the six direct candidate files named in artifacts plus this review request and one packet are intended for the C43 PR.",
+    "The nine source/output files inside the capsule retain individual SHA-256 values in its manifest."
+  ]
+}
