@@ -1,0 +1,160 @@
+{
+  "assumptions": [
+    "The preserved local ZIP is the exact bundle emitted in S13 Cycle 4.",
+    "The repository transport accepts UTF-8 text but does not provide a binary-file write argument.",
+    "The current protected base revision is dc6ee891ed7614602e88d48a57314416082dd022."
+  ],
+  "atomic_claims": [
+    {
+      "claim_id": "claim:opg169-s13-c05-exact-capsule",
+      "status": "candidate",
+      "text": "Four text chunks and the capsule manifest reconstruct the exact Cycle 4 ZIP and all fifteen member files with matching SHA-256 values."
+    },
+    {
+      "claim_id": "claim:opg169-s13-c05-transport-only",
+      "status": "candidate",
+      "text": "Cycle 5 is transport recovery only and introduces no new mathematical claim."
+    },
+    {
+      "claim_id": "claim:opg169-s13-c05-evidence-ceiling",
+      "status": "candidate",
+      "text": "The universal D/19 import remains opaque and unverified; the unpack audit checks bytes rather than mathematics."
+    },
+    {
+      "claim_id": "claim:opg169-s13-c05-root-open",
+      "status": "candidate",
+      "text": "L_join and obligation:opg169-root remain open regardless of PR or CI outcome."
+    }
+  ],
+  "attempt_id": "attempt:web-20260906-opg169-a01",
+  "base_revision": "dc6ee891ed7614602e88d48a57314416082dd022",
+  "candidate_artifacts": [
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-capsule-part-01",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-part01.txt",
+      "sha256": "38d002c85c9e15b9be6d5974478721048cc3806831a6d87f1e12e80a31ee4778"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-capsule-part-02",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-part02.txt",
+      "sha256": "01d37b0c9cf99d9a7c2f85db16ace8bd6fc65522d842f5ab2d97526b20111121"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-capsule-part-03",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-part03.txt",
+      "sha256": "7a8698c7dd62fda8a52cd1ebe321dd3965dc446893a05e4cb2967825b388c7fe"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-capsule-part-04",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-part04.txt",
+      "sha256": "bed773cec8907b422d1382644982cfe416f2a29203b7dfc65a19ed09dc2967bf"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-capsule-manifest",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-capsule-manifest.json",
+      "sha256": "0800210312aaf554ca7d21bd97eebea34596f0153d112ed13b15fcf7cfdd2903"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-cycle4-unpack",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-unpack.py",
+      "sha256": "0631f174d8e0d7595df2a1ad6375429d405fcdc071f42ef7b2bc709ab933144a"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-cycle4-unpack-output",
+      "kind": "computation",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-cycle4-unpack-output.json",
+      "sha256": "84cbfe37a600d9255be172a5bc3f3c0cda119c200b56d4f6ab7272b0b6431719"
+    },
+    {
+      "candidate_id": "candidate:opg169-a01-s13-c05-transport-recovery",
+      "kind": "proof",
+      "locator": "research/artifacts/candidates/opg169-a01-s13-c05-transport-recovery.md",
+      "sha256": "bac5f745fabe992902ed46a8a040a093e0a58ba985550fc907eab6450e9fb221"
+    }
+  ],
+  "channel": "chatgpt-web-github-issue-pr-writer",
+  "created_at": "2026-09-10T06:42:45+08:00",
+  "failed_route_proposal": null,
+  "generator": {
+    "model_fingerprint_status": "unverified",
+    "model_label": "GPT-5.6 Sol Pro",
+    "principal": "chatgpt-web-github"
+  },
+  "graph_id": "graph:opg169-initial-v1",
+  "harness_snapshot_sha256": "7a2742cba5465b04c12b939e43143ddaff67bbd355eaacb5c7cab9ed674ff47c",
+  "importer_policy_sha256": "a7650a8ba5be3fef370914b24a49b1118f57dc12f41980f21b11ef2b0a8267c1",
+  "objective": "Recover the exact S13 Cycle 4 candidate package as a text-only capsule, without changing its mathematics, evidence ceiling, or open-root status.",
+  "obligation_id": "obligation:opg169-root",
+  "open_obligations": [
+    "obligation:opg169-strong-min-degree-three",
+    "obligation:opg169-root"
+  ],
+  "problem_contract_sha256": "719230edd088c52a5468eed8090579e5eef1bf85d8a56e633350063108f345ec",
+  "problem_id": "problem:opg-169-two-color-conjecture",
+  "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+  "repository_identity": {
+    "binding_state": "verified",
+    "database_id": 1358762784,
+    "default_branch": "main",
+    "node_id": "R_kgDOUP0TIA"
+  },
+  "requested_verification": [
+    "transport_byte_faithfulness",
+    "digest_replay",
+    "statement_faithfulness"
+  ],
+  "risks": [
+    "The D/19 rule has no proof/certificate payload.",
+    "The unpack execution and consumer are in the generator trust domain.",
+    "The binary archive is represented by text chunks and must be reassembled before Cycle 4 replay.",
+    "Transport checks cannot verify mathematical statement faithfulness."
+  ],
+  "route_id": "route:minimal-counterexample-structure-v1",
+  "schema_version": "1.1.0",
+  "source_refs": [
+    {
+      "path": "problem-library/records/canonical-problems.jsonl",
+      "relation": "exact",
+      "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+      "revision": "dc6ee891ed7614602e88d48a57314416082dd022"
+    },
+    {
+      "path": "research/records/obligation-graphs.jsonl",
+      "relation": "exact",
+      "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+      "revision": "dc6ee891ed7614602e88d48a57314416082dd022"
+    },
+    {
+      "path": "research/records/failed-routes.jsonl",
+      "relation": "exact",
+      "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+      "revision": "dc6ee891ed7614602e88d48a57314416082dd022"
+    },
+    {
+      "path": "research/artifacts/candidates/opg169-a01-c37-proof.md",
+      "relation": "prior_art",
+      "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+      "revision": "dc6ee891ed7614602e88d48a57314416082dd022"
+    },
+    {
+      "path": "research/artifacts/candidates/opg169-a01-c40-proof.md",
+      "relation": "prior_art",
+      "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+      "revision": "dc6ee891ed7614602e88d48a57314416082dd022"
+    }
+  ],
+  "transport": {
+    "branch": "web/attempt-opg169-a01-s13-c05-transport-recovery-20260910",
+    "issue_number": 3,
+    "issue_url": "https://github.com/vibemathing/problem-opg-169-two-color-conjecture/issues/3",
+    "pull_request_number": null,
+    "pull_request_url": null
+  },
+  "verdict": "candidate_only"
+}
