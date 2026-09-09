@@ -1,0 +1,1 @@
+{"audit":{"coverage":{"guarded_reduction":22,"residual":14,"structural_semidegree":10,"unguarded_reduction":24},"degree4_outport_rows":7,"fan13_rows":8,"fan14_rows":8,"rows":70,"selected_rules":46,"status":"ok"},"mode":"audit","residual":{"catalog_total":6760,"files":14,"status":"ok"},"status":"ok"}
