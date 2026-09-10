@@ -1,0 +1,144 @@
+{
+  "cycle2_compatibility": {
+    "lift_o_theorem_content": "PASS(candidate, unchanged)",
+    "ordinary_two_terminal_shortcut": "FAIL",
+    "root_closed": false,
+    "tournament_specialization": "not applicable to unabsorbed lobe interface",
+    "trusted_verifier_receipt": "absent"
+  },
+  "format": "opg169-s10-cycle3-s04-ownership-matrix-v1",
+  "identity_binding": {
+    "s04": "NOT_VERIFIABLE_MISSING_SOURCE",
+    "s11_cycle4": "NOT_VERIFIABLE_MISSING_SOURCE"
+  },
+  "ownership_rules": [
+    {
+      "id": "O1",
+      "status": "PASS",
+      "text": "Normalize aliases before defining holes, boundaries, ownership, or R+."
+    },
+    {
+      "id": "O2",
+      "status": "PASS",
+      "text": "L13 and L14 share vertices {8,12} and share no edge."
+    },
+    {
+      "id": "O3",
+      "status": "PASS",
+      "text": "Under the unabsorbed C43/C47 decomposition, 8->12 belongs to the exterior, not either hole piece."
+    },
+    {
+      "id": "O4",
+      "status": "PASS",
+      "text": "Every replacement edge must be assigned to its owning hole disk; C47 admits no cross-hole shortcut."
+    },
+    {
+      "id": "O5",
+      "status": "PASS",
+      "text": "The inter-lobe separator {8,12} is not automatically the full outer boundary of a replacement patch."
+    },
+    {
+      "id": "O6",
+      "status": "PASS",
+      "text": "Absorbing either guard-edge incident face changes ownership and requires recomputing boundary, aliases, contacts, and lifting premises."
+    },
+    {
+      "id": "O7",
+      "status": "FAIL",
+      "text": "Do not use the 22-face boundary walks meeting only at 12 as the deletion-hole intersection."
+    },
+    {
+      "id": "O8",
+      "status": "FAIL",
+      "text": "Do not invoke the common-tournament ordinary-extension shortcut for the two lobes solely from the global exterior edge 8->12."
+    },
+    {
+      "id": "O9",
+      "status": "PASS",
+      "text": "Use complete positive two-terminal reachability, including possible 8->12 and 12->8 returns, with zero-length paths excluded."
+    },
+    {
+      "id": "O10",
+      "status": "PASS",
+      "text": "For multi-piece gluing, test positive transitive closure over the union of lobe and exterior reachability relations."
+    }
+  ],
+  "repository_derived_ownership": {
+    "boundary_walks_are_deletion_holes": false,
+    "c43_22_face_boundary_walk_intersection": [
+      12
+    ],
+    "c43_22_face_boundary_walks": [
+      [
+        5,
+        6,
+        11,
+        12
+      ],
+      [
+        12,
+        16,
+        8,
+        17
+      ]
+    ],
+    "c47_full_retained_boundary": [
+      7,
+      8,
+      16,
+      12,
+      15,
+      17
+    ],
+    "edge_intersection": [],
+    "guard_arc": [
+      8,
+      12
+    ],
+    "guard_arc_direction": "8->12",
+    "guard_arc_in_hole_13": false,
+    "guard_arc_in_hole_14": false,
+    "guard_arc_owner_unabsorbed": "exterior",
+    "hole_13": [
+      7,
+      8,
+      16,
+      12
+    ],
+    "hole_14": [
+      8,
+      15,
+      12,
+      17
+    ],
+    "inter_lobe_interface_kind": "shared vertices only; no shared edge",
+    "inter_lobe_separator": [
+      8,
+      12
+    ],
+    "source": "C43/C47",
+    "vertex_intersection": [
+      8,
+      12
+    ]
+  },
+  "scope_guards": {
+    "c47_candidate_pairs": 8136,
+    "c47_delete": [
+      13,
+      14
+    ],
+    "c47_max_new_nonisolated_internal_vertices_total": 1,
+    "c47_result": "ordinary_failure_all",
+    "do_not_extrapolate_to": [
+      "two new internal vertices",
+      "guard-face absorption",
+      "larger absorbed interfaces",
+      "additional controlled complete stars",
+      "cross-hole shortcuts",
+      "global criticality arguments"
+    ]
+  },
+  "source_base": "a2a9973d2f995de71095a6bea814cbe882cb7718",
+  "verdict": "candidate_only"
+}
