@@ -43,9 +43,15 @@
     "implementation": "CPython",
     "python": "3.13.5"
   },
+  "final_freshness": {
+    "final_main": "da5fdb264d7c74dbdcce7c66d2174830d16acae6",
+    "frozen_base_to_final_ahead_by": 2,
+    "source_delta": "none for C37, S08, C48/S09 source or ProblemContract used by this checker",
+    "delta_scope": "S01 Cycle-2 frontier/DAG/import packets only"
+  },
   "format": "opg169-s10-execution-manifest-v1",
-  "fresh_main": "2d9303e7ae9558d3904bb2fa0bade246ebe9bbde",
-  "fresh_main_parent": "8d5bcb4955e84468f58a5923bed7f2ec527a6218",
+  "frozen_computation_base": "2d9303e7ae9558d3904bb2fa0bade246ebe9bbde",
+  "requested_exact_sha": "8d5bcb4955e84468f58a5923bed7f2ec527a6218",
   "root_closed": false,
   "trust_domain": "clean-room consumer implementation in this S10 run; no producer checker, producer lift vector, or producer helper imported; not a registered trusted verifier, EvidenceLink, Result, or root closure",
   "verdict": "candidate_only"
