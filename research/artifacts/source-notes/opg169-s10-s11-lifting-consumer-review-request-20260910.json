@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "review-request:opg169-s10-s11-lifting-consumer-20260910",
+  "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+  "problem_id": "problem:opg-169-two-color-conjecture",
+  "attempt_id": "attempt:web-20260906-opg169-a01",
+  "route_id": "route:minimal-counterexample-structure-v1",
+  "obligation_id": "obligation:opg169-root",
+  "base_revision": "b742c72f1d50849bd074f1f7f7f6e2ed019870c4",
+  "scope": "S10 candidate-level statement/ownership audit of ordinary arbitrary-exterior lifting; S11 repository identity remains missing.",
+  "claims_to_review": [
+    "C13's exact positive-reachability gluing theorem implies the one-sided Replacement Lifting Lemma under R_P^+ subseteq R_Q^+.",
+    "Repeated boundary visits, shared boundary arcs, zero-length hazards, disconnected patches, aliases after quotient, and pinched multi-region interfaces are covered by the stated relation theorem.",
+    "All patch-interior/exterior contacts and arc ownership must be source-bound separately; complete-star saturation is a row certificate for no hidden contacts.",
+    "Strict order decrease and finite simple planar orientation membership belong to the minimum-counterexample corollary, not to the logical colour-lifting implication.",
+    "Ordinary same-boundary extension is sufficient on an exact common tournament interface but not on a generic partial interface.",
+    "No repository-bound S11 theorem artifact exists at the frozen base, so this audit cannot satisfy S11 identity binding."
+  ],
+  "review_questions": [
+    "Does the exact common-boundary/no-cross-interior contract account for every possible exterior contact and shared boundary arc?",
+    "Is positive R+ inclusion in both colours sufficient through C13's exact transitive-closure criterion without a hidden simple-cycle or simple-boundary assumption?",
+    "Do the C34 alias/two-region cases genuinely instantiate the arbitrary-set boundary theorem?",
+    "Is any zero-length or repeated-boundary-visit case omitted?",
+    "Are class-preservation guards and strict descent correctly separated from the lifting implication?",
+    "Is the tournament ordinary-extension specialization stated only under an identical complete interface?",
+    "Can an actual repository-bound S11 theorem locator be supplied to replace the current missing-source identity gate?"
+  ],
+  "requested_capabilities": ["statement_faithfulness"],
+  "trust_boundary": "Candidate consumer review request only. No registered trusted verifier, EvidenceLink, Result, or root closure.",
+  "verdict": "candidate_only"
+}
