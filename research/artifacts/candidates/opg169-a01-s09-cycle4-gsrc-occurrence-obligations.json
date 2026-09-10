@@ -1,0 +1,217 @@
+{
+  "base_revision": "a31eb9646c828e05ed9071f6830a24df28f5b64d",
+  "best_verified_result": "none",
+  "conditional_escape": {
+    "assumptions": [
+      "The selected C35/C36 J-direction occurs in a vertex-minimum counterexample.",
+      "The preserved earlier C36 cases plus the incoming C36 case imply d(7)>=6 in that selected J-direction.",
+      "At d(7)=6, the C37 source is exactly one of the 160 registry parents after C37 structural exclusions.",
+      "All 160 exact d(7)=6 parents have unconditional strict all-exterior reductions (S06; clean-room candidate corroboration S10)."
+    ],
+    "conclusion": "Within that selected J-source in a minimum counterexample, d(7)>=7.",
+    "does_not_conclude": "That every unpaid negative face generates the selected J-source.",
+    "id": "J_ESCAPE_GE7",
+    "status": "PASS_CANDIDATE_DERIVATION"
+  },
+  "counts": {
+    "conditional_selected_J_escape_lower_bound": 7,
+    "descendant_census_runs": 0,
+    "gsrc_occurrence_edges_proved_to_R160": 0,
+    "registry_parents": 160
+  },
+  "format": "opg169-s09-cycle4-gsrc-occurrence-obligations-v1",
+  "gsrc_occurrence_dag": {
+    "established_edges": [
+      [
+        "D0",
+        "A48"
+      ],
+      [
+        "C37J",
+        "D6_or_ESCAPE7"
+      ]
+    ],
+    "forbidden_inference": [
+      "D0->R160 from registry coverage alone",
+      "A48->R160 from arithmetic admissibility",
+      "LSRC->GSRC without payer/source ownership",
+      "d(7)>=6 -> d(7)=6"
+    ],
+    "missing_edges": [
+      [
+        "A48",
+        "LSRC"
+      ],
+      [
+        "LSRC",
+        "GSRC"
+      ],
+      [
+        "GSRC",
+        "C37J"
+      ],
+      [
+        "GSRC",
+        "JMAP"
+      ]
+    ],
+    "nodes": [
+      {
+        "id": "D0",
+        "meaning": "actual unpaid negative DC2 triangle",
+        "status": "SOURCE_ASSUMPTION"
+      },
+      {
+        "id": "A48",
+        "meaning": "low-slack arithmetic locator: F26 XOR SG",
+        "status": "PASS_CANDIDATE_ARITHMETIC"
+      },
+      {
+        "id": "LSRC",
+        "meaning": "actual local plane source realization with rotations/faces/aliases/stars/ownership",
+        "status": "OPEN"
+      },
+      {
+        "id": "GSRC",
+        "meaning": "global generation from D0 with exact payer/source identity and no double spending",
+        "status": "OPEN"
+      },
+      {
+        "id": "C37J",
+        "meaning": "prove the generated source is the selected C35/C36/C37 J-source",
+        "status": "OPEN_SPECIALIZATION"
+      },
+      {
+        "id": "D6",
+        "meaning": "C37 J-source with d(7)=6, mapped into R160 and reducible",
+        "status": "FORBIDDEN_IF_REACHED"
+      },
+      {
+        "id": "ESCAPE7",
+        "meaning": "same J-source with d(7)>=7 or a different explicitly typed source escape",
+        "status": "OPEN"
+      },
+      {
+        "id": "JMAP",
+        "meaning": "unique L_join/source selector",
+        "status": "OPEN"
+      }
+    ]
+  },
+  "imports": {
+    "c35": {
+      "git_blob_sha": "621cb2455dfeb71b3b078ec05ef842f5d89f26fc",
+      "path": "research/artifacts/candidates/opg169-a01-c35-proof.md"
+    },
+    "c36_incoming": {
+      "git_blob_sha": "1aa0158d67c1beafc04a9442792e034c72e73dc1",
+      "path": "research/artifacts/candidates/opg169-a01-c36-incoming-proof.md"
+    },
+    "c48": {
+      "git_blob_sha": "2ae68b69ca5de217ea923e2dac08cd70ea2cf3fe",
+      "path": "research/artifacts/candidates/opg169-a01-c48-live-frontier-proof.md"
+    },
+    "cycle3_lineage_proof": {
+      "git_blob_sha": "2d31a464630482ea3bf145495bfd497eb19d97f2",
+      "path": "research/artifacts/candidates/opg169-a01-s09-cycle3-c37-lineage-proof.md"
+    },
+    "cycle3_registry": {
+      "git_blob_sha": "05e6b31700d9c570927b8d96e76750feb32ee885",
+      "parents": 160,
+      "path": "research/artifacts/candidates/opg169-a01-s09-cycle3-c37-lineage-atlas.json"
+    },
+    "s01_cycle3": {
+      "git_blob_sha": "fcc40a0137fe225cbc991020f75b5a1b08d76a7b",
+      "path": "research/artifacts/candidates/opg169-a01-s01-cycle3-source-cut-repair-20260910.md"
+    },
+    "s02b": {
+      "git_blob_sha": "81233ffe3a8c9addb6ed9388505720f08f08ab7c",
+      "path": "research/artifacts/candidates/opg169-a01-s02b-high-port-chain-20260910.md"
+    }
+  },
+  "minimal_next_theorem": {
+    "name": "GSRC source-or-escape lemma",
+    "statement": "Every actual unpaid negative face generates a source-faithful state which either specializes to the exact selected C37 J-source or is placed in an explicit disjoint escape class, with payer/source identity and ownership preserved.",
+    "why_minimal": "If the C37 branch has d(7)=6 it is immediately eliminated by R160; if it has d(7)>=7 it moves to the high-port/escape lane. No descendant census is needed."
+  },
+  "mission": "Audit whether the exact C37 160-parent reduction registry can be inverted into GSRC occurrence from an actual unpaid negative DC2 face; do not enumerate descendants.",
+  "mutation_tests": [
+    {
+      "expected": "REJECT",
+      "mutation": "infer existence of an R160 occurrence from forall s in R160 reducible(s)",
+      "name": "invert_registry"
+    },
+    {
+      "expected": "REJECT",
+      "mutation": "treat A48 arithmetic cell membership as a plane/source occurrence",
+      "name": "arithmetic_is_occurrence"
+    },
+    {
+      "expected": "REJECT",
+      "mutation": "treat a locally source-valid patch as globally generated from D0",
+      "name": "local_is_global"
+    },
+    {
+      "expected": "REJECT",
+      "mutation": "replace d(7)>=6 by d(7)=6",
+      "name": "force_degree6"
+    },
+    {
+      "expected": "REJECT",
+      "mutation": "map a negative face to a source without payer/source ownership and no-double-spend data",
+      "name": "drop_payer_identity"
+    },
+    {
+      "expected": "REJECT",
+      "mutation": "use an unmerged/empty branch name as a GSRC theorem",
+      "name": "pretend_s13_branch_name_is_evidence"
+    },
+    {
+      "expected": "REJECT",
+      "mutation": "restart C40 guard-child enumeration instead of proving occurrence",
+      "name": "descendant_census"
+    }
+  ],
+  "non_claims": [
+    "No claim that GSRC is false.",
+    "No claim that no actual negative face can ever realize a C37 parent in an arbitrary graph.",
+    "No d(7)>=7 classification or termination theorem.",
+    "No global L_join or unique mapper.",
+    "No EvidenceLink, Result, or root closure."
+  ],
+  "non_inversion_countermodel": {
+    "conclusion_exists_registry_occurrence_for_f": false,
+    "faces": [
+      "f"
+    ],
+    "kind": "pure_logic_not_graph_counterexample",
+    "occurrence_pairs": 0,
+    "premise_registry_total_reduction": true,
+    "reducible_for_every_registry_parent": true,
+    "registry_parent_count": 160,
+    "scope": "Shows only that registry-total reduction alone cannot imply GSRC occurrence."
+  },
+  "problem_contract_sha256": "719230edd088c52a5468eed8090579e5eef1bf85d8a56e633350063108f345ec",
+  "registry_statement": {
+    "does_not_assert": "that any actual unpaid negative face globally generates any parent in the registry",
+    "domain": "exact C37 selected J-source with d(7)=6",
+    "families": [
+      "D",
+      "X5",
+      "X6",
+      "Y4",
+      "Y5"
+    ],
+    "known_relation": "for each exact parent, an unconditional strict all-exterior strong-profile reduction is candidate-supported",
+    "parents": 160,
+    "words_per_family": 32
+  },
+  "root_closed": false,
+  "target_occurrence_claim": {
+    "id": "GSRC160",
+    "reason": "conditional reduction coverage has the wrong logical direction; upstream artifacts explicitly separate arithmetic admissibility, local realizability, and global occurrence.",
+    "statement": "For every actual unpaid negative DC2 face f in a selected minimum counterexample, some exact source parent s in R160 is globally generated from f with source/payer identity and ownership preserved.",
+    "status": "OPEN_NOT_DERIVED"
+  },
+  "verdict": "candidate_only"
+}
