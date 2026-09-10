@@ -1,0 +1,58 @@
+{
+  "artifacts": {
+    "checker": {
+      "path": "s10_cleanroom_checker.py",
+      "sha256": "72300ee37f7f5df7ba28244577ab27c781876f9a2f642223065a30be8e2959a2"
+    },
+    "results": {
+      "path": "s10-cleanroom-results.json",
+      "semantic_result_digest": "f3dc810615fd1ee01c779e2f5f763c7c62309eea61dbd7e42fe4390e9fd86a20",
+      "sha256": "e26ddb5b66afc1479e2f5f8634d666a81c5b783471271d054fbacf7e836c3f21"
+    },
+    "row_status_csv": {
+      "path": "s10-row-status.csv",
+      "sha256": "935fa6f49cd26b9525c96c2fec5b117cf36e79626f0a7f2e4bb954fca8390a6c"
+    }
+  },
+  "command": "python3 s10_cleanroom_checker.py --out s10-cleanroom-results.json --glue-cap 100",
+  "counts": {
+    "c37": {
+      "bare_delete_3": 4,
+      "equal": 16536,
+      "finite_gluing_canaries": 1300,
+      "merged_delete_0_2": 156,
+      "pass": 160,
+      "strict": 5196,
+      "total": 160,
+      "valid_Q": 21732
+    },
+    "mutations": {
+      "killed": 8,
+      "total": 8
+    },
+    "s08": {
+      "finite_gluing_canaries": 500,
+      "pass": 5,
+      "total": 5
+    },
+    "s09": {
+      "status": "NOT_VERIFIABLE_MISSING_SOURCE"
+    }
+  },
+  "environment": {
+    "implementation": "CPython",
+    "python": "3.13.5"
+  },
+  "final_freshness": {
+    "final_main": "da5fdb264d7c74dbdcce7c66d2174830d16acae6",
+    "frozen_base_to_final_ahead_by": 2,
+    "source_delta": "none for C37, S08, C48/S09 source or ProblemContract used by this checker",
+    "delta_scope": "S01 Cycle-2 frontier/DAG/import packets only"
+  },
+  "format": "opg169-s10-execution-manifest-v1",
+  "frozen_computation_base": "2d9303e7ae9558d3904bb2fa0bade246ebe9bbde",
+  "requested_exact_sha": "8d5bcb4955e84468f58a5923bed7f2ec527a6218",
+  "root_closed": false,
+  "trust_domain": "clean-room consumer implementation in this S10 run; no producer checker, producer lift vector, or producer helper imported; not a registered trusted verifier, EvidenceLink, Result, or root closure",
+  "verdict": "candidate_only"
+}
