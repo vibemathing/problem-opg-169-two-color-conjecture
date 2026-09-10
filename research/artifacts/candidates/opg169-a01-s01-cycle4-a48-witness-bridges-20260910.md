@@ -1,4 +1,4 @@
-# R08 S01 Cycle 4 — A48 witness semantics and completed source bridges
+# R08 S01 Cycle 4 — A48 witness semantics and completed bridge integration
 
 Verdict: `candidate_only`. `root_closed=false`. `best_verified_result=none`.
 
@@ -8,36 +8,35 @@ Attempt: `attempt:web-20260906-opg169-a01`
 Route: `route:minimal-counterexample-structure-v1`  
 Graph: `graph:opg169-initial-v1`  
 Target: `obligation:opg169-root`  
-Fresh protected `main` consumed: `598d2c887a119fbb762ce51f9d6dc4af9431aff9`.
+Fresh protected `main` consumed: `3bec7e8d2c4fec368707f3f86cccfc7af8120472`.
 
-Cycle 4 makes one semantic repair and imports one newly completed repository-bound specialist package, S09 Cycle 3. S02-B and S10 remain active Cycle-3 dependencies. No completed S11, S12, S13 unique-mapper, S14, S15, or S04 successor is imported at this read.
+Cycle 4 repairs the quantifier semantics of C48/A48 and consumes three newly completed repository-bound candidate bridges on top of Cycle 3:
 
-## 1. A48 is an existential witness relation, not a face partition
+1. S09 exact C37 `d(7)=6` source registry and lineage;
+2. S10 theorem-content consumer for ordinary arbitrary-exterior lifting;
+3. S02-B Cycle 2 adversarial escape-rank audit.
 
-Let `D0(f)` mean that `f` is an actual unpaid negative triangular face in the C34/C35 candidate ledger, so `mu(f)<0`.
+No completed S13 global source generator / unique mapper, S12 B-criticality package, S11 artifact identity, S14 cap theorem, S15 new root falsifier, or S04 two-terminal disposition is imported.
 
-For a corner `p` of `f`, retain the C48 parameters
+## 1. A48 is a witness relation, not a face branch
+
+Let `D0(f)` mean that `f` is an actual unpaid negative triangular face in the candidate C34/C35 ledger. For a corner `p` of `f`, retain C48's arithmetic data
 
 ```text
 d(p) = 3 t(p) + s(p),
 s(p) >= 0,
-t(p)+s(p) >= 4.
+t(p) + s(p) >= 4.
 ```
 
-Define the low-slack witness relation
+Define
 
 ```text
-W48(f,p)  :<=>  p in V(f) and s(p) <= 5.
-```
-
-For a witness `(f,p)` define two arithmetic tags
-
-```text
+W48(f,p)  :<=>  p is a corner of f and s(p) <= 5,
 F48(f,p)  :<=>  W48(f,p) and t(p) <= 5,
 SG48(f,p) :<=>  W48(f,p) and t(p) >= 6.
 ```
 
-C48 Theorem 3.1 proves exactly the following quantifier pattern:
+The C48 theorem has the exact quantifier form
 
 ```text
 forall f:
@@ -47,7 +46,7 @@ forall f,p:
   W48(f,p) -> exactly_one(F48(f,p), SG48(f,p)).
 ```
 
-It does **not** prove
+It does **not** prove a unique low-slack corner, and it does **not** prove
 
 ```text
 D0(f) -> exactly_one(
@@ -56,127 +55,100 @@ D0(f) -> exactly_one(
 ).
 ```
 
-It also does not prove a unique low-slack corner.
+Therefore the Cycle-3 shorthand `A48: F26 XOR SG` is superseded whenever it is read as a face-level partition. F/SG exclusivity is valid only after a witness corner `p` has been fixed.
 
-Therefore the Cycle-3 shorthand
+### Arithmetic pressure test
 
-```text
-A48: F26 XOR SG
-```
-
-is superseded whenever it is read as a face-level branch partition. The XOR is valid only after a witness corner `p` has been fixed.
-
-### Arithmetic pressure test for the distinction
-
-At the arithmetic level consider three corner parameter triples
+The arithmetic triples
 
 ```text
-(s,t,d) = (5,0,5), (5,6,23), (5,0,5).
+(s,t,d) = (5,0,5), (5,6,23), (5,0,5)
 ```
 
-Each satisfies the C48 integer-domain inequalities. Their corner contributions are
+satisfy the C48 integer-domain inequalities. Their corner contributions are
 
 ```text
-gamma = 1/5, 7/23, 1/5,
+1/5, 7/23, 1/5,
 ```
 
-so
+so the corresponding arithmetic face charge is
 
 ```text
-mu = -1 + 1/5 + 7/23 + 1/5
-   = -34/115 < 0.
+-1 + 1/5 + 7/23 + 1/5 = -34/115 < 0.
 ```
 
-The first and third corners have the finite tag, while the second has the singleton-gap tag. This is an arithmetic countermodel to deriving face-level XOR from the C48 arithmetic premises. It is **not** asserted to be a geometrically realizable minimum-counterexample face.
+The first and third corners are F-tagged and the middle corner is SG-tagged. This is an arithmetic countermodel to deriving face-level F/SG XOR from the C48 arithmetic premises. It is **not** claimed to be a geometrically realizable minimum-counterexample face.
 
-Hence any later source theorem must carry the chosen witness `(f,p)` as provenance, or quantify uniformly over every eligible witness. It may not silently identify the face with an F or SG branch.
+Any downstream source theorem must therefore carry the witness `(f,p)` as provenance, quantify uniformly over all eligible witnesses, or prove a canonical selector.
 
-## 2. The finite tag and singleton tag have different choice semantics
+## 2. F and SG have different choice semantics
 
-### F tag
+For a fixed F witness `(f,p)`, `(s(p),t(p))` determines one of C48's 26 arithmetic cells. The `26` labels are arithmetic cells, not embedded parent states.
 
-For a fixed F-tagged witness `(f,p)`, the pair `(s(p),t(p))` determines exactly one of C48's 26 arithmetic cells, with `d=3t+s`.
-
-This gives a unique **arithmetic cell label for that witness**. It does not give a unique embedded parent. Rotation, directions, aliases, complete stars, edge ownership, and exterior contacts remain geometric data.
-
-Thus `26` is a finite arithmetic type list, not a 26-parent source census.
-
-### SG tag
-
-For a fixed SG-tagged witness `(f,p)`, let `G48(p)` be the set of singleton cyclic gaps between consecutive marked pair blocks. C48 proves
+For a fixed SG witness `(f,p)`, let `G48(p)` be the set of singleton cyclic gaps between consecutive marked pair blocks. C48 proves
 
 ```text
-|G48(p)| >= t(p)-s(p) >= 1.
+|G48(p)| >= t(p)-s(p) >= 1,
 ```
 
-It does not prove `|G48(p)|=1`.
+not `|G48(p)|=1`.
 
-For example, at the arithmetic parameters `t=6,s=0`, all six positive gaps must have size one, so the gap selector is maximally nonunique. Again, this is an arithmetic observation, not a geometric realization claim.
-
-C48 Section 4 then **chooses one** singleton gap `g in G48(p)`. For that selected gap it derives:
-
-- the exact two-sector plane source state;
-- three surviving local alias interfaces;
-- `3 * 8^2 = 192` normalized direction patterns, conditional on the frozen eight-sector direction catalogue.
-
-Therefore `192` is a **selected-gap local atlas**. It is not the number of all SG source states for a witness, a face, or the root problem.
-
-## 3. Corrected A48 interface
-
-The live arithmetic-to-source interface is now relational:
+C48 then chooses one `g in G48(p)` and derives for that selected gap the two-sector local geometry with three surviving alias interfaces and
 
 ```text
-D0 actual unpaid negative face f
- |
- +-- W48: choose/carry a low-slack witness p                  [PASS candidate]
-      |
-      +-- F48(f,p)                                            [per-witness tag]
-      |     |
-      |     +-- CELL48(p): unique one of 26 arithmetic cells
-      |     `-- LSRC-F: actual embedded realizations           [UNKNOWN]
-      |
-      `-- SG48(f,p)                                           [per-witness tag]
-            |
-            +-- choose/carry g in G48(p)
-            +-- GAP48(f,p,g): selected-gap local atlas
-            |     3 alias interfaces / 192 normalized patterns
-            |     conditional on the 8-sector catalogue
-            `-- LSRC-SG: actual embedded realizations          [UNKNOWN]
+3 * 8^2 = 192
 ```
 
-There are two sound downstream disciplines:
+normalized direction patterns, conditional on the frozen eight-sector direction catalogue.
 
-1. **choice-free:** prove the next source theorem uniformly for every admissible witness `p` and, on SG, every selected singleton gap `g`; or
-2. **selector-based:** define a canonical selector and prove that it is source-faithful before using it.
+Thus `192` is a **selected-gap local atlas** for `(f,p,g)`. It is not the number of all SG states attached to `p`, to `f`, or to the root problem.
 
-No selector theorem is imported in Cycle 4. A model-selected witness or gap without provenance is not a `JMAP`.
-
-## 4. Global generation and unique mapping remain downstream
-
-The corrected source chain is
+The correct arithmetic-to-source interface is
 
 ```text
 D0(f)
-  -> W48(f,p) and a per-witness arithmetic tag
-  -> LSRC(f,p[,g]) local embedded realization
-  -> GSRC source generation from the actual face with payer/source identity
+ |
+ +-- W48(f,p): choose/carry low-slack witness p
+      |
+      +-- F48(f,p)
+      |      -> unique arithmetic cell among 26
+      |      -> LSRC-F(f,p,geometry)                     [UNKNOWN]
+      |
+      `-- SG48(f,p)
+             -> choose/carry g in G48(p)
+             -> selected-gap local atlas (3 / 192)
+             -> LSRC-SG(f,p,g,geometry)                  [UNKNOWN]
+```
+
+No canonical witness selector or singleton-gap selector is imported in Cycle 4.
+
+## 3. Global source generation remains downstream
+
+The live source chain is relational:
+
+```text
+D0(f)
+  -> W48(f,p) + per-witness arithmetic tag
+  -> LSRC(f,p[,g]) actual local embedded realization
+  -> GSRC global generation from the actual face
+       with source/payer identity, ownership, and no double spending
   -> JMAP unique L_join / exact parent identity
   -> SCUT exactly one STRUCT / A / B leaf.
 ```
 
-`GSRC` and `JMAP` must resolve duplicate descriptions caused by multiple low-slack corners, multiple singleton gaps, aliases, or symmetries. They may not inherit uniqueness from A48, because A48 supplies none at face level.
+`GSRC` and `JMAP` must resolve duplicate descriptions from multiple low-slack corners, multiple singleton gaps, aliases, and symmetries. A48 supplies no face-level uniqueness to inherit.
 
-The first genuine source-faithful cut therefore remains `SCUT`, and remains `UNKNOWN`.
+`SCUT`, the first genuine source-faithful leaf cut, remains `UNKNOWN`.
 
-## 5. Newly completed bridge: S09 exact C37 source-lineage atlas
+## 4. Completed bridge: S09 exact C37 source lineage
 
-Cycle 4 imports the completed S09 Cycle-3 package merged as main commit
+Merged S09 main commit:
 
 ```text
-598d2c887a119fbb762ce51f9d6dc4af9431aff9.
+598d2c887a119fbb762ce51f9d6dc4af9431aff9
 ```
 
-Its repository-bound identities include:
+Frozen identities:
 
 ```text
 atlas SHA-256
@@ -188,231 +160,344 @@ cb8b4171491572de52a1ca5f3ebe1235e6091dd7298c5b380f0477d0c9789b74
 expanded 160-row SHA-256
 65357c97e5fdb35ba150c7d658ed053489097ee6d1013ec03529685f643b6dab
 
-lineage checker SHA-256
+checker SHA-256
 5a319d5d329f0ea80d2f22c04d715fcb56af1e51a80f61cb5a563c5ea643e609
 
-lineage proof SHA-256
+proof SHA-256
 9d23c6846ff89f1acb39ef664ef800e6968aa569776b93d0e18dcbceddee4b61
 ```
 
-### REG37 — exact source registry
+### REG37
 
-The exact C37 `d(7)=6` source universe is now repository-bound as
+The exact C37 `d(7)=6` source universe is repository-bound as
 
 ```text
-{D,X5,X6,Y4,Y5} x {0,...,31},
+{D,X5,X6,Y4,Y5} x {0,...,31}
 ```
 
-with five-bit direction semantics, aliases, controlled stars, and complementary-region data.
+with 160 exact source IDs.
 
-Status: `PASS(candidate source-registry)`.
+Status: `PASS(candidate source registry)`.
 
-### RED37 — ancestor rule allocation
+### RED37
 
-The 160 rows partition exactly as
+The exact 160 rows partition as
 
 ```text
-96  exact direct-fan delete {0,2}
-60  other unconditional merged-catalogue delete {0,2}
- 4  bare delete 3: Y4/0,4,16,20
+96 direct-fan delete {0,2}
+60 other unconditional merged-catalogue delete {0,2}
+ 4 bare delete 3: Y4/0,4,16,20
 ---
 160
 ```
 
-The 60 catalogue literals remain bound to the frozen S06 postprocess digest rather than being re-fabricated by S09.
+The 60 literal catalogue rules remain bound to the frozen S06 postprocess rather than being regenerated by S09.
 
-S10 independently corroborates the aggregate `156+4` allocation and the full finite profile totals at candidate level.
+S10's clean-room finite consumer independently corroborates the aggregate `156+4` allocation and the complete-Q / positive-reachability totals at candidate level.
 
-### LINEAGE37 — exact-parent inheritance
+### LINEAGE37
 
-S09 gives an explicit lineage gate. A descendant is ancestor-dominated only if it preserves:
+A child is ancestor-dominated only when it preserves:
 
-1. every source arc of the C37 parent;
+1. every source arc of the exact C37 parent;
 2. rotations and complete stars of controlled vertices `0,2,3,7`;
 3. the parent interface and deletion hole;
-4. only additional data in the arbitrary exterior already quantified by the parent rule; and
-5. all parent vertex identities and controlled adjacencies.
+4. only data in the arbitrary exterior already quantified by the parent rule; and
+5. all parent identities and controlled adjacencies.
 
-Under those conditions the child is an exterior refinement of the exact parent and inherits its arbitrary-exterior positive-reachability reduction.
+A changed source arc, star, rotation, interface, alias, or controlled adjacency creates a new source state.
 
-If any source arc, controlled star, rotation, interface, parent alias, or controlled adjacency changes, the object is a new source state and `LINEAGE37` does not apply.
+Status: `PASS(candidate exact-parent lineage bridge)`.
 
-Status: `PASS(candidate lineage bridge)`.
+### D19-ID
 
-### D19-ID — named descendant identity
+Exactly `D/19` carries the current named C38 -> C39 -> C40 repository chain. After C38's `12 <-> 13` relabeling, its complete 23-arc source is exactly C40 `BASE_ARCS`.
 
-Exactly one current named C38/C39/C40 repository chain is assigned by the atlas:
+A physical C40 reverse guard may invalidate a child shortcut but does not invalidate the unconditional C37 ancestor rule.
 
-```text
-D/19.
-```
+No descendant chain is invented for the other 159 rows.
 
-After C38's `12 <-> 13` label swap, its complete 23-arc source equals C40 `BASE_ARCS`. Thus a physical C40 reverse guard may invalidate a C40 child shortcut but does not invalidate the unconditional C37 ancestor rule.
+### S09 disposition
 
-No named C38/C39/C40 chain is invented for the other 159 rows.
-
-Status: `PASS(candidate exact identity bridge)`.
-
-## 6. S09 blocker disposition
-
-Cycle 3 recorded
+The Cycle-3 source blocker `NOT_VERIFIABLE_MISSING_SOURCE` is repaired inside the exact C37 `d(7)=6` universe.
 
 ```text
-S09 = FAIL(source-admission gate):
-missing exact remaining-child registry / source digests.
+exact source parents                         160
+unconditional ancestor parents               160
+named C38->C39->C40 source rows                 1
+C40 guard-child enumeration required            0
 ```
 
-That specific blocker is now repaired at candidate level.
+The final zero follows from exact-parent ancestor precedence, not from separately reducing every guard child.
 
-Within the exact C37 `d(7)=6` universe:
+S09 guard-difference work is retired inside this exact universe and remains inapplicable to changed sources, `d(7)>=7`, or another J orientation.
+
+## 5. Completed bridge: ordinary LIFT-O theorem content
+
+Merged S10 theorem-content consumer main commit:
 
 ```text
-registered exact source parents            160
-unconditional ancestor parents             160
-named C38->C39->C40 source rows              1
-C40 guard-child enumeration required         0
+a31eb9646c828e05ed9071f6830a24df28f5b64d
 ```
 
-The last zero is due to exact-parent ancestor precedence, not because every guard child was separately enumerated or contradicted.
+Frozen candidate identities:
 
-Therefore the old S09 "remaining guard difference" lane is retired **inside this exact source universe**. It remains inapplicable, rather than solved, for changed sources, `d(7)>=7`, other J orientations, or any state failing the lineage gate.
+```text
+theorem consumer SHA-256
+319764672c907c40e0cea74376040548b121f55fbc9e9140f8ef7c4f1a298c01
 
-## 7. Completed conditional C37 bridge
+ownership/checklist SHA-256
+35050f2ef18d450f5a2d6c94e02ce89cab4b92ddefec70c6809d9965f7507e03
+```
 
-Combining the already merged S06/S10 finite profile work with the newly merged S09 registry/lineage work gives the following candidate conditional bridge:
+Cycle-4 disposition:
+
+```text
+LIFT_O_THEOREM_CONTENT        PASS(candidate, repository-derived)
+LIFT_O_SOURCE_OWNERSHIP       row-dependent
+LIFT_O_TRUSTED_VERIFICATION   UNKNOWN
+S11_ARTIFACT_BINDING          NOT_VERIFIABLE_MISSING_SOURCE
+```
+
+The generic theorem content is:
+
+Let `P,Q,F` meet exactly in an alias-normalized boundary `B`; all patch/exterior contacts occur through `B`; shared boundary arcs have consistent ownership and direction. If every valid complete `Q` colouring has a same-boundary valid `P` lift with both-colour positive reachability
+
+```text
+R_P^+ subseteq R_Q^+,
+```
+
+then every valid colouring of `Q union F` lifts to a valid colouring of `P union F` while the exterior `F` stays fixed.
+
+The repository proof chain is C13 exact boundary gluing, C31 one-sided profile replacement and shared-edge semantics, C34 saturated-star ownership/pinched-interface application, C37 complete-Q instantiation, and C48 exact-parent packaging. S10 clean-room mutation controls pressure-test the finite row semantics.
+
+The audit covers repeated boundary visits, boundary-owned edges, positive-length/zero-length hazards, disconnected patches, aliases, reused walks, pinched/two-region interfaces, and unrecorded exterior contacts.
+
+Strict order decrease, simple-planar-orientation membership, reverse guards, and actual complete-star ownership remain row/source obligations for minimal-counterexample use.
+
+On an exact common tournament interface with identical directions, ordinary same-boundary extension suffices because boundary reachability is fixed by the tournament orientation. This shortcut does **not** extend to generic partial or two-terminal interfaces.
+
+DAG effect: proving the generic mathematical implication is no longer the live LIFT-O blocker. Remaining work is source-specific ownership/class-preservation binding and trusted verification/admission.
+
+## 6. Completed bridge: S02-B escape-rank adversarial audit
+
+Merged S02-B Cycle-2 main commit:
+
+```text
+3bec7e8d2c4fec368707f3f86cccfc7af8120472
+```
+
+Frozen identities:
+
+```text
+proof SHA-256
+34bd93025bec1fb2645edc4303a55aad61ae1337a91c59df330cea760577d972
+
+checker SHA-256
+aaacfaaa24229919fdcacc79ce00532480fab45d068504542b8b275bb0b77b6b
+
+output SHA-256
+c6587703d780e1ad0d695bad5fc7924543b006837ca8e0a36299b53a6a85093d
+```
+
+This sharpens the Cycle-3 termination frontier.
+
+### History-free complete-star release fails
+
+In the exact C37-derived alternating high-port strip, the natural raw state space that remembers only the currently active complete degree-four wheel admits literal two-cycles
+
+```text
+W_i -> W_{i+1} -> W_i.
+```
+
+Therefore no well-founded rank can strictly decrease on **every unnormalized/history-free** complete-star release transition.
+
+This is a candidate falsifier for that transition definition. The actual normalized S02-A transition system remains unbound.
+
+### Purely local separator rank fails
+
+Repeated directed octahedral shells can be nested to arbitrary depth inside an actual directed face of the C37-derived high-port strip while preserving the old embedding footprint and minimum semidegree. The bounded control reaches depth 32 and exhibits 31 genuine locally identical separating triangles.
+
+Thus separator type, local shell geometry, or purely local separator depth pattern cannot by itself be the required decreasing rank.
+
+The construction remains inside a fixed outer interface, so it does not refute global fixed-interface profile compression.
+
+### Root-class stress test is source-separated
+
+Alternating oriented bipyramids give a separate finite root-class cyclic stress test for a locally canonical release rule. They are not claimed to be C37 descendants or GSRC/JMAP children.
+
+### Surviving termination form
+
+The current adversarial results do not refute a **normalized history-aware discovery rank** recording, for example:
+
+```text
+unseen vertices,
+incompletely exposed complete stars,
+unprocessed rooted separator sides.
+```
+
+Such a monotone rank can prove that source discovery on a fixed finite graph terminates. It does **not** prove that the terminal discovered state is reducible, belongs to a finite leaf library, satisfies GSRC/JMAP, or closes the root.
+
+Therefore the former single node `ESCAPE-RANK` is superseded by two obligations:
+
+```text
+TNORM  define/source-bind a normalized no-backtracking transition system
+TPROG  prove every terminal normalized state makes mathematical progress
+       (structural contradiction, exact mapped leaf, or strict reduction)
+```
+
+Current status:
+
+```text
+raw degree/port/size rank                 FAIL(candidate route)
+history-free star-release rank            FAIL(candidate route)
+purely local separator rank               FAIL(candidate route)
+fixed four-port C37 profile compression   PASS(candidate, exact family)
+history-aware discovery rank              NOT REFUTED / only discovery
+TNORM                                      UNKNOWN
+TPROG                                      UNKNOWN
+```
+
+No global termination theorem is claimed.
+
+## 7. Exact C37 conditional leaf bridge
+
+The S06/S10/S09/LIFT-O content now composes conditionally as:
 
 ```text
 EXACT-C37(s)
-  -> REG37 source identity                         [S09 PASS candidate]
-  -> RED37 unconditional selected reduction        [S06 + S10 PASS candidate]
-  -> LINEAGE37 arbitrary-exterior inheritance      [S09 PASS candidate]
+  -> REG37 exact source identity                 [S09 PASS candidate]
+  -> RED37 strict parent reduction               [S06/S10 PASS candidate]
+  -> LINEAGE37 ownership/exterior inheritance    [S09 PASS candidate]
+  -> LIFT-O theorem content                      [PASS candidate]
   -> exclusion from a vertex-minimum counterexample
 ```
 
-This bridge is strong enough that, **once** a future GSRC/JMAP theorem identifies an actual negative-face source with one of these 160 exact parents, the C37 `d(7)=6` finite reduction lane is no longer a live research blocker.
-
-It does not provide the missing implication
+The missing implication is still
 
 ```text
 A48 witness -> EXACT-C37(s).
 ```
 
-That remains a GSRC/JMAP problem.
+That is a GSRC/JMAP problem, not a finite-reduction or lifting problem.
 
-## 8. Interaction with high-port termination
-
-S02-B remains unchanged:
-
-- raw degree/port/sector/size ranks fail on an arbitrarily long locally source-valid `d(7)>=7` family;
-- its exact fixed four-port tail is profile-compressible;
-- growing-interface / separator-crossing / complete-star escape remains the termination target.
-
-S09 is exact `d(7)=6`. Its new source registry does not restrict or classify the S02-B high-port family.
-
-Thus no ancestor-precedence edge is drawn from `REG37` into `d(7)>=7`.
-
-## 9. Repaired live typed DAG
+## 8. Repaired live DAG
 
 ```text
 R0 root
  |
  +-- D0 actual unpaid negative DC2 face f
       |
-      +-- W48 witness relation: exists low-slack p
+      +-- W48(f,p): nonempty low-slack witness relation
             |
-            +-- per-witness F48
-            |      -> unique arithmetic cell among 26
-            |      -> LSRC-F                              [UNKNOWN]
+            +-- fixed p: F48
+            |      -> one arithmetic cell among 26
+            |      -> LSRC-F(f,p,geometry)                    [UNKNOWN]
             |
-            `-- per-witness SG48
-                   -> choose singleton gap g
+            `-- fixed p: SG48
+                   -> choose/carry g in G48(p)
                    -> selected-gap 3-interface / 192 atlas
-                   -> LSRC-SG                             [UNKNOWN]
+                   -> LSRC-SG(f,p,g,geometry)                 [UNKNOWN]
 
-LSRC(f,p[,g])
+LSRC
  |
- +-- TERM side gate on recursive source/interface change
- |      raw degree/port/size rank                         [FAIL candidate route]
- |      fixed C37 four-port profile compression          [PASS exact family]
- |      growing-interface / separator escape rank        [UNKNOWN]
- |
- v
-GSRC global source generation                             [UNKNOWN]
- |
- v
-JMAP unique L_join / exact parent identity                [UNKNOWN]
+ +-- TERM / recursive source-discovery discipline
+ |      raw-size rank                                         [FAIL]
+ |      history-free star-release rank                        [FAIL]
+ |      purely local separator rank                           [FAIL]
+ |      fixed-interface profile compression                  [PASS exact family]
+ |      TNORM normalized history-aware transition             [UNKNOWN]
+ |      TPROG terminal mathematical progress                  [UNKNOWN]
  |
  v
-SCUT exactly one STRUCT / A / B                           [UNKNOWN]
+GSRC global source generation                                 [UNKNOWN]
+ |
+ v
+JMAP unique L_join / exact parent identity                    [UNKNOWN]
+ |
+ v
+SCUT exactly one STRUCT / A / B                               [UNKNOWN]
       |
       +-- STRUCT -> contradiction
       |
       +-- A -> strict ordinary reduction
       |       |
       |       +-- if EXACT-C37 d(7)=6:
-      |       |     REG37 -> RED37 -> LINEAGE37           [PASS candidate bridge]
+      |       |      REG37 -> RED37 -> LINEAGE37              [PASS candidate]
       |       |
-      |       `-- LIFT-O
+      |       `-- LIFT-O theorem content                      [PASS candidate]
+      |              source ownership / trusted admission     [row-dependent/UNKNOWN]
       |
-      `-- B -> B-criticality                              [UNKNOWN]
+      `-- B -> B-criticality                                  [UNKNOWN]
               -> strict ordinary reduction
-              -> LIFT-O
-
-LIFT-O general arbitrary-exterior theorem/verification    [UNKNOWN]
- -> contradiction
+              -> LIFT-O theorem content                       [PASS candidate]
+                 + source ownership/admission
 ```
 
-The exact C37 conditional bridge is a leaf library. It is not `GSRC`, `JMAP`, or `SCUT`.
+Anchored contracts remain a disjoint lane; S08 `ATC_any_old` cannot close an ordinary edge without a separately proved conversion theorem.
 
-## 10. Current frontier after Cycle 4
+## 9. Cycle-4 status ledger
 
-1. **A48-to-source bridge with witness provenance.** Produce LSRC/GSRC from actual negative faces without treating F/SG or singleton-gap choice as a unique face branch.
-2. **JMAP / unique `L_join`.** Resolve multiple witness/gap/source descriptions and prove exact unique parent/leaf identity, or provide an ambiguity/unmapped falsifier.
-3. **ESCAPE-RANK.** Decide growing-interface / separator / complete-star termination.
-4. **B-criticality.** Blocking-path, topology, and falsifier agreement remain missing.
-5. **LIFT-O general theorem.** S09 gives a specialized exact-parent path-composition bridge; S10 finite corroboration does not replace the general S11 theorem.
-6. **S04 / S14.** Corrected two-terminal and singleton-cap lanes remain `UNKNOWN` until a completed repository-bound successor survives source precedence.
-
-S09 guard-child difference is no longer on the live frontier for exact C37 `d(7)=6`.
-
-## 11. Wave status delta
-
-| Slot | Cycle 4 status | Effect |
+| Node / lane | Status | Exact meaning |
 |---|---|---|
-| S09 | PASS(candidate source bridge) | missing registry repaired; exact C37 guard-child census unnecessary under ancestor precedence |
-| S10 | PASS(clean-room candidate, carried) | exact C37 finite profiles corroborated; anchored S08 remains separate |
-| S02-B | PASS/FAIL split, carried | raw-size termination refuted; fixed-interface compression family-scoped |
-| S13-A/B/C/D | UNKNOWN | A48 witness-to-source generation / unique mapper not completed |
-| S12-A/B/C | UNKNOWN | B-criticality not completed |
-| S02-A | UNKNOWN | escape rank not completed |
-| S11 | UNKNOWN | general lifting theorem not completed |
-| S14 | UNKNOWN | no completed cap successor |
-| S15 | UNKNOWN | no completed new falsifier package |
-| S04 | UNKNOWN | no completed two-terminal disposition |
-| S01 | PASS(import/scope) | A48 semantics repaired and completed bridges integrated |
+| `W48` existence | PASS(import/scope) | every negative unpaid face has at least one low-slack witness |
+| face-level F/SG XOR | FAIL(semantic inference) | C48 gives XOR only for a fixed witness |
+| F arithmetic cell label | PASS per fixed witness | one of 26 arithmetic cells; no source realization |
+| SG singleton-gap existence | PASS per fixed witness | at least one gap; not unique |
+| selected-gap 192 atlas | PASS(import/scope) | one selected `(p,g)`; conditional on 8-sector catalogue |
+| LSRC | UNKNOWN | actual realizations/provenance |
+| GSRC | UNKNOWN | global source/payer generation |
+| JMAP | UNKNOWN | unique source/leaf mapper |
+| exact C37 REG37 | PASS(candidate) | 160 repository-bound exact source IDs |
+| exact C37 RED37 | PASS(candidate) | 160/160 strict finite parent rules |
+| exact C37 LINEAGE37 | PASS(candidate) | exact-parent exterior inheritance |
+| S09 old guard-difference lane | RETIRED in exact C37 | no separate C40 child census needed |
+| LIFT-O theorem content | PASS(candidate) | generic R+ lifting implication |
+| LIFT-O trusted verification | UNKNOWN | no trusted receipt |
+| S11 artifact identity | FAIL(source-binding gate) | no repository-bound S11 artifact |
+| raw/history-free/local TERM ranks | FAIL(candidate routes) | explicit counterfamilies/cycles |
+| TNORM | UNKNOWN | normalized history-aware transition not source-bound |
+| TPROG | UNKNOWN | terminal discovery -> actual mathematical progress missing |
+| B-criticality | UNKNOWN | S12 package absent |
+| S04 two-terminal | UNKNOWN | no completed disposition |
+| S14 caps | UNKNOWN | no completed source-bound successor |
+| root | OPEN | no EvidenceLink / Result |
 
-## 12. Truth boundary and non-claims
+## 10. Live frontier
 
-No truth-ledger status is inferred from candidate PRs or CI.
+Priority after Cycle 4:
+
+1. **A48 witness -> LSRC/GSRC bridge.** Carry `(f,p[,g])` provenance or prove a selector; do not use face-level F/SG branch language.
+2. **JMAP / unique `L_join`.** Resolve multiple witness/gap/source descriptions and map to one exact source/leaf, or provide an ambiguity/unmapped falsifier.
+3. **TNORM + TPROG.** Stop searching for raw local ranks; bind a normalized no-backtracking transition and prove terminal mathematical progress.
+4. **B-criticality.** Blocking-path/topology/falsifier agreement remains absent.
+5. **LIFT-ADMISSION.** Generic theorem content is available; remaining work is row ownership/class-preservation and trusted verification, not re-proving the generic lemma.
+6. **S04 / S14.** Only source-faithful successors surviving ancestor precedence matter.
+
+Exact C37 `d(7)=6` finite descendants and the old S09 guard-difference census are no longer live blockers once exact source identity is established.
+
+## 11. Non-claims
 
 This checkpoint does not claim:
 
-- a unique low-slack corner of a negative face;
+- a unique low-slack corner;
 - face-level F/SG exclusivity;
-- a unique singleton gap at an SG witness;
-- that 26 cells are source parents;
+- a unique singleton gap;
+- that the 26 arithmetic cells are 26 source parents;
 - that 192 is a complete SG source census;
-- geometric realizability of every arithmetic witness;
+- realizability of every arithmetic witness;
 - A48-to-C37 generation;
-- a global source generator or unique `L_join`;
-- a completed STRUCT/A/B cut;
-- `d(7)>=7` coverage from S09;
+- GSRC or a unique `L_join`;
+- a completed STRUCT/A/B source cut;
+- `d(7)>=7` coverage from S09/C37;
 - a global termination theorem;
+- terminal reducibility from history-aware discovery;
 - B-criticality;
-- a general LIFT-O theorem;
-- ordinary use of anchored S08 results;
-- a two-terminal theorem or singleton-cap theorem;
+- a repository-bound S11 artifact;
 - trusted independent verification;
+- an anchored-to-ordinary conversion;
+- a two-terminal theorem;
+- a singleton-cap theorem;
 - EvidenceLink, Result, Solution, or root closure.
 
 `best_verified_result=none`  
