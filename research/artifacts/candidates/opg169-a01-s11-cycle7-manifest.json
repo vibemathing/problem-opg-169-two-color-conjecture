@@ -1,0 +1,93 @@
+{
+  "format": "opg169-s11-cycle7-exact-glue-formalization-v1",
+  "verdict": "candidate_only",
+  "best_verified_result": "none",
+  "root_closed": false,
+  "fresh_protected_main": "6b34ce7f7ce83b238bebd85babd7aaff6f40a3d0",
+  "pr83": {
+    "state_at_read": "open_draft_unmerged",
+    "head_before_cycle7_binding": "d048a736ec440933302c07c69df823d9fd06db7e",
+    "base_sha_at_read": "2a72d159ed8bd79fe31b9522f84c0e1c729913e5"
+  },
+  "source_contracts": [
+    {
+      "path": "research/artifacts/candidates/opg169-a01-c13-boundary-automaton.md",
+      "revision": "6b34ce7f7ce83b238bebd85babd7aaff6f40a3d0",
+      "git_blob_sha": "0a61e301ef80079f9cde90cc1bd4aa5d82e60260",
+      "role": "raw exact boundary gluing contract"
+    },
+    {
+      "path": "research/artifacts/candidates/opg169-a01-c31-strip-reduction.md",
+      "revision": "6b34ce7f7ce83b238bebd85babd7aaff6f40a3d0",
+      "git_blob_sha": "41d4bfce5efbb90ba39d6a16ef79b18258ec6c43",
+      "role": "shared-edge ownership and reverse-guard source semantics"
+    }
+  ],
+  "replacement_source": {
+    "local_path": "/mnt/data/opg169-s11-cycle7-exact-glue.lean",
+    "intended_repository_path": "research/artifacts/candidates/opg169-a01-s11-cycle7-exact-glue.lean",
+    "sha256": "cbd6c57d1667d8865f33054a2005608adb4be82c46429ecfbcdc217c1b98bf96",
+    "lines": 996,
+    "bytes": 39375,
+    "imports": ["Init"]
+  },
+  "claims_in_source": {
+    "alias_normalized_actual_boundary": "encoded by one shared B summand after source quotient; canonical private summands are disjoint",
+    "exterior_precedence": "GlueArc boundary-boundary case chooses X arc when present; P is fallback only when same-direction X arc is absent",
+    "reverse_guard_failure": "explicit ReverseArcGuardFailure plus digon witness theorem",
+    "raw_exact_glue": "Good whole iff Good patch and Good exterior and no positive closed Walk in the union of positive boundary reachability relations",
+    "closed_bridge": "StrongLift plus GlueContract on P/X and Q/X implies GoodLiftOn preserving the full exterior"
+  },
+  "static_audit": {
+    "sorry_or_admit_matches": 0,
+    "axiom_or_unsafe_declarations": 0,
+    "explicit_classical_blocks": 1,
+    "classical_use": "one explicit classical block, only to decide whether a same-direction exterior boundary arc exists when embedding a patch boundary arc; no choice witness is selected"
+  },
+  "bounded_semantic_sanity": {
+    "scope": "B=2, one patch-private and one exterior-private vertex; all 27 loopless partial orientations per piece; all 16 whole colourings",
+    "cases_checked": 11664,
+    "exact_glue_failures": 0,
+    "status": "sanity_only_not_proof"
+  },
+  "toolchain_probe": {
+    "requested_pin": "Lean 4.28.0",
+    "command_v_lean_exit": 1,
+    "command_v_lake_exit": 1,
+    "command_v_elan_exit": 1,
+    "lean_version_exit": 127,
+    "lean_version_output": "bash: lean: command not found",
+    "lake_version_exit": 127,
+    "lake_version_output": "bash: lake: command not found",
+    "lake_build_attempted": false,
+    "print_axioms_executed": false,
+    "kernel_checked": false
+  },
+  "intended_replay_if_pinned_toolchain_available": [
+    "lake build",
+    "lake env lean research/artifacts/candidates/opg169-a01-s11-cycle7-exact-glue.lean"
+  ],
+  "assurance_boundary": {
+    "theorem_content": "candidate proof source complete by manual/static audit; no kernel receipt",
+    "repository_bound_artifact": "YES on PR #83 branch only; unmerged and unadmitted",
+    "kernel_receipt": "absent because no Lean toolchain is available"
+  },
+  "nonclaims": [
+    "no repository admission",
+    "no trusted verification",
+    "no EvidenceLink",
+    "no Result",
+    "no Solution",
+    "no root closure"
+  ],
+  "repository_binding": {
+    "status": "branch_bound_unmerged_unadmitted",
+    "branch": "web/attempt-opg169-s11-cycle6-lean-transport-20260910",
+    "source_commit_sha": "34ea4ab1cc426e2b8e7169c5c80ea2ce524a78dd",
+    "source_git_blob_sha": "80546f9e0b0f32fc01517b02d37834502f0d091e",
+    "repository_path": "research/artifacts/candidates/opg169-a01-s11-cycle7-exact-glue.lean",
+    "pr_number": 83,
+    "merged": false,
+    "admitted": false
+  }
+}
