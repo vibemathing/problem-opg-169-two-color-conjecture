@@ -99,11 +99,13 @@ def main():
     assert "D0->R160" in schema["nonclaims"][0]
     assert schema["input_contract"]["requires_actual_source_bound"] is True
 
+    # Alias quotient: exact 13 labelled types, exact five survivors.
     alias=schema["classification"]["C37"]["alias_quotient"]
     assert len(alias)==13
     survivors=[r["name"] for r in alias if r["status"]=="C37"]
     assert survivors==["D","X5","X6","Y4","Y5"]
 
+    # Reconstruct all five underlying plane templates independently.
     expected_pairs={"D":(12,13),"X5":(5,13),"X6":(6,13),"Y4":(12,4),"Y5":(12,5)}
     for name,pair in expected_pairs.items():
         g=geom(*pair); assert "bad" not in g
@@ -113,6 +115,7 @@ def main():
         assert got==stored["patch_rotation"]
         assert g["n"] in (10,11) and g["e"]==23
 
+    # Actual record: simple oriented triangulation and exact faces.
     rot=rec["actual_embedding"]["rotation"]
     arcs=rec["actual_embedding"]["arcs"]
     V=set(map(int,rot))
@@ -127,6 +130,7 @@ def main():
     assert all(len(f)==3 for f in fs)
     assert {canon_cycle(f) for f in fs}=={canon_cycle(f) for f in rec["actual_embedding"]["faces"]}
 
+    # Provenance is actual and source-bound. f=(0,2,3), p=0 is an F witness.
     prov=rec["provenance"]
     assert prov["source_bound"] is True
     f=prov["source_face"]
@@ -141,6 +145,7 @@ def main():
     assert rec["payments"]["marks"]==[] and rec["payments"]["payer_ids"]==[]
     assert rec["payments"]["classification_invents_payment"] is False
 
+    # Ownership partition is literal and complete.
     SA=directed_set(rec["ownership"]["source_owned_arcs"])
     EA=directed_set(rec["ownership"]["exterior_owned_arcs"])
     assert SA.isdisjoint(EA) and SA|EA==A
@@ -153,6 +158,7 @@ def main():
     for v in ("0","2","3","7"):
         assert list(rot[v])==stars[v]
 
+    # Exact C37 parent identity from actual source data, not from reduction coverage.
     sel=rec["selected_J"]; cls=rec["classification"]
     assert sel["degree7"]==6 and len(sel["ordered_wedge_neighbors"])==2
     x,y=sel["ordered_wedge_neighbors"]
@@ -170,12 +176,14 @@ def main():
     assert cls["family_template_match"] is True
     assert rec["actual_embedding"]["source_patch_rotation"]==schema["classification"]["C37"]["families"]["D"]["patch_rotation"]
 
+    # Imported R160 rule is used only after identity.
     rule=cls["imported_ancestor_rule"]
     assert rule["class"]=="direct_fan_delete_0_2"
     assert rule["delete"]==[0,2] and rule["adds"]==[[5,7],[6,7],[7,4]]
     assert rule["hole"]==[3,4,5,6,11,7]
     assert rule["strict_all_exterior_candidate"] is True
 
+    # Source-or-escape cut is disjoint and exhaustive after the C36 d7>=6 gate.
     def cut(d7):
         assert d7>=6
         return "C37" if d7==6 else "J_HIGHPORT"
@@ -184,18 +192,27 @@ def main():
     assert schema["classification"]["J_HIGHPORT"]["disjoint_from_C37"].startswith("degree:")
 
     out={
-      "status":"ok","verdict":"candidate_only","root_closed":False,
+      "status":"ok",
+      "verdict":"candidate_only",
+      "root_closed":False,
       "scope":"already actual source-bound selected C35/C36 J occurrence",
       "narrow_selected_J_G_COVER":"PASS_CANDIDATE",
-      "R_TOTAL":"NOT_CLAIMED","G_TOTAL_from_arbitrary_Desc48":"NOT_CLAIMED",
-      "registry_inversion":"FORBIDDEN","alias_types":13,"c37_families":survivors,
+      "R_TOTAL":"NOT_CLAIMED",
+      "G_TOTAL_from_arbitrary_Desc48":"NOT_CLAIMED",
+      "registry_inversion":"FORBIDDEN",
+      "alias_types":13,
+      "c37_families":survivors,
       "degree6_cut":"exact C37 family/word parent identity",
       "degree_ge7_cut":"J_HIGHPORT exact-source escape record",
-      "instantiated_parent":"D/3","instantiated_source_face":[0,2,3],
-      "instantiated_witness":{"kind":"F","p":0},"payer_count":0,
+      "instantiated_parent":"D/3",
+      "instantiated_source_face":[0,2,3],
+      "instantiated_witness":{"kind":"F","p":0},
+      "payer_count":0,
       "ownership_partition":"23 source-owned arcs + 4 exterior-owned arcs",
-      "schema_sha256":sha256(SCHEMA),"record_sha256":sha256(RECORD),
-      "descendant_census_runs":0,"profile_recomputations":0
+      "schema_sha256":sha256(SCHEMA),
+      "record_sha256":sha256(RECORD),
+      "descendant_census_runs":0,
+      "profile_recomputations":0
     }
     print(json.dumps(out,sort_keys=True,separators=(",",":")))
 
