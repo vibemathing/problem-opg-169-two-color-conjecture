@@ -1,0 +1,42 @@
+{
+  "format": "opg169-s09-cycle9-compact-nonj-output-v1",
+  "verdict": "candidate_only",
+  "root_closed": false,
+  "best_verified_result": "none",
+  "fresh_main": "88af1f947ecbdbac4562d57e4b4f195250319eb4",
+  "controls": 20,
+  "distinct_control_profiles_mod_D6_colour_swap": 20,
+  "distinct_canonical_templates": 19,
+  "D6_closed_templates": 85,
+  "all_zero_internal_states": 215,
+  "controls_exhaust_arbitrary_COMPACT_NONJ": false,
+  "conditional_theorem": "RawSourceRow + SameMinCEJREL + COMPACT_NONJ + COMPACT20 -> strict ordinary L_A ClosureEligible",
+  "counterrow_face": [
+    0,
+    3,
+    4
+  ],
+  "counterrow_boundary": [
+    2,
+    7,
+    8,
+    9,
+    5,
+    6
+  ],
+  "counterrow_exterior_reverse_arc": [
+    8,
+    2
+  ],
+  "counterrow_profile_valid_states_before_guard": 1,
+  "counterrow_profile_valid_states_after_guard": 0,
+  "counterrow_minimum_blocker_count": 1,
+  "registry_inversion": "FORBIDDEN",
+  "mince_occurrence_created": false,
+  "signature_sha256": "1d3a95c92325d06d549d95f36c3bc3f90e45f8b6a5bd5909e8ce6b2aef3ee6e4",
+  "proof_sha256": "d4baccc1fe68c0ff4ee4b0ce2ab866fb4223202418ce0d348631a5cb06c57176",
+  "checker_sha256": "4ac0af6178b51f1091f37a61ecec1e183683757dba3913be25ea70a83d610611",
+  "full_local_exact_profile_payload_sha256": "2222e8b86b20fe68adcba3ce882a65be3bd02ddf343082e1f872acc4c0dd16b8",
+  "signature_rows_exactly_bound": 20,
+  "c35_git_blob_exact": true
+}
