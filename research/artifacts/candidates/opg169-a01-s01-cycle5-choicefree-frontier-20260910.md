@@ -3,22 +3,24 @@
 Verdict: `candidate_only`. `root_closed=false`. `best_verified_result=none`.
 
 Repository: `vibemathing/problem-opg-169-two-color-conjecture`  
-Problem: `problem:opg-169-two-color-conjecture`  
+Problem: `problem-opg-169-two-color-conjecture`  
 Attempt: `attempt:web-20260906-opg169-a01`  
 Route: `route:minimal-counterexample-structure-v1`  
 Graph: `graph:opg169-initial-v1`  
 Target: `obligation:opg169-root`  
-Fresh protected `main` consumed: `2a72d159ed8bd79fe31b9522f84c0e1c729913e5`.
+Fresh protected `main` consumed: `6b34ce7f7ce83b238bebd85babd7aaff6f40a3d0`.
 
 Cycle 5 does two things only:
 
 1. it replaces selector-dependent root wording by a choice-free relational root contract; and
 2. it imports the exact post-Cycle-4 substantive delta already merged on main:
-   S10 Cycle 3 ownership/source-gate content and S09 Cycle 4 GSRC occurrence content.
+   S10 Cycle 3 ownership/source-gate content and S09 Cycle 4 GSRC occurrence content; and
+3. it absorbs the later S04 identity-only binding without promoting new mathematics.
 
 No new S12 B-criticality package, S13 global generator / unique mapper package,
-S11 identity-bound theorem, S04 identity-bound theorem, S14 cap theorem, S15
-root falsifier, or new S02-A termination theorem is imported.
+S11 identity-bound theorem, S14 cap theorem, S15 root falsifier, or new S02-A
+termination theorem is imported. S04 now has a repository-bound specialist
+identity, but no new S04 theorem is promoted.
 
 ## 1. Choice-free root semantics
 
@@ -351,9 +353,59 @@ with edges inside their owning disks.
 Its 8,136 failures do not extend to guard-face absorption, two new internal
 vertices, larger interfaces, extra complete stars, or cross-hole shortcuts.
 
-Cycle-5 effect: S04-labelled theorem identity is still missing, but the
-two-terminal ownership semantics are no longer UNKNOWN. They are a
-repository-derived source contract that any future S04/GSRC state must obey.
+Cycle-5 effect: S04 now has a repository-bound identity-only artifact, but no
+new theorem content is promoted. The two-terminal ownership semantics are a
+repository-derived source contract from C43/C47/S10 that any future
+substantive S04/GSRC state must obey.
+
+
+## 5A. Latest identity delta — S04 is repository-bound and STANDBY
+
+Merged main commit:
+
+```text
+6b34ce7f7ce83b238bebd85babd7aaff6f40a3d0
+```
+
+PR #82 adds the repository specialist identity artifact
+
+```text
+research/artifacts/candidates/opg169-a01-s04-cycle6-artifact-identity.json
+
+SHA-256
+89a2a4e26b9108907e8fe88a7918330e4c8dcca4ba4b4da27d831152d6a93e53
+```
+
+Its identity status is
+
+```text
+REPOSITORY_BOUND_IDENTITY_ONLY
+```
+
+and its disposition is
+
+```text
+STANDBY.
+```
+
+This repairs only the S04 source-identity gate. It promotes no mathematical
+content: the corrected holes, ownership, C47 bounded negative result, and
+two-terminal semantics remain attributed to the already merged C43/C47/S10
+source chain.
+
+Therefore Cycle 5 distinguishes:
+
+```text
+S04 identity       BOUND(candidate metadata)
+S04 content        repository-derived C43/C47/S10
+new S04 theorem    none
+trusted verification none
+disposition        STANDBY
+```
+
+S04 should reactivate only on C43/C47/S10 source drift, verifier mismatch, or
+an explicit new S04 obligation. Its identity binding does not re-open the old
+one-terminal geometry and does not extend C47 beyond its frozen scope.
 
 ## 6. LIFT-O status after the ownership repair
 
@@ -501,8 +553,9 @@ Priority order after the two new substantive deltas:
    verification remain.
 
 6. **Two-terminal composition under corrected ownership.**
-   S04 identity remains missing. Any future theorem must use the vertex-only
-   `{8,12}` interface, exterior guard ownership, and full positive reachability.
+   S04 identity is bound and STANDBY. Any future substantive theorem must use the
+   vertex-only `{8,12}` interface, exterior guard ownership, and full positive
+   reachability.
 
 ## 10. Specialist status after Cycle 5
 
@@ -515,15 +568,15 @@ S09 Cycle 4
 S10 Cycle 3
   PASS(candidate substantive delta):
   corrected two-hole ownership/content;
-  S11/S04 identity source gates remain closed.
+  S11 theorem identity remains source-gated; S04 identity is metadata-bound/STANDBY.
 
-S11 Cycle 4/6 identity
-  NOT_VERIFIABLE_MISSING_SOURCE.
-  The visible S11 Cycle-6 branch has no delta from current main.
+S11 identity-bound theorem
+  NOT_VERIFIABLE_MISSING_SOURCE on protected main.
+  PR #83 is draft transport of a Lean source and is not a completed/kernel-checked bridge.
 
-S04 identity
-  NOT_VERIFIABLE_MISSING_SOURCE.
-  The visible S04 Cycle-6 identity branch has no delta from current main.
+S04
+  REPOSITORY_BOUND_IDENTITY_ONLY; disposition STANDBY.
+  No new theorem or C47 scope extension is promoted.
 
 S12
   no new repository-bound branch/package.
