@@ -2,7 +2,7 @@
 
 **Verdict:** `candidate_only`  
 **Repository:** `vibemathing/problem-opg-169-two-color-conjecture`  
-**Frozen protected main:** `61aa9f65e0be9b00205ed0e57c7c9a5c5917f96c`  
+**Frozen protected main:** `8541c137f7769ec29c1f6043f017b8cace9efc87`  
 **Target:** `obligation:opg169-root`  
 **Expected mission scope:** 46 exact S13-C Bcrit rows.
 
@@ -13,7 +13,7 @@ verification.
 
 ## 1. Fresh source result
 
-Fresh protected `main`, recent branches/PRs and the current S01 Cycle-6 source
+Fresh protected `main`, recent branches/PRs and the merged S01 Cycle-6 source
 audit contain no repository-bound S13-C `4300/B46` artifact or packet. S01
 Cycle 6 explicitly records S13-C `4300/B46` as source-required/unconsumed.
 
