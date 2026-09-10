@@ -36,6 +36,12 @@
       "kind": "proof",
       "locator": "research/artifacts/candidates/opg169-s10-s11-lifting-consumer-20260910.md",
       "sha256": "319764672c907c40e0cea74376040548b121f55fbc9e9140f8ef7c4f1a298c01"
+    },
+    {
+      "candidate_id": "candidate:opg169-s10-s11-lifting-checklist-20260910",
+      "kind": "proof",
+      "locator": "research/artifacts/candidates/opg169-s10-s11-lifting-consumer-checklist-20260910.json",
+      "sha256": "35050f2ef18d450f5a2d6c94e02ce89cab4b92ddefec70c6809d9965f7507e03"
     }
   ],
   "atomic_claims": [
