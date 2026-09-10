@@ -3,43 +3,30 @@
 Verdict: `candidate_only`. `root_closed=false`. `best_verified_result=none`.
 
 Repository: `vibemathing/problem-opg-169-two-color-conjecture`  
-Problem: `problem-opg-169-two-color-conjecture`  
+Problem: `problem:opg-169-two-color-conjecture`  
 Attempt: `attempt:web-20260906-opg169-a01`  
 Route: `route:minimal-counterexample-structure-v1`  
 Graph: `graph:opg169-initial-v1`  
 Target: `obligation:opg169-root`  
 Fresh protected `main` consumed: `6b34ce7f7ce83b238bebd85babd7aaff6f40a3d0`.
 
-Cycle 5 does two things only:
+Cycle 5 replaces selector-dependent root wording by a choice-free relational
+contract and imports the latest completed deltas: S09 Cycle 4 GSRC occurrence
+audit, S10 Cycle 3 corrected two-hole ownership, and S04 Cycle 6 identity-only
+binding. No new S12, S13, S14, S15, or S02-A theorem is imported. S11 PR #83
+is draft transport and is not consumed as a completed/kernel-checked bridge.
 
-1. it replaces selector-dependent root wording by a choice-free relational root contract; and
-2. it imports the exact post-Cycle-4 substantive delta already merged on main:
-   S10 Cycle 3 ownership/source-gate content and S09 Cycle 4 GSRC occurrence content; and
-3. it absorbs the later S04 identity-only binding without promoting new mathematics.
+## 1. Choice-free root contract
 
-No new S12 B-criticality package, S13 global generator / unique mapper package,
-S11 identity-bound theorem, S14 cap theorem, S15 root falsifier, or new S02-A
-termination theorem is imported. S04 now has a repository-bound specialist
-identity, but no new S04 theorem is promoted.
-
-## 1. Choice-free root semantics
-
-Cycle 4 correctly repaired C48 from a face-level `F26 XOR SG` shorthand to an
-existential witness relation. Cycle 5 removes the remaining unnecessary
-selector pressure from the *root* architecture.
-
-Let `D0(f)` mean that `f` is an actual unpaid negative triangular face. Let
+For an actual unpaid negative face `f`, define
 
 ```text
 W48(f,p)   p is a corner of f and s(p)<=5
 F48(f,p)   W48(f,p) and t(p)<=5
-SG48(f,p)  W48(f,p) and t(p)>=6.
+SG48(f,p)  W48(f,p) and t(p)>=6
 ```
 
-For an SG witness, let `G48(p)` be the nonempty set of singleton gaps proved by
-C48.
-
-Define the complete set of admissible arithmetic descriptions of `f`:
+and let `G48(p)` be the set of singleton gaps for an SG witness. Define
 
 ```text
 Desc48(f) =
@@ -48,21 +35,17 @@ Desc48(f) =
   { (SG,p,g) : SG48(f,p) and g in G48(p) }.
 ```
 
-C48 plus the singleton-gap lemma gives
+C48/S01 Cycle 4 gives
 
 ```text
-D0(f) -> Desc48(f) is nonempty.
+D0(f) -> Desc48(f) != empty.
 ```
 
-There is no requirement that `Desc48(f)` have one element.
+No unique corner or gap is supplied.
 
 ### Choice-free closure lemma
 
-Let `Close(f,a)` be any downstream statement such that, whenever it holds for
-an admissible description `a in Desc48(f)`, the assumed minimum counterexample
-containing `f` yields a contradiction.
-
-If
+If every admissible description closes uniformly,
 
 ```text
 forall f,a:
@@ -71,545 +54,305 @@ forall f,a:
 
 then no `D0(f)` exists.
 
-**Proof.** Assume `D0(f)`. The C48 theorem gives `Desc48(f)` nonempty. Use
-ordinary existential elimination to take an arbitrary witness description
-`a in Desc48(f)`. The universally quantified downstream theorem gives
-`Close(f,a)`, hence a contradiction. No global choice function, canonical
-corner, canonical singleton gap, or uniqueness theorem is used. QED.
+Proof: assume `D0(f)`. Nonemptiness gives an arbitrary
+`a in Desc48(f)` by existential elimination; the uniform theorem gives
+`Close(f,a)`. No canonical selector or global choice function is used.
 
-This is the root-level semantics for Cycle 5.
+Hence the root architecture requires uniform coverage of all admissible
+descriptions, not construction of a preferred witness.
 
-The proof obligation is therefore **uniformity over all admissible
-descriptions**, not construction of a preferred selector.
+## 2. Nonvacuous source relations
 
-## 2. Choice-free source relations
-
-For an admissible description `a in Desc48(f)`, define:
+For `a in Desc48(f)` define
 
 ```text
-Real(f,a,r)   r is the actual alias-normalized local embedded realization
-              extracted from the graph for description a;
-
-Gen(f,a,r,s)  s is a source-faithful global source state generated from r,
-              with source/payer identity, all ownership, and no double spending;
-
-Class(s,c)    c is an explicit source class assigned to s.
+Real(f,a,r)   actual alias-normalized local embedded realization
+Gen(f,a,r,s)  globally source-faithful generated state
+Class(s,c)    explicit source class of s.
 ```
 
-The root contract is intentionally relational. It has three nonvacuity /
-coverage requirements.
-
-### R-TOTAL — local realization is total
+The mandatory choice-free gates are:
 
 ```text
-forall f,a:
+R-TOTAL:
   D0(f) and a in Desc48(f)
-  -> exists r Real(f,a,r).
-```
+  -> exists r Real(f,a,r)
 
-`r` must record actual rotations/faces, aliases before geometry, complete stars,
-edge/face ownership, exterior contacts, and the source/payer key.
-
-### G-TOTAL — global source generation is nonempty
-
-```text
-forall f,a,r:
+G-TOTAL:
   D0(f) and a in Desc48(f) and Real(f,a,r)
-  -> exists s Gen(f,a,r,s).
-```
+  -> exists s Gen(f,a,r,s)
 
-An empty generation relation is not allowed to close the root by vacuity.
-
-### G-COVER — every generated source is explicitly classified
-
-```text
-forall f,a,r,s:
+G-COVER:
   D0(f) and a in Desc48(f) and Real(f,a,r) and Gen(f,a,r,s)
   -> exists c Class(s,c).
 ```
 
-For root closure, every allowed class must then make mathematical progress:
-structural contradiction, strict reduction covered by LIFT-O, or a separately
-proved recursive escape whose normalized terminal states make progress.
+`Real` must carry actual rotations/faces, aliases before geometry, complete
+stars, all contacts and ownership, and the source/payer key. `Gen` may not be
+empty. Every generated state must be classified and handled; otherwise
+universal statements could close by vacuity.
 
-This is stronger than selecting one convenient source and is safe under
-duplicate descriptions.
+Duplicate descriptions are allowed.
 
-## 3. Unique JMAP is not a root gate
+## 3. Unique JMAP is optional, coverage is mandatory
 
-Cycle 4 still listed
+Cycle 4 still placed a unique `JMAP/L_join` after GSRC. Choice-free root logic
+does not require uniqueness if `G-TOTAL` and `G-COVER` hold and every generated
+state is handled.
 
-```text
-GSRC -> JMAP unique L_join / exact parent identity.
-```
+`JMAP-UNIQUE` is therefore demoted from a root gate to an optional
+normalization theorem. It can still be useful for registry compression,
+canonical IDs, avoiding duplicate computation, or a separately proved
+payer-injectivity requirement. It may not silently discard noncanonical
+descriptions.
 
-Under the choice-free contract, uniqueness is not logically required for the
-root contradiction.
+The root-critical statement is complete coverage, not unique encoding.
 
-Several admissible descriptions may:
+## 4. S09 Cycle 4 — R160 non-inversion and selected-J escape
 
-- represent the same exact source after alias normalization;
-- map to several source encodings of the same embedded state;
-- reach different explicit source classes.
-
-The root proof remains sound provided `G-TOTAL` and `G-COVER` hold and every
-generated state is handled.
-
-Therefore:
-
-```text
-JMAP-UNIQUE
-```
-
-is demoted from a mandatory root gate to an optional normalization theorem.
-
-It remains useful for:
-
-- registry compression;
-- canonical source IDs;
-- proving an injective payer assignment when a separate accounting argument
-  actually needs injectivity;
-- avoiding duplicate computation.
-
-It may not be used to strengthen the mathematical root statement by silently
-discarding noncanonical descriptions.
-
-The root-critical obligation is **coverage**, not uniqueness.
-
-## 4. Latest completed delta A — S09 GSRC non-inversion
-
-Merged main commit:
+Merged commit:
 
 ```text
 2a72d159ed8bd79fe31b9522f84c0e1c729913e5
 ```
 
-PR #80 final-head candidate package has:
+Final candidate digests:
 
 ```text
-proof SHA-256
-7fcbd8a40640d2c712de51efb86df73302be2c97ba92eaf8dbec51154796bfa1
-
-obligations SHA-256
-58e27407199889f84186a780b225ef5ecbd3d4f5431f0f8600a1acb2f5f93c46
-
-checker SHA-256
-55568973f649d0b05619e695a889b64eb0efabaf5961d07a3e528d6db60cb1ee
-
-output SHA-256
-2a4d965109ba2115afce879479bed29346a3a3c8a5ff756072ddb43e67c917b7
+proof        7fcbd8a40640d2c712de51efb86df73302be2c97ba92eaf8dbec51154796bfa1
+obligations  58e27407199889f84186a780b225ef5ecbd3d4f5431f0f8600a1acb2f5f93c46
+checker      55568973f649d0b05619e695a889b64eb0efabaf5961d07a3e528d6db60cb1ee
+output       2a4d965109ba2115afce879479bed29346a3a3c8a5ff756072ddb43e67c917b7
 ```
 
-### R160 cannot be inverted into occurrence
-
-The exact C37 registry says
+The exact C37 statement
 
 ```text
 forall s in R160:
-  exact_C37_parent(s) -> reducible(s).
+  exact_C37_parent(s) -> reducible(s)
 ```
 
-It does not imply
+does not imply that an actual unpaid face generates any `s in R160`. S09 gives
+a pure-logic countermodel to that inversion. This is not a planar
+counterexample and does not refute GSRC.
+
+Therefore R160 is a reduction library after source identification, not an
+occurrence generator.
+
+Conditional on occurrence of the exact selected C35/C36 J-source, preserved
+C36 dependencies give `d(7)>=6`. If `d(7)=6`, C37 places the source in R160 and
+the unconditional reductions exclude it from a vertex-minimum counterexample.
+Thus
 
 ```text
-forall actual unpaid faces f:
-  exists s in R160 occurs(f,s).
-```
-
-S09 gives a finite pure-logic countermodel to this inference. This is not a
-planar counterexample and does not refute GSRC. It proves that the registry is
-a reduction library, not a source generator.
-
-Cycle-5 consequence: remove every route edge that treats
-
-```text
-R160 total reduction coverage
-```
-
-as evidence for
-
-```text
-D0 -> R160 occurrence.
-```
-
-### Selected-J escape lemma
-
-Conditional on occurrence of the exact selected C35/C36 J-source:
-
-```text
-minimum counterexample -> d(7)>=6
-```
-
-from the preserved C36 source chain.
-
-If `d(7)=6`, the source is one of the exact C37 160 parents and is eliminated by
-the unconditional C37 strong-profile reductions. Hence:
-
-```text
-selected C35/C36 J-source in a vertex-minimum counterexample
+selected C35/C36 J-source in a minimum counterexample
   -> d(7)>=7.
 ```
 
-Thus R160 is now best viewed as an **equality-kill layer** inside a future
-source-or-escape theorem, not as the intended GSRC occurrence target.
+The correct next GSRC target is a provenance-preserving source-or-escape
+theorem, not `D0 -> R160`.
 
-### Minimal next source theorem
-
-The useful target is the choice-free form of a provenance-preserving
-source-or-escape statement:
+Choice-free form:
 
 ```text
-forall f,a,r:
-  D0(f) and a in Desc48(f) and Real(f,a,r)
-  ->
-  exists s Gen(f,a,r,s)
-  and every generated s is in exactly the declared coverage union:
-      selected-C37-J
-      OR explicit disjoint source/escape class.
+for every f,a,r with
+  D0(f), a in Desc48(f), Real(f,a,r),
+
+produce nonempty Gen(f,a,r,·), and cover every generated state by
+  selected C37-J
+  OR an explicit disjoint source/escape class.
 ```
 
-Uniqueness of the class label is optional for the root; complete coverage is
-mandatory.
+If selected C37-J occurs, the minimum-counterexample branch is already
+`d(7)>=7`.
 
-If the selected C37-J class occurs, the minimum-counterexample branch is
-already narrowed to `d(7)>=7`.
+## 5. S10 Cycle 3 — corrected two-terminal ownership
 
-## 5. Latest completed delta B — corrected two-hole ownership
-
-Merged main commit:
+Merged commit:
 
 ```text
 fa0b94b59eebeb2a1b5d123dc9e07ff03fc840b0
 ```
 
-S10 Cycle-3 packet binds:
+Digests:
 
 ```text
-ownership consumer SHA-256
-69ab1332effea024bb56f4479fe310b4ceec595e5f9f05173fbf37e5d3b555f6
-
-ownership matrix SHA-256
-aa623407d0716e129bf7a3e4fa49d783dc7a09eca09bd63454e706b69b914916
+ownership consumer  69ab1332effea024bb56f4479fe310b4ceec595e5f9f05173fbf37e5d3b555f6
+ownership matrix    aa623407d0716e129bf7a3e4fa49d783dc7a09eca09bd63454e706b69b914916
 ```
 
-The corrected source-owned holes are
+Actual deletion holes:
 
 ```text
-H13 = (7,8,16,12)
-H14 = (8,15,12,17)
+H13=(7,8,16,12)
+H14=(8,15,12,17)
+
+vertex intersection = {8,12}
+edge intersection   = empty.
 ```
 
-with
+The guard arc `8->12` is exterior to both hole interiors in the unabsorbed
+decomposition. The old 22-face boundary walks meeting only at `12` are not the
+deletion holes.
 
-```text
-V(H13) intersect V(H14) = {8,12}
-E(H13) intersect E(H14) = empty.
-```
+Therefore the inter-lobe object is a vertex-only two-terminal separator
+`{8,12}`, not a shared-edge `K2` tournament. The exterior guard does not make
+the two lobe pieces a common tournament interface. Ordinary same-boundary
+extension is insufficient: a lobe return `12->8` may close a cycle with the
+exterior `8->12`.
 
-The guard arc
+Sound composition must retain full positive reachability in both directions
+and explicit ownership.
 
-```text
-8->12
-```
+Guard-face absorption creates a new theorem instance: boundary, aliases,
+contacts, ownership, and all LIFT-O premises must be recomputed.
 
-is exterior to both hole interiors in the unabsorbed decomposition.
+C47 remains restricted to delete `{13,14}` plus at most one new nonisolated
+internal vertex total inside the owning disks. Its 8,136 failures are not
+extrapolated to absorbed/larger interfaces.
 
-The old two 22-face-complex boundary walks meeting only at `12` are not the
-deletion holes and may not be used to recover a one-terminal pinch.
+## 6. S04 Cycle 6 — identity bound, mathematics unchanged
 
-### Correct interface type
-
-The inter-lobe object is a vertex-only two-terminal separator
-
-```text
-T = {8,12},
-```
-
-not a shared-edge `K2` tournament.
-
-The exterior arc `8->12` does not change that ownership fact.
-
-Therefore the complete-tournament ordinary-extension shortcut is unavailable
-for the two lobes. A same-colour lobe return `12->8` can combine with exterior
-`8->12` to form a cycle.
-
-Any sound composition must retain complete positive reachability in both
-directions and explicit ownership.
-
-### Guard-face absorption
-
-If a guard-edge incident face is absorbed into a patch, the theorem instance
-changes. Boundary, aliases, exterior contacts, arc ownership, and all LIFT-O
-premises must be recomputed.
-
-C47 remains bounded exactly to:
-
-```text
-delete {13,14}
-plus at most one new nonisolated internal vertex total,
-with edges inside their owning disks.
-```
-
-Its 8,136 failures do not extend to guard-face absorption, two new internal
-vertices, larger interfaces, extra complete stars, or cross-hole shortcuts.
-
-Cycle-5 effect: S04 now has a repository-bound identity-only artifact, but no
-new theorem content is promoted. The two-terminal ownership semantics are a
-repository-derived source contract from C43/C47/S10 that any future
-substantive S04/GSRC state must obey.
-
-
-## 5A. Latest identity delta — S04 is repository-bound and STANDBY
-
-Merged main commit:
+Merged commit:
 
 ```text
 6b34ce7f7ce83b238bebd85babd7aaff6f40a3d0
 ```
 
-PR #82 adds the repository specialist identity artifact
+Identity artifact:
 
 ```text
 research/artifacts/candidates/opg169-a01-s04-cycle6-artifact-identity.json
-
-SHA-256
-89a2a4e26b9108907e8fe88a7918330e4c8dcca4ba4b4da27d831152d6a93e53
+SHA-256 89a2a4e26b9108907e8fe88a7918330e4c8dcca4ba4b4da27d831152d6a93e53
 ```
 
-Its identity status is
+Status:
 
 ```text
-REPOSITORY_BOUND_IDENTITY_ONLY
+identity_status = REPOSITORY_BOUND_IDENTITY_ONLY
+disposition     = STANDBY
+mathematical_content_promotion = none.
 ```
 
-and its disposition is
+The corrected geometry/ownership content remains attributed to C43/C47/S10.
+No C47 scope extension or trusted verification follows. S04 should reactivate
+only on source drift, verifier mismatch, or an explicit new S04 obligation.
 
-```text
-STANDBY.
-```
+## 7. LIFT-O and termination status
 
-This repairs only the S04 source-identity gate. It promotes no mathematical
-content: the corrected holes, ownership, C47 bounded negative result, and
-two-terminal semantics remain attributed to the already merged C43/C47/S10
-source chain.
-
-Therefore Cycle 5 distinguishes:
-
-```text
-S04 identity       BOUND(candidate metadata)
-S04 content        repository-derived C43/C47/S10
-new S04 theorem    none
-trusted verification none
-disposition        STANDBY
-```
-
-S04 should reactivate only on C43/C47/S10 source drift, verifier mismatch, or
-an explicit new S04 obligation. Its identity binding does not re-open the old
-one-terminal geometry and does not extend C47 beyond its frozen scope.
-
-## 6. LIFT-O status after the ownership repair
-
-The generic theorem content from S10 Cycle 2 remains unchanged:
+Generic ordinary arbitrary-exterior lifting remains
 
 ```text
 LIFT_O_THEOREM_CONTENT      PASS(candidate)
-S11 identity-bound theorem NOT_VERIFIABLE_MISSING_SOURCE
-trusted verification       UNKNOWN
+S11 identity-bound theorem NOT_VERIFIABLE_MISSING_SOURCE on protected main
+trusted verification       UNKNOWN.
 ```
 
-The S04 correction does not refute LIFT-O; it prevents a wrong invocation.
+PR #83 is a draft transport of an S11 Lean source and is not merged or
+kernel-checked.
 
-For every concrete reduction row, source binding must still verify:
+The live lifting gates are therefore
 
 ```text
-actual alias quotient
-actual boundary
-all patch/exterior contacts
-shared-edge ownership/direction
-complete valid-Q quantifier
-same-boundary valid-P lift
-both-colour positive R+ inclusion
-class-preservation guards
-strict order decrease
-simple planar orientation membership.
+LIFT-BIND
+  actual aliases/boundary/contacts/ownership,
+  complete valid-Q quantifier,
+  same-boundary valid-P lift,
+  both-colour positive R+ inclusion,
+  class-preservation guards and strict descent;
+
+LIFT-VERIFY
+  trusted verification/admission.
 ```
 
-Thus the live lifting gate is now:
+S02-B Cycle 2 still refutes raw degree/port/size ranks, history-free
+complete-star release ranks, and purely local separator ranks. Fixed-interface
+profile compression remains family-scoped.
+
+The unresolved termination gates are
 
 ```text
-LIFT-BIND + LIFT-VERIFY
+TNORM  source-bind a normalized no-backtracking transition system
+TPROG  prove every terminal normalized state yields actual mathematical progress.
 ```
 
-not reproving the generic theorem.
+Discovery termination alone is insufficient.
 
-## 7. Termination stays split: TNORM and TPROG
-
-S02-B Cycle 2 remains unchanged by the new deltas.
-
-Refuted in exact scopes:
-
-```text
-raw degree/port/size rank
-history-free complete-star release rank
-purely local separator rank.
-```
-
-Not refuted:
-
-```text
-history-aware normalized source-discovery bookkeeping.
-```
-
-But discovery termination alone does not close the root.
-
-The live obligations remain:
-
-```text
-TNORM
-  source-bind a no-backtracking normalized transition system;
-
-TPROG
-  prove every terminal normalized state yields:
-    structural contradiction,
-    source class already covered,
-    or strict source-valid reduction.
-```
-
-A terminal state that merely means "the finite graph has been fully exposed"
-is not mathematical progress.
-
-## 8. Cycle-5 choice-free live DAG
+## 8. Cycle-5 live root DAG
 
 ```text
 R0 root
  |
  +-- D0 actual unpaid negative face f
       |
-      +-- Desc48(f) nonempty                              [PASS candidate arithmetic]
+      +-- Desc48(f) nonempty                         [PASS candidate arithmetic]
             |
-            +-- for every admissible description a
-                   |
-                   +-- R-TOTAL: actual source extraction  [UNKNOWN]
-                   |
-                   +-- TNORM / TPROG if recursive         [UNKNOWN]
-                   |
-                   `-- G-TOTAL + G-COVER
-                         provenance-preserving
-                         source-or-escape relation         [UNKNOWN]
-                              |
-                              +-- selected C37 J source
-                              |      |
-                              |      +-- d(7)=6
-                              |      |     -> R160 kill    [PASS candidate]
-                              |      |
-                              |      `-- d(7)>=7
-                              |            -> high-port
-                              |            -> TNORM/TPROG [UNKNOWN]
-                              |
-                              +-- explicit non-J class     [UNKNOWN classification]
-                              |
-                              `-- structural / A / B class
-                                      |
-                                      +-- STRUCT contradiction
-                                      |
-                                      +-- A strict reduction
-                                      |      -> LIFT-BIND   [row-dependent]
-                                      |      -> LIFT-O content [PASS candidate]
-                                      |      -> LIFT-VERIFY [UNKNOWN]
-                                      |
-                                      `-- B
-                                             -> B-criticality [UNKNOWN]
-                                             -> reduction
-                                             -> LIFT-BIND/VERIFY
+            `-- for every admissible a
+                  |
+                  +-- R-TOTAL                        [UNKNOWN]
+                  |
+                  +-- G-TOTAL + G-COVER             [UNKNOWN]
+                  |      source-or-escape
+                  |        |
+                  |        +-- selected C37-J
+                  |        |      +-- d(7)=6 -> R160 kill  [PASS candidate]
+                  |        |      `-- d(7)>=7 -> TNORM/TPROG [UNKNOWN]
+                  |        |
+                  |        `-- explicit non-J/source class  [UNKNOWN]
+                  |
+                  `-- structural / A / B coverage
+                         +-- STRUCT contradiction
+                         +-- A reduction -> LIFT-BIND -> LIFT-O -> LIFT-VERIFY
+                         `-- B -> B-criticality -> reduction -> lifting
 ```
 
-There is no mandatory `JMAP-UNIQUE` node in this root DAG.
+There is no mandatory `JMAP-UNIQUE` root node.
 
-A future unique mapper may compress this graph; it may not be required for
-logical root closure unless a separate payer/injectivity argument proves that
-uniqueness is mathematically necessary.
+## 9. Exact frontier
 
-## 9. Exact current frontier
+Priority:
 
-Priority order after the two new substantive deltas:
+1. `R-TOTAL`: choice-free actual source extraction for every `(f,p[,g])`.
+2. `G-TOTAL + G-COVER`: nonempty provenance-preserving source-or-escape
+   generation; do not target R160 directly.
+3. `TNORM + TPROG` on the selected-J `d(7)>=7` escape.
+4. B-criticality: no completed S12 package.
+5. `LIFT-BIND + LIFT-VERIFY`: theorem content already candidate-PASS.
+6. Corrected two-terminal composition: S04 identity is bound/STANDBY; any new
+   theorem must use `{8,12}`, exterior guard ownership, and full positive R+.
 
-1. **Choice-free R-TOTAL / GSRC source-or-escape.**
-   For every admissible `(f,p[,g])`, extract the actual source geometry with
-   ownership and produce a nonempty globally source-faithful generation
-   relation. Do not target R160 directly.
-
-2. **G-COVER.**
-   Prove every generated state lies in the explicit coverage union. Duplicate
-   descriptions are allowed. Empty or unclassified generation is not.
-
-3. **TNORM + TPROG on the selected-J `d(7)>=7` escape.**
-   History-free/local ranks are already refuted.
-
-4. **B-criticality.**
-   No completed S12 package exists.
-
-5. **LIFT-BIND + LIFT-VERIFY.**
-   Generic theorem content is candidate-PASS; source-row ownership and trusted
-   verification remain.
-
-6. **Two-terminal composition under corrected ownership.**
-   S04 identity is bound and STANDBY. Any future substantive theorem must use the
-   vertex-only `{8,12}` interface, exterior guard ownership, and full positive
-   reachability.
-
-## 10. Specialist status after Cycle 5
+Current specialist delta:
 
 ```text
-S09 Cycle 4
-  PASS(candidate substantive delta):
-  R160 non-inversion + selected-J d(7)>=7 escape
-  + source-or-escape target.
-
-S10 Cycle 3
-  PASS(candidate substantive delta):
-  corrected two-hole ownership/content;
-  S11 theorem identity remains source-gated; S04 identity is metadata-bound/STANDBY.
-
-S11 identity-bound theorem
-  NOT_VERIFIABLE_MISSING_SOURCE on protected main.
-  PR #83 is draft transport of a Lean source and is not a completed/kernel-checked bridge.
-
-S04
-  REPOSITORY_BOUND_IDENTITY_ONLY; disposition STANDBY.
-  No new theorem or C47 scope extension is promoted.
-
-S12
-  no new repository-bound branch/package.
-
-S13
-  no post-Cycle-4 generator/mapper package.
-
-S14 / S15
-  no new repository-bound branch/package.
-
-S02-A
-  no new normalized termination theorem.
-
-S01
-  PASS(import/scope only):
-  choice-free root semantics + latest completed substantive delta.
+S09 Cycle 4   PASS(candidate substantive delta)
+S10 Cycle 3   PASS(candidate substantive delta)
+S04 Cycle 6   REPOSITORY_BOUND_IDENTITY_ONLY / STANDBY
+S11           no completed identity-bound/kernel-checked theorem on main
+S12           no new package
+S13           no post-Cycle-4 generator/mapper package
+S14/S15       no new package
+S02-A         no normalized termination theorem
+S01           PASS(import/scope only)
 ```
 
-## 11. Evidence ceiling
+## 10. Evidence ceiling
 
-All imported mathematical statements remain `candidate_only`.
+All mathematics remains `candidate_only`. Issue/PR/merge/CI state is not
+mathematical Evidence.
 
-No Issue/PR/merge/CI state is mathematical Evidence.
-
-At this fresh read:
+Fresh authoritative ledgers remain empty:
 
 ```text
-EvidenceLink ledger   empty
-Result ledger         empty
-failed-route ledger   empty
-best_verified_result  none
-root_closed           false
+EvidenceLink
+Result
+failed-route
 ```
 
-Cycle 5 does not alter the admitted sparse formal obligation graph and does not
-write any truth/control record.
+Therefore
+
+```text
+best_verified_result=none
+root_closed=false.
+```
+
+Cycle 5 changes no formal truth/control record.
