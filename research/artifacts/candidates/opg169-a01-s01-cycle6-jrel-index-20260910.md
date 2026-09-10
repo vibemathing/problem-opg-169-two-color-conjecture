@@ -1,18 +1,24 @@
-# R08 S01 Cycle 6 — JREL root proof index
+# R08 S01 Cycle 6 — final JREL root proof index
 
 `candidate_only`; `best_verified_result=none`; `root_closed=false`.
 
-Full proof Git blob: `21dfe8025c82dd384ed0b487d3d08f5994ee7e02`.
-Full proof path: `research/artifacts/candidates/opg169-a01-s01-cycle6-jrel-root-dag-20260910.md`.
+Fresh protected main: `f764f5b2b6acdf8b0ff965ec09dc1d224a36a08f`.
 
-Root route: `D0 -> LowCorners relation -> JREL-SOUND/TOTAL -> JCLOSE-EC -> Sigma-mu contradiction`.
+Full base proof Git blob:
+`21dfe8025c82dd384ed0b487d3d08f5994ee7e02`
+at `research/artifacts/candidates/opg169-a01-s01-cycle6-jrel-root-dag-20260910.md`.
 
-`JUNIQ` and exact-one SCUT are optional. C37 R160 and C35 finite atlases do not imply occurrence. The first missing root source record is an immutable same-face JREL record connecting an actual D0 low corner to an exact source row.
+Final refinement Git blob:
+`7dde4851eb9e63627bc6b2d9d4f4fe7a0921fddf`
+at `research/artifacts/candidates/opg169-a01-s01-cycle6-final-refinement-20260910.md`.
 
-Fresh source audit at main `61aa9f65e0be9b00205ed0e57c7c9a5c5917f96c`:
-- S02-B Cycle 3 is identity-bound root-class terminal-usefulness pressure only.
-- S04 is repository-bound identity-only / STANDBY with no new mathematics.
-- S11 PR #83 is draft transport with `kernel_checked=false`.
-- Requested S12-A 784/578/206, S13-C 4300/B46, and S13-D/S15 same-face/alternative-root packages have no identity-bound repository source at this read and are not consumed as mathematical facts.
+Sole root route:
+`D0 -> LowCorners relation -> JREL-SOUND/TOTAL -> JCLOSE-EC -> Sigma-mu contradiction`.
+
+`JUNIQ` and exact-one SCUT are optional. The first root missing record remains an actual same-face JREL record connecting an actual D0 low corner to an exact source row.
+
+Merged S09 Cycle 5 is used only after an already actual selected-J join: `d(7)=6` receives exact C37 family/word identity before R160; `d(7)>=7` enters the exact-source `J_HIGHPORT` escape. It does not prove JREL-TOTAL or D0 occurrence.
+
+S04 remains repository-bound STANDBY with no new mathematics. S11 PR #83 remains transport-only until real kernel replay. Requested S12-A 784/578/206 and S13-C 4300/B46 statistics remain unconsumed absent protected-main source records; concurrent PR #89 is not a recovered B46 row library.
 
 No EvidenceLink, Result, Solution, trusted verification, or root closure is claimed.
