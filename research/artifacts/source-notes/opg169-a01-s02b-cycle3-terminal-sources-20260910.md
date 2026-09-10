@@ -2,13 +2,20 @@
 
 Status: `candidate_only`; `root_closed=false`.
 
-Fresh protected main used for the final source read and branch base:
+Fresh protected main used for the final mathematical source read:
 `6b34ce7f7ce83b238bebd85babd7aaff6f40a3d0`.
+
+Transport was subsequently rebased onto protected main
+`ea8148a64703c6d29831d07c83001a4988ab80c1` after concurrent S01 Cycle 5 landed.
+That S01 commit explicitly imports no S02-A theorem and leaves the live
+termination gates as normalized source resolution plus mathematical progress;
+it does not supersede the frozen Cycle-3 stress result.
 
 Repository-bound predecessors consumed:
 
 - S02-B Cycle 2 merge `3bec7e8d2c4fec368707f3f86cccfc7af8120472`, which leaves history-aware discovery well-foundedness alive but explicitly does not prove terminal reducibility.
 - S01 Cycle 4 integration `a2a9973d2f995de71095a6bea814cbe882cb7718`, which imports that separation and keeps GSRC/JMAP unknown.
+- S01 Cycle 5 `ea8148a64703c6d29831d07c83001a4988ab80c1`, which renames the unresolved termination gates `TNORM` and `TPROG`; discovery termination alone remains insufficient.
 - C37 exact `d(7)=6` material is not extrapolated to this family.
 
 Cycle-3 construction `T_N` is a new root-class stress family. It is proved/checked only as a finite simple plane triangulation orientation with minimum semidegree at least two, actual rotations/faces, unbounded pole degree, no separating triangle, a growing A-star sweep interface, and same-boundary ordinary-extension irreducibility for consecutive A-star blocks of sizes 1, 2 and 3.
