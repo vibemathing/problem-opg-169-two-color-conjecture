@@ -42,9 +42,7 @@ The PR #54 manifest requires each of the four chunks to have
 
 For `opg169-a01-s13-c05-cycle4-capsule-part01.txt`, the Git blob is
 `1ebfc1ba59f4ca7f099b23990d123e0cb642b8b5`. Direct blob slicing shows the
-actual file has 14,783 raw bytes and its final bytes decode to
-
-`qF6wD6XmnQ+m9njGdFtb0L\n`.
+actual file has 14,783 raw bytes and its final byte is LF (`0x0a`).
 
 Therefore the raw file ends in a newline. After the unpacker's `.strip()`, the
 chunk has at most 14,782 characters, contradicting the manifest requirement
