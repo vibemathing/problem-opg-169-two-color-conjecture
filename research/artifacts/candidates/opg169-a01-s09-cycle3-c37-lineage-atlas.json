@@ -1,0 +1,527 @@
+{
+  "base_revision": "160fa1085f274191bc09185f289d5ac2c4c6362e",
+  "counts": {
+    "bare_delete_3": 4,
+    "delete_0_2_total": 156,
+    "direct_fan_delete_0_2": 96,
+    "families": 5,
+    "merged_delete_0_2_catalogue": 60,
+    "named_C38_C40_chain_rows": 1,
+    "parents": 160,
+    "words_per_family": 32
+  },
+  "families": {
+    "D": {
+      "bare_delete_3_words": [],
+      "catalogue_delete_0_2_words": [],
+      "direct_fan_words": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "named_C38_C40_words": [
+        19
+      ],
+      "regions": [
+        [
+          4,
+          8,
+          12,
+          13,
+          11,
+          6,
+          5
+        ]
+      ],
+      "x": 12,
+      "y": 13
+    },
+    "X5": {
+      "bare_delete_3_words": [],
+      "catalogue_delete_0_2_words": [
+        2,
+        3,
+        6,
+        7,
+        10,
+        11,
+        14,
+        15,
+        18,
+        19,
+        22,
+        23,
+        26,
+        27,
+        30,
+        31
+      ],
+      "direct_fan_words": [
+        0,
+        1,
+        4,
+        5,
+        8,
+        9,
+        12,
+        13,
+        16,
+        17,
+        20,
+        21,
+        24,
+        25,
+        28,
+        29
+      ],
+      "named_C38_C40_words": [],
+      "regions": [
+        [
+          4,
+          8,
+          5
+        ],
+        [
+          5,
+          13,
+          11,
+          6
+        ]
+      ],
+      "x": 5,
+      "y": 13
+    },
+    "X6": {
+      "bare_delete_3_words": [],
+      "catalogue_delete_0_2_words": [
+        2,
+        3,
+        6,
+        7,
+        10,
+        11,
+        14,
+        15,
+        18,
+        19,
+        22,
+        23,
+        26,
+        27,
+        30,
+        31
+      ],
+      "direct_fan_words": [
+        0,
+        1,
+        4,
+        5,
+        8,
+        9,
+        12,
+        13,
+        16,
+        17,
+        20,
+        21,
+        24,
+        25,
+        28,
+        29
+      ],
+      "named_C38_C40_words": [],
+      "regions": [
+        [
+          4,
+          8,
+          6,
+          5
+        ],
+        [
+          6,
+          13,
+          11
+        ]
+      ],
+      "x": 6,
+      "y": 13
+    },
+    "Y4": {
+      "bare_delete_3_words": [
+        0,
+        4,
+        16,
+        20
+      ],
+      "catalogue_delete_0_2_words": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23
+      ],
+      "direct_fan_words": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "named_C38_C40_words": [],
+      "regions": [
+        [
+          4,
+          8,
+          12
+        ],
+        [
+          4,
+          11,
+          6,
+          5
+        ]
+      ],
+      "x": 12,
+      "y": 4
+    },
+    "Y5": {
+      "bare_delete_3_words": [],
+      "catalogue_delete_0_2_words": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "direct_fan_words": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "named_C38_C40_words": [],
+      "regions": [
+        [
+          4,
+          8,
+          12,
+          5
+        ],
+        [
+          5,
+          11,
+          6
+        ]
+      ],
+      "x": 12,
+      "y": 5
+    }
+  },
+  "format": "opg169-s09-c37-source-lineage-atlas-v1",
+  "imports": {
+    "c37_input": {
+      "git_blob_sha": "a452f67995e1b563e364382593b887bf0ec1f63d",
+      "path": "research/artifacts/candidates/opg169-a01-c37-input.json"
+    },
+    "c39_proof": {
+      "git_blob_sha": "c07673e27896a87edd848c201fd154472e5bd523",
+      "path": "research/artifacts/candidates/opg169-a01-c39-d4-degree6-proof.md"
+    },
+    "c40_search": {
+      "git_blob_sha": "d54e5a1f60208509d20deeb3726dba5ff82a7315",
+      "path": "research/artifacts/candidates/opg169-a01-c40-search.py"
+    },
+    "c48_precedence": {
+      "git_blob_sha": "2ae68b69ca5de217ea923e2dac08cd70ea2cf3fe",
+      "path": "research/artifacts/candidates/opg169-a01-c48-live-frontier-proof.md"
+    },
+    "s06_proof": {
+      "git_blob_sha": "25718159fd3a8403d3d2e0d123337a0c90e34829",
+      "path": "research/artifacts/candidates/opg169-a01-s06-c05-universal-fan-backtrace.md",
+      "postprocess_sha256": "a3ceecc524f1ef24f81e132fe99ddd4daff3feaa649ea0255898a213ae64a8e5"
+    },
+    "s10_manifest": {
+      "git_blob_sha": "bec2d6b78a405b7ac45026d398b3f68b91753b08",
+      "path": "research/artifacts/candidates/opg169-s10-cleanroom-execution-manifest.json",
+      "semantic_result_digest": "f3dc810615fd1ee01c779e2f5f763c7c62309eea61dbd7e42fe4390e9fd86a20"
+    }
+  },
+  "lineage_gate": [
+    "preserve every parent source arc",
+    "preserve rotations and complete stars of 0,2,3,7",
+    "preserve ancestor interface and deletion hole",
+    "child fixes only arbitrary-exterior data already quantified by the ancestor rule",
+    "no new alias identifying distinct source vertices and no new adjacency to a controlled vertex"
+  ],
+  "non_claims": [
+    "No profile table is recomputed by this atlas.",
+    "The 60 catalogue-row literal added-arc sets are not rederived here.",
+    "Only D/19 is assigned the named C38-C40 repository lineage.",
+    "No d(7)>=7, other J orientation, global L_join, or root closure."
+  ],
+  "problem_contract_sha256": "719230edd088c52a5468eed8090579e5eef1bf85d8a56e633350063108f345ec",
+  "representation": "generative_normal_form_expands_to_160_rows",
+  "root_closed": false,
+  "row_expansion": {
+    "ancestor_rule_class": "bare words first; else direct_fan_delete_0_2 when direct fan available; else merged_delete_0_2_catalogue",
+    "direct_fan_available": "true iff no reverse of a direct_fan_add is a physical source arc",
+    "expanded_parent_ids_sha256": "cb8b4171491572de52a1ca5f3ebe1235e6091dd7298c5b380f0477d0c9789b74",
+    "expanded_rows_sha256": "65357c97e5fdb35ba150c7d658ed053489097ee6d1013ec03529685f643b6dab",
+    "extra_arcs": "instantiate x,y then apply bit_semantics to five word_edge_roles",
+    "named_chain": "C38->C39->C40 exactly for D/19, null otherwise",
+    "parent_id": "family + '/' + decimal(word)"
+  },
+  "rule_classes": {
+    "bare_delete_3": {
+      "adds": [],
+      "delete": [
+        3
+      ],
+      "literal_status": "exact"
+    },
+    "direct_fan_delete_0_2": {
+      "adds": [
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          4
+        ]
+      ],
+      "delete": [
+        0,
+        2
+      ],
+      "literal_status": "exact"
+    },
+    "merged_delete_0_2_catalogue": {
+      "adds": null,
+      "delete": [
+        0,
+        2
+      ],
+      "literal_status": "row-specific literal bound by S06 postprocess; not rederived by S09"
+    }
+  },
+  "source": {
+    "bare_delete_3_hole": [
+      0,
+      4,
+      8,
+      7,
+      2
+    ],
+    "base_arcs": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        11
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        7
+      ]
+    ],
+    "bit_semantics": "bit i=1 reverses word_edge_roles[i]; bit i=0 keeps listed direction",
+    "complete_degrees": {
+      "0": 5,
+      "2": 5,
+      "3": 5,
+      "7": 6
+    },
+    "controlled": [
+      0,
+      2,
+      3,
+      7
+    ],
+    "direct_fan_adds": [
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        4
+      ]
+    ],
+    "merged_delete_0_2_hole": [
+      3,
+      4,
+      5,
+      6,
+      11,
+      7
+    ],
+    "word_domain": {
+      "max": 31,
+      "min": 0
+    },
+    "word_edge_roles": [
+      [
+        "8",
+        "x"
+      ],
+      [
+        "x",
+        "7"
+      ],
+      [
+        "x",
+        "y"
+      ],
+      [
+        "y",
+        "7"
+      ],
+      [
+        "y",
+        "11"
+      ]
+    ]
+  },
+  "verdict": "candidate_only"
+}
