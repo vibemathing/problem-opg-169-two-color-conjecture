@@ -3,11 +3,11 @@
 `candidate_only`; no mathematical row verdict is produced.
 
 Fresh protected main at the audit cutoff is
-`61aa9f65e0be9b00205ed0e57c7c9a5c5917f96c`.
+`8541c137f7769ec29c1f6043f017b8cace9efc87`.
 
 The mission requests 46 exact S13-C Bcrit rows. Fresh repository search finds
-no identity-bound S13-C `4300/B46` artifact or packet. The current S01 Cycle-6
-candidate independently records that same source gate as open.
+no identity-bound S13-C `4300/B46` artifact or packet. The merged S01 Cycle-6
+candidate separately records that same source gate as open.
 
 The only plausible historical carrier is open PR #54 at
 `e68936730ed8b28469b568d4958cf569cd1ac078`. Its manifest names the expected
@@ -16,7 +16,7 @@ self-consistent with its own unpacker:
 
 - manifest: `chars_without_newline=14783` for part01;
 - actual Git blob `1ebfc1ba59f4ca7f099b23990d123e0cb642b8b5`: 14,783 raw
-  bytes and ends with `\n`;
+  bytes and ends with newline;
 - unpacker: `raw.decode('ascii').strip()` before comparing the length;
 - therefore stripped length is at most 14,782, so the manifest assertion cannot
   pass.
