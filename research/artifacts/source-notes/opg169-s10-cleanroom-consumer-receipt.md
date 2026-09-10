@@ -2,15 +2,17 @@
 
 `verdict=candidate_only`; `root_closed=false`.
 
-## Base
-- fresh protected `main`: `2d9303e7ae9558d3904bb2fa0bade246ebe9bbde`
-- direct parent: `8d5bcb4955e84468f58a5923bed7f2ec527a6218`
+## Base and final freshness
+- frozen computation base: `2d9303e7ae9558d3904bb2fa0bade246ebe9bbde`
+- exact requested SHA: `8d5bcb4955e84468f58a5923bed7f2ec527a6218` (direct parent of the frozen base)
+- final fresh protected `main`: `da5fdb264d7c74dbdcce7c66d2174830d16acae6`
+- final-main delta from the frozen base: two commits adding only S01 Cycle-2 frontier/DAG/import packets; no C37, S08, C48/S09 source or contract used by this checker changed
 - ProblemContract SHA-256: `719230edd088c52a5468eed8090579e5eef1bf85d8a56e633350063108f345ec`
 
 ## Consumer result
 - C37 exact `d(7)=6`: **160/160 PASS**.
   - 156 merged `delete {0,2}` rules.
-  - four independently rediscovered merged-search residuals `Y4/0,4,16,20`, all closed by bare `delete 3`.
+  - four clean-room rediscovered merged-search residuals `Y4/0,4,16,20`, all closed by bare `delete 3`.
   - all complete valid Q colourings: **21,732**.
   - equal R+ lifts: **16,536**; strict R+ lifts: **5,196**; failures: **0**.
 - S08 P10--P14 under the frozen `ATC_any_old` lane: **5/5 PASS**.
@@ -19,12 +21,12 @@
   - `strict_zero_new`: strong-profile / zero-new / intersection = `6/101/0`, `6/101/0`, `3/113/0`, `3/113/0`, `3/113/0`.
   - P12 `ATC_deleted_only` witness: `V/E/F=13/30/19`, strong-profile `3`, deleted-anchor `140`, intersection `0`.
 - S09 remaining guard-child set: **NOT_VERIFIABLE_MISSING_SOURCE**.
-  Current main supplies no repository-bound exact remaining S09 registry, row set, or per-row source digests. The only S09 item in C48 is unbound `S09_C5` with digest `40841798d17fc6930c9d9036d1225e7a79c00bd81d9aeacbbdd94df1f6e012f0`, corroborating C37 160/160 rather than identifying the requested remaining child set.
+  Final main still supplies no repository-bound exact remaining S09 registry, row set, or per-row source digests. The only S09 item in C48 is unbound `S09_C5` with digest `40841798d17fc6930c9d9036d1225e7a79c00bd81d9aeacbbdd94df1f6e012f0`, corroborating C37 160/160 rather than identifying the requested remaining child set. S01 Cycle 2 independently leaves S09 UNKNOWN pending exactly that remaining-child set after ancestor subtraction.
 
 ## Required checks
 Alias normalization precedes geometry. Faces and deletion holes are derived from rotation. Controlled complete stars are checked. Every accepted rule is strictly smaller and a simple planar orientation; reverse-arc conditions are discharged only by an actual parent edge, a declared complete star, or the exact source-noncofaciality interface where permitted. `valid_Q_count>0`; every complete valid Q colouring is enumerated; each receives a same-boundary valid P lift; both-colour positive reachability satisfies `R_P^+ ⊆ R_Q^+`.
 
-The arbitrary-exterior theorem interface is the full R+ condition. In addition, the frozen run executed 1,800 bounded cofacial return-path gluing canaries; none produced a counterexample.
+The arbitrary-exterior theorem interface is the full R+ condition. In addition, the frozen run executed 1,800 bounded cofacial return-path gluing canaries; none produced a counterexample. The canaries are stress tests, not the proof of arbitrary-exterior soundness.
 
 ## Mutation receipt
 All 8 required mutants were killed: dropping complete-Q, R+, embedding, reverse guards, complete stars, alias handling, nonvacuity, or strictness admits its dedicated invalid canary.
