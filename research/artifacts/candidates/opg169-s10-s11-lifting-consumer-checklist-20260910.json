@@ -1,0 +1,26 @@
+{
+  "format": "opg169-s10-s11-lifting-consumer-checklist-v1",
+  "verdict": "candidate_only",
+  "root_closed": false,
+  "base_revision": "b742c72f1d50849bd074f1f7f7f6e2ed019870c4",
+  "checks": [
+    {"id": "positive_R", "status": "PASS", "basis": "C13/C31/C34/C37 all use positive-length reachability; empty path excluded"},
+    {"id": "complete_Q", "status": "PASS", "basis": "generic theorem quantifies over every valid complete Q colouring; S10 mutation requires it"},
+    {"id": "same_boundary", "status": "PASS", "basis": "required explicitly before gluing"},
+    {"id": "R_inclusion_both_colours", "status": "PASS", "basis": "monotonicity of C13 exact gluing relation"},
+    {"id": "repeated_boundary_visits", "status": "PASS", "basis": "C13 cuts at consecutive visits and uses cyclic relation chains"},
+    {"id": "shared_boundary_edges", "status": "PASS", "basis": "consistent directions, counted once; direct arc is positive path"},
+    {"id": "zero_length_hazard", "status": "PASS", "basis": "R+ is irreflexive positive reachability"},
+    {"id": "disconnected_patch", "status": "PASS", "basis": "connectivity not used by relation criterion"},
+    {"id": "pinched_two_region", "status": "PASS", "basis": "C34 applies same proof with two complementary regions sharing a port"},
+    {"id": "aliases", "status": "PASS_CONDITIONAL", "basis": "alias quotient must be frozen before defining B and ownership"},
+    {"id": "all_exterior_contacts", "status": "PASS_CONDITIONAL", "basis": "no patch-interior/exterior-interior arc; complete stars/saturation provide row certificates"},
+    {"id": "reverse_guards", "status": "PASS_CONDITIONAL", "basis": "class preservation is outside lifting implication and must be row-bound"},
+    {"id": "planar_simple_orientation", "status": "PASS_CONDITIONAL", "basis": "required for minimal-counterexample corollary, not generic colour-lift implication"},
+    {"id": "strict_descent", "status": "PASS_CONDITIONAL", "basis": "required only to invoke minimum-order minimality"},
+    {"id": "tournament_ordinary_specialization", "status": "PASS", "basis": "common exact tournament determines same-colour boundary order/reachability"},
+    {"id": "generic_ordinary_only", "status": "FAIL", "basis": "missing return relation can close with an exterior reverse return"},
+    {"id": "s11_repository_identity", "status": "NOT_VERIFIABLE_MISSING_SOURCE", "basis": "no S11 branch/PR/candidate/packet/Issue-bound theorem locator at frozen base"},
+    {"id": "trusted_verifier", "status": "UNKNOWN", "basis": "none present"}
+  ]
+}
