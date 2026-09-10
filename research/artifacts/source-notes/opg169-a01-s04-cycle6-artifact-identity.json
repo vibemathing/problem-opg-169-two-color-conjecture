@@ -1,0 +1,99 @@
+{
+  "format": "opg169-s04-cycle6-artifact-identity-v1",
+  "verdict": "candidate_only",
+  "root_closed": false,
+  "best_verified_result": "none",
+  "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+  "problem_id": "problem:opg-169-two-color-conjecture",
+  "attempt_id": "attempt:web-20260906-opg169-a01",
+  "route_id": "route:minimal-counterexample-structure-v1",
+  "specialist": "S04",
+  "artifact_id": "artifact:opg169-a01-s04-cycle6-identity",
+  "base_revision": "2a72d159ed8bd79fe31b9522f84c0e1c729913e5",
+  "identity_kind": "repository_specialist_identity_only",
+  "disposition_after_binding": "STANDBY",
+  "pre_binding_state": {
+    "source": "research/artifacts/candidates/opg169-s10-cycle3-s11c4-s04-ownership-consumer-20260910.md",
+    "source_commit": "fa0b94b59eebeb2a1b5d123dc9e07ff03fc840b0",
+    "statement": "S04_ARTIFACT_BINDING = NOT_VERIFIABLE_MISSING_SOURCE"
+  },
+  "identity_effect": {
+    "repository_specialist_locator": "research/artifacts/source-notes/opg169-a01-s04-cycle6-artifact-identity.json",
+    "status_after_merge": "REPOSITORY_BOUND_IDENTITY_ONLY",
+    "mathematical_content_promotion": "none",
+    "theorem_identity_promotion": "none",
+    "trusted_verification_promotion": "none"
+  },
+  "repository_bound_content_sources": [
+    {
+      "role": "canonical_two_hole_geometry",
+      "path": "research/artifacts/candidates/opg169-a01-c43-c41-geometry.json",
+      "git_blob": "4242925c0443c0e62e8565d00646cb12f1b1de8e"
+    },
+    {
+      "role": "canonical_geometry_proof",
+      "path": "research/artifacts/candidates/opg169-a01-c43-geometry-recovery-proof.md",
+      "git_blob": "dc375839623bf9a3a210e72d949b3734ddcc4f18",
+      "sha256": "5d9baae3cc2e00f03f6b992613aa0a079146808c7e53d94c34ccf98c04aea1e9"
+    },
+    {
+      "role": "bounded_c47_negative",
+      "path": "research/artifacts/candidates/opg169-a01-c47-two-hole-point-proof.md",
+      "git_blob": "95fb8c8f7b4eac56c662e2703ba17679f3fe5e52",
+      "sha256": "3a6e894c607a8c73f59291c0094efacab9f2bfbaa117ed33907af5d266321339"
+    },
+    {
+      "role": "repository_derived_s04_ownership_matrix",
+      "path": "research/artifacts/candidates/opg169-s10-cycle3-s04-ownership-matrix-20260910.json",
+      "git_blob": "f09573213a220331322e4699bc5d03400067204f",
+      "source_commit": "fa0b94b59eebeb2a1b5d123dc9e07ff03fc840b0"
+    },
+    {
+      "role": "repository_derived_s04_ownership_consumer",
+      "path": "research/artifacts/candidates/opg169-s10-cycle3-s11c4-s04-ownership-consumer-20260910.md",
+      "git_blob": "52ce230cd58162e6e82738a035cd23fd61b5a2a7",
+      "source_commit": "fa0b94b59eebeb2a1b5d123dc9e07ff03fc840b0"
+    }
+  ],
+  "session_receipt_fingerprints": {
+    "status": "fingerprints_only_not_repository_source_locators",
+    "cycle3": {
+      "source_complete_checker_sha256": "315fa2c23748be583b360b5cba740d9fc455a1dfee4c0fa4b493090ff0310766",
+      "source_complete_output_sha256": "db979177169ff2cfcb1e7215dce00d84e03ddcbfcf2c87b0f09a8ffa961dd69b",
+      "alias_ledger_sha256": "ce5e9489b096a8a4b862ed7565ca6e7b2970e088df8e992817818ba8691aee68",
+      "audit_note_sha256": "0e19991dafbdb173cfe0515bb24693dd663aa9ff4c30a9e045f535ca581d3a50"
+    },
+    "cycle4": {
+      "cleanroom_consumer_sha256": "e72dedd7ffaf6067f97fdedac1a45fcbafba2ea584b05188713806b5cef783bb",
+      "cleanroom_certificates_sha256": "dde836176d716150a70763564260d2e824ee3e97792aa1916cb1258ab4d1dee9",
+      "cleanroom_output_sha256": "53857e56a1975ebb362e1d295a0739284d968f9d65f17d8e60f157fb44e2f950",
+      "audit_note_sha256": "7dee6291fb3cc7bc413aed07bd0fd8b8ce432b07246960294bda867973a014b5"
+    },
+    "cycle5": {
+      "canonical_producer_output_sha256": "ed3a8280425a6f33e0514ffb9dc6a5fcc32c448dac7e35ce4c792a788afa3a4b",
+      "producer_commitment_rebuild_sha256": "dc0f938fe3e50d72ab1d0a483a7452d643856e82e385bff813561112be3815ba",
+      "verifiable_transport_manifest_sha256": "ac941b35d9f7df1d6395549dc3cc696f22ac11fed298f95723405c444213b64c",
+      "transport_verifier_sha256": "d7547b81a2acf7ed40827e60c18a6f02b77af7483e3972c2c7fdad87df9b2b16",
+      "audit_note_sha256": "a9608139b8c9e1c89da29811e446ea07d572f0752e6088d334bf9bb027d41f69"
+    }
+  },
+  "frozen_s04_scope": {
+    "two_hole_separator": [8, 12],
+    "hole_13": [7, 8, 16, 12],
+    "hole_14": [8, 15, 12, 17],
+    "hole_edge_intersection": [],
+    "guard_arc": [8, 12],
+    "guard_owner_unabsorbed": "exterior",
+    "c47_full_boundary": [7, 8, 16, 12, 15, 17],
+    "c47_pair_count": 8136,
+    "c47_scope": "delete {13,14}; at most one new nonisolated internal vertex total; owning-disk edges only",
+    "one_terminal_meet_only_at_12": "RETIRED_SOURCE_INVALID"
+  },
+  "nonclaims": [
+    "This source note creates repository identity only; it proves no new mathematical statement.",
+    "Cycle 3-5 local/session artifacts listed by digest are not silently promoted to repository source files.",
+    "C47 is not extrapolated beyond its exact bounded class.",
+    "No EvidenceLink, Result, Solution, trusted independent verification, or root closure is created."
+  ],
+  "standby_policy": "After repository binding, S04 remains STANDBY. Reactivate only for source drift in C43/C47/S10 ownership, a verifier mismatch, or an explicit new S04 obligation."
+}
