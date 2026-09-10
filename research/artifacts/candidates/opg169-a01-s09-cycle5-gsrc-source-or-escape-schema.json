@@ -2,84 +2,287 @@
   "classification": {
     "C37": {
       "alias_quotient": [
-        {"name":"D","reason":"survives","signature":["new","new"],"status":"C37"},
-        {"name":"X4","reason":"x=4 closes the actual degree-three link of 8","signature":[4,"new"],"status":"IMPOSSIBLE"},
-        {"name":"X5","reason":"survives","signature":[5,"new"],"status":"C37"},
-        {"name":"X6","reason":"survives","signature":[6,"new"],"status":"C37"},
-        {"name":"Y4","reason":"survives","signature":["new",4],"status":"C37"},
-        {"name":"Y5","reason":"survives","signature":["new",5],"status":"C37"},
-        {"name":"Y6","reason":"y=6 closes the actual degree-three link of 11","signature":["new",6],"status":"IMPOSSIBLE"},
-        {"name":"O45","reason":"x=4 link obstruction at 8","signature":[4,5],"status":"IMPOSSIBLE"},
-        {"name":"O46","reason":"x=4 and y=6 link obstructions","signature":[4,6],"status":"IMPOSSIBLE"},
-        {"name":"O54","reason":"two stipulated faces require different successors of the same dart at 5","signature":[5,4],"status":"IMPOSSIBLE"},
-        {"name":"O56","reason":"y=6 link obstruction at 11","signature":[5,6],"status":"IMPOSSIBLE"},
-        {"name":"O64","reason":"9 vertices and 23 edges violate e<=3v-6","signature":[6,4],"status":"IMPOSSIBLE"},
-        {"name":"O65","reason":"two stipulated faces require different successors of the same dart at 6","signature":[6,5],"status":"IMPOSSIBLE"}
+        {
+          "name": "D",
+          "reason": "survives",
+          "signature": [
+            "new",
+            "new"
+          ],
+          "status": "C37"
+        },
+        {
+          "name": "X4",
+          "reason": "x=4 closes the actual degree-three link of 8",
+          "signature": [
+            4,
+            "new"
+          ],
+          "status": "IMPOSSIBLE"
+        },
+        {
+          "name": "X5",
+          "reason": "survives",
+          "signature": [
+            5,
+            "new"
+          ],
+          "status": "C37"
+        },
+        {
+          "name": "X6",
+          "reason": "survives",
+          "signature": [
+            6,
+            "new"
+          ],
+          "status": "C37"
+        },
+        {
+          "name": "Y4",
+          "reason": "survives",
+          "signature": [
+            "new",
+            4
+          ],
+          "status": "C37"
+        },
+        {
+          "name": "Y5",
+          "reason": "survives",
+          "signature": [
+            "new",
+            5
+          ],
+          "status": "C37"
+        },
+        {
+          "name": "Y6",
+          "reason": "y=6 closes the actual degree-three link of 11",
+          "signature": [
+            "new",
+            6
+          ],
+          "status": "IMPOSSIBLE"
+        },
+        {
+          "name": "O45",
+          "reason": "x=4 link obstruction at 8",
+          "signature": [
+            4,
+            5
+          ],
+          "status": "IMPOSSIBLE"
+        },
+        {
+          "name": "O46",
+          "reason": "x=4 and y=6 link obstructions",
+          "signature": [
+            4,
+            6
+          ],
+          "status": "IMPOSSIBLE"
+        },
+        {
+          "name": "O54",
+          "reason": "two stipulated faces require different successors of the same dart at 5",
+          "signature": [
+            5,
+            4
+          ],
+          "status": "IMPOSSIBLE"
+        },
+        {
+          "name": "O56",
+          "reason": "y=6 link obstruction at 11",
+          "signature": [
+            5,
+            6
+          ],
+          "status": "IMPOSSIBLE"
+        },
+        {
+          "name": "O64",
+          "reason": "9 vertices and 23 edges violate e<=3v-6",
+          "signature": [
+            6,
+            4
+          ],
+          "status": "IMPOSSIBLE"
+        },
+        {
+          "name": "O65",
+          "reason": "two stipulated faces require different successors of the same dart at 6",
+          "signature": [
+            6,
+            5
+          ],
+          "status": "IMPOSSIBLE"
+        }
       ],
       "bit_semantics": "bit i=1 reverses the listed role edge, bit i=0 keeps it",
       "families": {
         "D": {
-          "complementary_regions": [[4,8,12,13,11,6,5]],
-          "patch_rotation": {"0":[2,6,5,4,3],"11":[6,2,7,13],"12":[13,7,8],"13":[11,7,12],"2":[0,3,7,11,6],"3":[0,4,8,7,2],"4":[8,3,0,5],"5":[4,0,6],"6":[5,0,2,11],"7":[2,3,8,12,13,11],"8":[12,7,3,4]},
-          "source_triangles": [[0,2,3],[0,6,2],[0,5,6],[0,4,5],[0,3,4],[2,7,3],[2,11,7],[2,6,11],[3,8,4],[3,7,8],[8,7,12],[12,7,13],[7,11,13]],
-          "x":12,"y":13
+          "complementary_regions": [
+            [
+              4,
+              8,
+              12,
+              13,
+              11,
+              6,
+              5
+            ]
+          ],
+          "patch_rotation": {
+            "0": [
+              2,
+              6,
+              5,
+              4,
+              3
+            ],
+            "11": [
+              6,
+              2,
+              7,
+              13
+            ],
+            "12": [
+              13,
+              7,
+              8
+            ],
+            "13": [
+              11,
+              7,
+              12
+            ],
+            "2": [
+              0,
+              3,
+              7,
+              11,
+              6
+            ],
+            "3": [
+              0,
+              4,
+              8,
+              7,
+              2
+            ],
+            "4": [
+              8,
+              3,
+              0,
+              5
+            ],
+            "5": [
+              4,
+              0,
+              6
+            ],
+            "6": [
+              5,
+              0,
+              2,
+              11
+            ],
+            "7": [
+              2,
+              3,
+              8,
+              12,
+              13,
+              11
+            ],
+            "8": [
+              12,
+              7,
+              3,
+              4
+            ]
+          },
+          "source_triangles": [
+            [0,2,3],[0,6,2],[0,5,6],[0,4,5],[0,3,4],
+            [2,7,3],[2,11,7],[2,6,11],[3,8,4],[3,7,8],
+            [8,7,12],[12,7,13],[7,11,13]
+          ],
+          "x": 12,
+          "y": 13
         },
         "X5": {
           "complementary_regions": [[4,8,5],[5,13,11,6]],
-          "patch_rotation": {"0":[2,6,5,4,3],"11":[6,2,7,13],"13":[11,7,5],"2":[0,3,7,11,6],"3":[0,4,8,7,2],"4":[8,3,0,5],"5":[4,0,6,13,7,8],"6":[5,0,2,11],"7":[2,3,8,5,13,11],"8":[5,7,3,4]},
+          "patch_rotation": {
+            "0": [2,6,5,4,3],
+            "11": [6,2,7,13],
+            "13": [11,7,5],
+            "2": [0,3,7,11,6],
+            "3": [0,4,8,7,2],
+            "4": [8,3,0,5],
+            "5": [4,0,6,13,7,8],
+            "6": [5,0,2,11],
+            "7": [2,3,8,5,13,11],
+            "8": [5,7,3,4]
+          },
           "source_triangles": [[0,2,3],[0,6,2],[0,5,6],[0,4,5],[0,3,4],[2,7,3],[2,11,7],[2,6,11],[3,8,4],[3,7,8],[8,7,5],[5,7,13],[7,11,13]],
-          "x":5,"y":13
+          "x": 5,
+          "y": 13
         },
         "X6": {
           "complementary_regions": [[4,8,6,5],[6,13,11]],
           "patch_rotation": {"0":[2,6,5,4,3],"11":[6,2,7,13],"13":[11,7,6],"2":[0,3,7,11,6],"3":[0,4,8,7,2],"4":[8,3,0,5],"5":[4,0,6],"6":[5,0,2,11,13,7,8],"7":[2,3,8,6,13,11],"8":[6,7,3,4]},
           "source_triangles": [[0,2,3],[0,6,2],[0,5,6],[0,4,5],[0,3,4],[2,7,3],[2,11,7],[2,6,11],[3,8,4],[3,7,8],[8,7,6],[6,7,13],[7,11,13]],
-          "x":6,"y":13
+          "x": 6,
+          "y": 13
         },
         "Y4": {
           "complementary_regions": [[4,8,12],[4,11,6,5]],
           "patch_rotation": {"0":[2,6,5,4,3],"11":[6,2,7,4],"12":[4,7,8],"2":[0,3,7,11,6],"3":[0,4,8,7,2],"4":[8,3,0,5,11,7,12],"5":[4,0,6],"6":[5,0,2,11],"7":[2,3,8,12,4,11],"8":[12,7,3,4]},
           "source_triangles": [[0,2,3],[0,6,2],[0,5,6],[0,4,5],[0,3,4],[2,7,3],[2,11,7],[2,6,11],[3,8,4],[3,7,8],[8,7,12],[12,7,4],[7,11,4]],
-          "x":12,"y":4
+          "x": 12,
+          "y": 4
         },
         "Y5": {
           "complementary_regions": [[4,8,12,5],[5,11,6]],
           "patch_rotation": {"0":[2,6,5,4,3],"11":[6,2,7,5],"12":[5,7,8],"2":[0,3,7,11,6],"3":[0,4,8,7,2],"4":[8,3,0,5],"5":[4,0,6,11,7,12],"6":[5,0,2,11],"7":[2,3,8,12,5,11],"8":[12,7,3,4]},
           "source_triangles": [[0,2,3],[0,6,2],[0,5,6],[0,4,5],[0,3,4],[2,7,3],[2,11,7],[2,6,11],[3,8,4],[3,7,8],[8,7,12],[12,7,5],[7,11,5]],
-          "x":12,"y":5
+          "x": 12,
+          "y": 5
         }
       },
-      "parent_id":"family+'/'+decimal(word)",
-      "predicate":"d7==6",
-      "registry_effect":"After exact parent identity is established, R160 supplies the imported strict reduction; it is not an occurrence generator.",
-      "required":["wedge_neighbors_exactly_two","alias_signature","family","word","parent_id","family_template_match"],
-      "word_roles":[["8","x"],["x","7"],["x","y"],["y","7"],["y","11"]]
+      "parent_id": "family+'/'+decimal(word)",
+      "predicate": "d7==6",
+      "registry_effect": "After exact parent identity is established, R160 supplies the imported strict reduction; it is not an occurrence generator.",
+      "required": ["wedge_neighbors_exactly_two","alias_signature","family","word","parent_id","family_template_match"],
+      "word_roles": [["8","x"],["x","7"],["x","y"],["y","7"],["y","11"]]
     },
     "J_HIGHPORT": {
-      "disjoint_from_C37":"degree: d7>=7 versus d7=6",
-      "escape_key":"J_HIGHPORT/d7/<canonical alias+direction digest>",
-      "predicate":"d7>=7",
-      "required":["exact_full_star_7","ordered_wedge_neighbors","actual_wedge_faces","alias_signature","direction_signature","escape_key"]
+      "disjoint_from_C37": "degree: d7>=7 versus d7=6",
+      "escape_key": "J_HIGHPORT/d7/<canonical alias+direction digest>",
+      "predicate": "d7>=7",
+      "required": ["exact_full_star_7","ordered_wedge_neighbors","actual_wedge_faces","alias_signature","direction_signature","escape_key"]
     }
   },
-  "format":"opg169-s09-cycle5-gsrc-source-or-escape-schema-v1",
+  "format": "opg169-s09-cycle5-gsrc-source-or-escape-schema-v1",
   "input_contract": {
-    "complete_star_rotations":{"0":[2,6,5,4,3],"2":[0,3,7,11,6],"3":[0,4,8,7,2]},
-    "controlled_vertices":[0,2,3,7],
-    "core_arcs":[[0,2],[0,4],[2,3],[2,6],[2,11],[3,0],[3,4],[3,7],[4,5],[4,8],[5,0],[5,6],[6,0],[7,2],[7,8],[8,3],[11,6],[11,7]],
-    "core_faces":[[0,2,3],[0,6,2],[0,5,6],[0,4,5],[0,3,4],[2,7,3],[2,11,7],[2,6,11],[3,8,4],[3,7,8]],
-    "fixed_7_anchor_order":[2,3,8,"wedge...",11],
-    "old_alias_ports":[4,5,6],
-    "ownership_rule":"Every edge/face used to certify the selected-J source is source-owned; all remaining contacts/arcs are exterior-owned. Alias normalization renames role symbols only and never merges distinct actual vertices.",
-    "payer_rule":"Carry original DC2 payer/source keys unchanged. No payer is invented by classification or by R160.",
-    "provenance_descriptor":["F","p","or","SG","p","g"],
-    "requires_actual_source_bound":true,
-    "requires_minimum_counterexample_selected_J_lower_bound":"d(7)>=6 from preserved C36 dependencies",
-    "selected_J_face":[0,2,3]
+    "complete_star_rotations": {"0":[2,6,5,4,3],"2":[0,3,7,11,6],"3":[0,4,8,7,2]},
+    "controlled_vertices": [0,2,3,7],
+    "core_arcs": [[0,2],[0,4],[2,3],[2,6],[2,11],[3,0],[3,4],[3,7],[4,5],[4,8],[5,0],[5,6],[6,0],[7,2],[7,8],[8,3],[11,6],[11,7]],
+    "core_faces": [[0,2,3],[0,6,2],[0,5,6],[0,4,5],[0,3,4],[2,7,3],[2,11,7],[2,6,11],[3,8,4],[3,7,8]],
+    "fixed_7_anchor_order": [2,3,8,"wedge...",11],
+    "old_alias_ports": [4,5,6],
+    "ownership_rule": "Every edge/face used to certify the selected-J source is source-owned; all remaining contacts/arcs are exterior-owned. Alias normalization renames role symbols only and never merges distinct actual vertices.",
+    "payer_rule": "Carry original DC2 payer/source keys unchanged. No payer is invented by classification or by R160.",
+    "provenance_descriptor": ["F","p","or","SG","p","g"],
+    "requires_actual_source_bound": true,
+    "requires_minimum_counterexample_selected_J_lower_bound": "d(7)>=6 from preserved C36 dependencies",
+    "selected_J_face": [0,2,3]
   },
-  "nonclaims":["No D0->R160.","No source occurrence is manufactured from reduction coverage.","No classification of the high-port escape beyond its exact source record.","No GSRC totality for arbitrary Desc48 descriptions.","No root closure."],
-  "root_closed":false,
-  "row_required_fields":["occurrence_id","provenance","selected_J","actual_embedding","ownership","payments","classification"],
-  "scope":"Already actual, source-bound selected C35/C36 J occurrence with provenance; classifies the selected-J source only. Does not generate occurrence from D0.",
-  "verdict":"candidate_only"
+  "nonclaims": ["No D0->R160.","No source occurrence is manufactured from reduction coverage.","No classification of the high-port escape beyond its exact source record.","No GSRC totality for arbitrary Desc48 descriptions.","No root closure."],
+  "root_closed": false,
+  "row_required_fields": ["occurrence_id","provenance","selected_J","actual_embedding","ownership","payments","classification"],
+  "scope": "Already actual, source-bound selected C35/C36 J occurrence with provenance; classifies the selected-J source only. Does not generate occurrence from D0.",
+  "verdict": "candidate_only"
 }
