@@ -93,8 +93,8 @@ FAIL = 0
 NOT_VERIFIABLE_CORRUPT_TRANSPORT = 46
 ```
 
-The 46 slots in the companion JSON are ordinal audit slots only; they are
-explicitly not claimed to be S13 source row identifiers.
+Ordinal audit slots `1..46` are all assigned this source-blocked disposition;
+none of those ordinals is claimed to be an S13 source row identifier.
 
 ## 4. Why S10 does not repair the missing byte
 
