@@ -1,0 +1,82 @@
+{
+  "format": "opg169-s10-s11-lifting-source-chain-v1",
+  "verdict": "candidate_only",
+  "root_closed": false,
+  "fresh_base": "b742c72f1d50849bd074f1f7f7f6e2ed019870c4",
+  "s11_artifact_binding": "NOT_VERIFIABLE_MISSING_SOURCE",
+  "lift_o_theorem_content": "PASS_CANDIDATE",
+  "ownership_contract": "PASS_CANDIDATE_CONDITIONAL_ON_ROW_SOURCE",
+  "trusted_verifier_receipt": "absent",
+  "chain": [
+    {
+      "order": 1,
+      "path": "research/artifacts/candidates/opg169-a01-c13-boundary-automaton.md",
+      "git_blob": "0a61e301ef80079f9cde90cc1bd4aa5d82e60260",
+      "role": "generic exact gluing theorem: positive boundary reachability and no-cross-interior ownership"
+    },
+    {
+      "order": 2,
+      "path": "research/artifacts/candidates/opg169-a01-c31-strip-reduction.md",
+      "git_blob": "41d4bfce5efbb90ba39d6a16ef79b18258ec6c43",
+      "role": "one-sided smaller-patch replacement, shared-boundary ownership and reverse-arc class guards"
+    },
+    {
+      "order": 3,
+      "path": "research/artifacts/candidates/opg169-a01-nine-donor-proof-20260908.md",
+      "git_blob": "40215abc9799fb0b9e9d85eeec9ae371c2eb223a",
+      "role": "saturated-star ownership and pinched/two-region interface application"
+    },
+    {
+      "order": 4,
+      "path": "research/artifacts/candidates/opg169-a01-s06-c05-universal-fan-backtrace.md",
+      "git_blob": "25718159fd3a8403d3d2e0d123337a0c90e34829",
+      "role": "complete-Q and R+ row-level instantiation with arbitrary exterior"
+    },
+    {
+      "order": 5,
+      "path": "research/artifacts/candidates/opg169-a01-c48-live-frontier-proof.md",
+      "git_blob": "2ae68b69ca5de217ea923e2dac08cd70ea2cf3fe",
+      "role": "exact-parent dominance packaging; ownership inherited rather than recreated"
+    },
+    {
+      "order": 6,
+      "path": "research/artifacts/source-notes/opg169-s10-cleanroom-consumer-receipt.md",
+      "git_blob": "3d3fd3c250796c936bcf7f63905e6cfeb7acd61d",
+      "role": "clean-room finite row semantics and mutation canaries"
+    },
+    {
+      "order": 7,
+      "path": "research/artifacts/candidates/opg169-a01-s01-cycle3-source-cut-repair-20260910.md",
+      "git_blob": "fcc40a0137fe225cbc991020f75b5a1b08d76a7b",
+      "role": "live DAG consumer: LIFT-O remains theorem/verification UNKNOWN pending S11+S10"
+    }
+  ],
+  "specialization": {
+    "path": "research/artifacts/candidates/opg169-a01-c11-triangular-interface.md",
+    "git_blob": "4e108aaa278bc9316ec16fa15e26d7256fbcd9e2",
+    "scope": "exact common tournament interface; ordinary same-boundary extension determines R+ and is sufficient only in this specialization"
+  },
+  "required_row_ownership_fields": [
+    "alias_quotient",
+    "boundary_B",
+    "P_internal_vertices",
+    "Q_internal_vertices",
+    "exterior_contact_vertices",
+    "arc_ownership_P_Q_exterior_shared",
+    "shared_arc_direction_agreement",
+    "no_unrecorded_internal_exterior_arc",
+    "complete_valid_Q_quantifier",
+    "same_boundary_valid_P_lift",
+    "both_colour_positive_R_plus_inclusion",
+    "class_preservation_guards",
+    "strict_order_decrease_for_minimality"
+  ],
+  "nonclaims": [
+    "no repository-bound S11 theorem identity",
+    "no trusted independent verification",
+    "no anchored-to-ordinary conversion",
+    "no GSRC or unique L_join",
+    "no B-criticality or global termination",
+    "no EvidenceLink, Result or root closure"
+  ]
+}
