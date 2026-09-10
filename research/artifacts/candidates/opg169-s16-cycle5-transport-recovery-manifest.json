@@ -1,0 +1,213 @@
+{
+  "classification": "transport_only",
+  "current_main_context": {
+    "latest_main_candidate": "C46 degree-four octahedral guard child",
+    "main_revision": "a0b2908f88ef017d6bd58e7fb006a2c7135589ec",
+    "relationship": "later main work through C46 is not incorporated into the historical S16 sources during this transport-only recovery"
+  },
+  "format": "opg169-s16-cycle5-transport-recovery-v3",
+  "fresh_local_integrity_replay": {
+    "cycle4_static_audit_replay_exact_match": "pass",
+    "d19_ledger_replay_exact_match": "pass",
+    "encoded_artifact_decode_hashes": "pass",
+    "json_parse": "pass",
+    "lake_available": false,
+    "lean_available": false,
+    "python_compile": "pass"
+  },
+  "historical_math_base_revision": "dc6ee891ed7614602e88d48a57314416082dd022",
+  "issue_number": 3,
+  "logical_payload": [
+    {
+      "decoded_byte_preserved": true,
+      "decoded_transport_sha256": "75d22d7d8fa135c7ae0b030eb69ae88aeffc352a35f805123ddfb142e824942b",
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle2-formalization-receipt.json",
+      "role": "candidate formalization metadata; not a trusted verifier receipt",
+      "source_basename": "opg169-s16-cycle2-formalization-receipt.json",
+      "source_sha256": "75d22d7d8fa135c7ae0b030eb69ae88aeffc352a35f805123ddfb142e824942b",
+      "transport_bytes": 1909,
+      "transport_lines": 61,
+      "transport_normalized": false,
+      "transport_representation": "direct_utf8",
+      "transport_sha256": "75d22d7d8fa135c7ae0b030eb69ae88aeffc352a35f805123ddfb142e824942b"
+    },
+    {
+      "decoded_byte_preserved": true,
+      "decoded_transport_sha256": "f65630752130d629ca6b0fa31069ac0d483ed8873cbc31cf0d35821c86f58534",
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle2-shortest-root-cut.lean",
+      "role": "Cycle 2 Lean source candidate",
+      "source_basename": "opg169-s16-cycle2-shortest-root-cut.lean",
+      "source_sha256": "f65630752130d629ca6b0fa31069ac0d483ed8873cbc31cf0d35821c86f58534",
+      "transport_bytes": 2888,
+      "transport_lines": 84,
+      "transport_normalized": false,
+      "transport_representation": "direct_utf8",
+      "transport_sha256": "f65630752130d629ca6b0fa31069ac0d483ed8873cbc31cf0d35821c86f58534"
+    },
+    {
+      "decoded_byte_preserved": false,
+      "decoded_transport_sha256": "44efe02b370341f3c020ea5cf07346f7526f019eb6ba45158e0b40d4dd83b862",
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle3-formalization-receipt.json",
+      "role": "transport-normalized candidate formalization metadata; not a trusted verifier receipt",
+      "source_basename": "opg169-s16-cycle3-formalization-receipt.json",
+      "source_sha256": "e48b7d92785655f90f435594b3607781b0d366b6bde012a29d8127444f4bdfb5",
+      "transport_bytes": 12981,
+      "transport_lines": 430,
+      "transport_normalized": true,
+      "transport_representation": "direct_utf8",
+      "transport_sha256": "44efe02b370341f3c020ea5cf07346f7526f019eb6ba45158e0b40d4dd83b862"
+    },
+    {
+      "decoded_byte_preserved": true,
+      "decoded_transport_sha256": "eeb4b7c513d08595284d00093142a875ac6417e09719039b4a2282a8fc3c4c96",
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle3-proof-map.md",
+      "role": "Cycle 3 proof/dependency map",
+      "source_basename": "opg169-s16-cycle3-proof-map.md",
+      "source_sha256": "eeb4b7c513d08595284d00093142a875ac6417e09719039b4a2282a8fc3c4c96",
+      "transport_bytes": 7881,
+      "transport_lines": 264,
+      "transport_normalized": false,
+      "transport_representation": "direct_utf8",
+      "transport_sha256": "eeb4b7c513d08595284d00093142a875ac6417e09719039b4a2282a8fc3c4c96"
+    },
+    {
+      "decoded_byte_preserved": true,
+      "decoded_transport_sha256": "24957608b453a102e70ad87465c3780b75861de697fcb121b0e7ddf78e72fc14",
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle3-substantive-glue-kernel.lean.zlib.b64",
+      "role": "Cycle 3 Lean source candidate",
+      "source_basename": "opg169-s16-cycle3-substantive-glue-kernel.lean",
+      "source_sha256": "24957608b453a102e70ad87465c3780b75861de697fcb121b0e7ddf78e72fc14",
+      "transport_bytes": 7937,
+      "transport_lines": 1,
+      "transport_normalized": false,
+      "transport_representation": "zlib+base64",
+      "transport_sha256": "fe2b1ca2982c05dc3f33cbe04430b14125a839e7b10b8215f3edf2cd2cccff62"
+    },
+    {
+      "decoded_byte_preserved": true,
+      "decoded_transport_sha256": "40fb13961e19f39ee73efeaf3cf135e5bafeea3f0ad689f2ee2837086923eec5",
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle4-d19-ledger-check.py",
+      "role": "finite D/19 partition replay program",
+      "source_basename": "opg169-s16-cycle4-d19-ledger-check.py",
+      "source_sha256": "40fb13961e19f39ee73efeaf3cf135e5bafeea3f0ad689f2ee2837086923eec5",
+      "transport_bytes": 9966,
+      "transport_lines": 286,
+      "transport_normalized": false,
+      "transport_representation": "direct_utf8",
+      "transport_sha256": "40fb13961e19f39ee73efeaf3cf135e5bafeea3f0ad689f2ee2837086923eec5"
+    },
+    {
+      "decoded_byte_preserved": true,
+      "decoded_transport_sha256": "d53e445880e7b934d0724fe45737ea05a4e0e6b69e9d29e2a3514d6dd860207f",
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle4-d19-ledger.json.zlib.b64",
+      "role": "finite D/19 partition output",
+      "source_basename": "opg169-s16-cycle4-d19-ledger.json",
+      "source_sha256": "d53e445880e7b934d0724fe45737ea05a4e0e6b69e9d29e2a3514d6dd860207f",
+      "transport_bytes": 2337,
+      "transport_lines": 1,
+      "transport_normalized": false,
+      "transport_representation": "zlib+base64",
+      "transport_sha256": "02978797aa048af14e7feafefc49924c8fcd59eaae84e079e51ff44e32943454"
+    },
+    {
+      "decoded_byte_preserved": false,
+      "decoded_transport_sha256": "0d15c8801dd096d80ba3c134e8998105e935ea37c101097624738b2d164864f7",
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle4-formalization-receipt.json.zlib.b64",
+      "role": "transport-normalized candidate formalization metadata; not a trusted verifier receipt",
+      "source_basename": "opg169-s16-cycle4-formalization-receipt.json",
+      "source_sha256": "f8842c8393ecec6445097c466eda5a6bc15f31240b76df034e358436f386db61",
+      "transport_bytes": 4189,
+      "transport_lines": 1,
+      "transport_normalized": true,
+      "transport_representation": "zlib+base64",
+      "transport_sha256": "b90c73e617ff2f67a4e41e95b68a70fe42590a246c9abda75d88f45a4214e2e9"
+    },
+    {
+      "decoded_byte_preserved": true,
+      "decoded_transport_sha256": "9b7e4d87b6efc4e18c7ef83b3e08e28e44a43b13ed53585a24f2a09523d60016",
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle4-normalized-root-cut.lean.zlib.b64",
+      "role": "Cycle 4 Lean source candidate",
+      "source_basename": "opg169-s16-cycle4-normalized-root-cut.lean",
+      "source_sha256": "9b7e4d87b6efc4e18c7ef83b3e08e28e44a43b13ed53585a24f2a09523d60016",
+      "transport_bytes": 13729,
+      "transport_lines": 1,
+      "transport_normalized": false,
+      "transport_representation": "zlib+base64",
+      "transport_sha256": "b62262cf9f6d6cfc5a9f85a9d855d05bc4bf5172bc391cb3ca82ea50aac0939e"
+    },
+    {
+      "decoded_byte_preserved": true,
+      "decoded_transport_sha256": "3c47586dbf43b41e6ee041e8b35078fd11ac4fee91efaab79af82080f0fe8b4b",
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle4-proof-map.md.zlib.b64",
+      "role": "Cycle 4 proof/dependency map",
+      "source_basename": "opg169-s16-cycle4-proof-map.md",
+      "source_sha256": "3c47586dbf43b41e6ee041e8b35078fd11ac4fee91efaab79af82080f0fe8b4b",
+      "transport_bytes": 5337,
+      "transport_lines": 1,
+      "transport_normalized": false,
+      "transport_representation": "zlib+base64",
+      "transport_sha256": "dcf51366db39296808dbcc5d517a7d63d7be64b620831964049175a7f9baebcc"
+    },
+    {
+      "decoded_byte_preserved": true,
+      "decoded_transport_sha256": "c9970af6dacece17c038195efde94c3e6bf9a98fca3f044017811fbd1069f150",
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle4-static-audit.json",
+      "role": "static source-audit output; not kernel evidence",
+      "source_basename": "opg169-s16-cycle4-static-audit.json",
+      "source_sha256": "c9970af6dacece17c038195efde94c3e6bf9a98fca3f044017811fbd1069f150",
+      "transport_bytes": 1214,
+      "transport_lines": 46,
+      "transport_normalized": false,
+      "transport_representation": "direct_utf8",
+      "transport_sha256": "c9970af6dacece17c038195efde94c3e6bf9a98fca3f044017811fbd1069f150"
+    },
+    {
+      "decoded_byte_preserved": true,
+      "decoded_transport_sha256": "afecc691ab0a220fe21811b075e938550252dffc103653b4011ea5d2b4c07b30",
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle4-static-audit.py.zlib.b64",
+      "role": "static source-audit program",
+      "source_basename": "opg169-s16-cycle4-static-audit.py",
+      "source_sha256": "afecc691ab0a220fe21811b075e938550252dffc103653b4011ea5d2b4c07b30",
+      "transport_bytes": 2765,
+      "transport_lines": 1,
+      "transport_normalized": false,
+      "transport_representation": "zlib+base64",
+      "transport_sha256": "49b9f7eef70f049e1feb75c4d9db6dc239cea5b236459c6efa954f79d685482f"
+    }
+  ],
+  "logical_payload_count": 12,
+  "normalization": {
+    "encoded_files": [
+      "opg169-s16-cycle3-substantive-glue-kernel.lean",
+      "opg169-s16-cycle4-d19-ledger.json",
+      "opg169-s16-cycle4-formalization-receipt.json",
+      "opg169-s16-cycle4-normalized-root-cut.lean",
+      "opg169-s16-cycle4-proof-map.md",
+      "opg169-s16-cycle4-static-audit.py"
+    ],
+    "lossless_encoding_count": 6,
+    "metadata_files": [
+      "opg169-s16-cycle3-formalization-receipt.json",
+      "opg169-s16-cycle4-formalization-receipt.json"
+    ],
+    "metadata_path_normalization_count": 2,
+    "reason": "repository policy forbids ephemeral host paths; connector payload robustness is handled by lossless zlib+base64 representation; neither operation strengthens the mathematics"
+  },
+  "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+  "scope_boundaries": [
+    "Cycle 5 adds no mathematical lemma and does not rebase Cycle 2-4 mathematics onto C41-C46.",
+    "Candidate formalization metadata files are not trusted verifier receipts.",
+    "No Lean elaboration, axiom report, independent verification, EvidenceLink, Result, Solution, D/19 frontier completion, global unavoidability join, or root closure is claimed.",
+    "Finite D/19 replay establishes only the frozen 70 = 10 + 24 + 22 + 14 labelled partition."
+  ],
+  "transport_base_revision": "a0b2908f88ef017d6bd58e7fb006a2c7135589ec",
+  "transport_helpers": [
+    {
+      "bytes": 2120,
+      "repository_locator": "research/artifacts/candidates/opg169-s16-cycle5-unpack.py",
+      "role": "deterministic decoder and decoded-byte integrity checker for all encoded artifacts",
+      "sha256": "87c2e13c1ba28b30ac8a4f168e8ff8e5657ad76d03b75d2643d31e3796d69b6a"
+    }
+  ],
+  "verdict": "candidate_only"
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "s16-cycle2-receipt-v1",
+  "verdict": "candidate_only",
+  "assurance_mode": "calibration_blocked_tool_missing",
+  "repository": "vibemathing/problem-opg-169-two-color-conjecture",
+  "frozen_main": "dc6ee891ed7614602e88d48a57314416082dd022",
+  "target_toolchain": "leanprover/lean4:v4.33.0",
+  "artifact": {
+    "path": "opg169-s16-cycle2-shortest-root-cut.lean",
+    "bytes": 2888,
+    "lines": 84,
+    "sha256": "f65630752130d629ca6b0fa31069ac0d483ed8873cbc31cf0d35821c86f58534"
+  },
+  "claim_requested": "Root Plane iff ShortestRootCut Plane, with the forward root closure proved by Nat.strongRecOn",
+  "claim_established": "Lean source authored; no kernel claim established because Lean/lake/elan are absent",
+  "statement_faithfulness": {
+    "status": "conditional",
+    "bound": "finite Fin n vertex sets; loopless no-antiparallel arc relation; full induced monochromatic arcs; positive closed-walk acyclicity",
+    "remaining_adapter": "instantiate Plane with the project concrete planarity predicate and audit finite reindexing against ProblemContract"
+  },
+  "static_audit": {
+    "forbidden_tokens": [
+      "sorry",
+      "admit",
+      "axiom",
+      "unsafe"
+    ],
+    "matches": [],
+    "explicit_classical": false,
+    "imports": [
+      "Init"
+    ],
+    "print_axioms_commands_present": true
+  },
+  "tool_probe": {
+    "lean": {
+      "found": false,
+      "command": "command -v lean",
+      "exit_code": 1
+    },
+    "lake": {
+      "found": false,
+      "command": "command -v lake",
+      "exit_code": 1
+    },
+    "elan": {
+      "found": false,
+      "command": "command -v elan",
+      "exit_code": 1
+    }
+  },
+  "elaboration": {
+    "run": false,
+    "exit_code": null,
+    "classification": "blocked/tool_missing"
+  },
+  "axiom_report": null,
+  "best_verified_result": null,
+  "remaining_obligation": "ShortestRootCut ConcretePlane",
+  "root_closed": false
+}

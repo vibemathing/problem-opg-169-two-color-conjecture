@@ -1,0 +1,46 @@
+{
+  "backend_leaks": {
+    "Good Plane G": false,
+    "Root Plane": false,
+    "TwoColorable Plane G": false
+  },
+  "checks": {
+    "backend_has_no_conclusion_field": true,
+    "cycle3_namespace_preserved": true,
+    "delimiters_balanced": true,
+    "forbidden_counts_zero": true,
+    "lexical_regions_closed": true,
+    "root_theorem_mentions_unavoidability_and_frontier": true,
+    "sparse_rule_has_no_conclusion_field": true,
+    "universal_theorem_mentions_frontier": true
+  },
+  "counts": {
+    "def": 30,
+    "inductive": 9,
+    "print_axioms": 15,
+    "structure": 10,
+    "theorem": 53
+  },
+  "delimiter_error": null,
+  "forbidden": {
+    "admit": 0,
+    "declared_axiom": 0,
+    "sorry": 0,
+    "tactic_hole": 0,
+    "unsafe_declaration": 0
+  },
+  "format": "opg169-s16-cycle4-static-audit-v1",
+  "lean": {
+    "bytes": 45698,
+    "lines": 1183,
+    "path": "opg169-s16-cycle4-normalized-root-cut.lean",
+    "sha256": "9b7e4d87b6efc4e18c7ef83b3e08e28e44a43b13ed53585a24f2a09523d60016"
+  },
+  "scope": "static source audit only; not Lean elaboration or kernel checking",
+  "sparse_rule_leaks": {
+    "Good Plane G": false,
+    "Root Plane": false,
+    "TwoColorable Plane G": false
+  },
+  "status": "ok"
+}
