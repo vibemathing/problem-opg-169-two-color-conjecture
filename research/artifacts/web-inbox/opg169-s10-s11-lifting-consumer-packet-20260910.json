@@ -26,8 +26,8 @@
     "branch": "web/attempt-opg169-s10-s11-lifting-consumer-20260910",
     "issue_number": 3,
     "issue_url": "https://github.com/vibemathing/problem-opg-169-two-color-conjecture/issues/3",
-    "pull_request_number": null,
-    "pull_request_url": null
+    "pull_request_number": 72,
+    "pull_request_url": "https://github.com/vibemathing/problem-opg-169-two-color-conjecture/pull/72"
   },
   "objective": "Consume the ordinary arbitrary-exterior lifting theorem content and its exact repository source/edge-ownership chain in S10, while failing closed on the absence of a repository-bound S11 theorem artifact.",
   "candidate_artifacts": [
