@@ -42,7 +42,7 @@ It tests:
 
 from __future__ import annotations
 import argparse, hashlib, itertools, json, sys
-from collections import defaultdict
+from collections import defaultdict, deque
 
 BASE_ARCS = [
     (0,2),(0,4),(2,3),(2,6),(2,11),(3,0),(3,4),(3,7),
@@ -162,7 +162,10 @@ def structural_check(word):
 def transition_check(word):
     """Check exact edge-split delta from word to word+(bit,) for each bit."""
     n = len(word)
-    terminal = 12 if n == 0 else zname(n)
+    if n == 0:
+        terminal = 12
+    else:
+        terminal = zname(n)
     _, A, _ = build_full(word)
     old = set(A)
     for bit in (0,1):
@@ -317,6 +320,7 @@ def strong_lift(Pword,Qword):
     return not failures, failures
 
 def profile_signature(word):
+    # Full realized relation sets, not minimized.
     by=defaultdict(set)
     for bc,r,bits in states(tuple(word)):
         by[bc].add((tuple(sorted(r[0])),tuple(sorted(r[1]))))
@@ -332,12 +336,14 @@ def main():
     ap.add_argument("--word-max",type=int,default=8)
     args=ap.parse_args()
 
+    # Exact structural family, all-1 spokes.
     structural=[]
     for n in range(1,args.structural_max+1):
         word=(1,)*n
         structural.append(structural_check(word))
         transition_check(word)
 
+    # Natural all-1 profile pump.
     natural=[]
     q0=()
     for n in range(1,args.profile_max+1):
@@ -356,6 +362,7 @@ def main():
     assert natural[0]["fail_boundary_words"] == ["0110","1001"]
     assert all(r["lifts_P0"] for r in natural[1:])
 
+    # Exhaust all source-valid forward-path spoke words.
     word_rows=[]
     irreducible_by_n={}
     p0_fail_by_n={}
@@ -389,6 +396,8 @@ def main():
     for n in range(2,args.word_max+1):
         assert irreducible_by_n[str(n)] == []
 
+    # Exact repeat -> compression sanity: if two prefix profiles are equal,
+    # later strongly lifts earlier.
     repeat_checks=0
     for n in range(1,args.word_max+1):
         for word in itertools.product((0,1),repeat=n):
