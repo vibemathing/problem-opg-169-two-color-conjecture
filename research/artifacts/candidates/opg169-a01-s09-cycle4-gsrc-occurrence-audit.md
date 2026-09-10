@@ -2,55 +2,82 @@
 
 `verdict=candidate_only`; `root_closed=false`; `best_verified_result=none`.
 
-Fresh protected base at construction: `a31eb9646c828e05ed9071f6830a24df28f5b64d`.
+Fresh protected base after Cycle-4 witness-semantics synchronization:
+`a2a9973d2f995de71095a6bea814cbe882cb7718`.
 
-This cycle does **not** enumerate C40 descendants or guard truth cells. It asks the
-opposite-direction question left after Cycle 3: can the exact C37 160-parent
-reduction registry itself force an actual unpaid negative DC2 face to occur in
-one of those source parents?
+This cycle performs **zero descendant census**.  It asks the reverse-source
+question left after Cycle 3: can the exact C37 160-parent conditional reduction
+registry itself force an actual unpaid negative DC2 face to occur in one of
+those parents?
 
-The answer is **no as an inference from the registry**, and current repository
-artifacts do not supply the missing occurrence bridge. The useful positive
-consequence is instead a conditional escape lemma: if the already selected
-C35/C36 J-source occurs in a vertex-minimum counterexample, then the C37
-`d(7)=6` registry eliminates the equality case and the source must have
+The answer is **no as an inference from the registry**.  The repository also
+does not currently supply the missing global-occurrence bridge.  The useful
+positive consequence is instead a conditional escape lemma: if the exact
+selected C35/C36 J-source occurs in a vertex-minimum counterexample, the C37
+`d(7)=6` registry kills the equality case, so that selected source must have
 `d(7)>=7`.
 
-## 1. Frozen inputs and type discipline
+## 1. Frozen inputs and the corrected witness semantics
 
-The Cycle-3 S09 registry freezes exactly five C37 families
+Cycle 3 freezes the exact C37 `d(7)=6` registry
 
 ```text
-D, X5, X6, Y4, Y5
+R160 = {D,X5,X6,Y4,Y5} x {0,...,31},
 ```
 
-and all 32 direction words in each family, for 160 exact C37 source parents.
-It allocates an unconditional strict all-exterior reduction to every parent,
-with 156 delete-`{0,2}` ancestors and four bare delete-3 ancestors.
-
-That statement has the logical form
+with 160 exact source IDs and an unconditional strict all-exterior reduction for
+each parent.  That has the logical direction
 
 ```text
-for every s in R160:
+forall s in R160:
     exact_C37_parent(s) -> reducible(s).
 ```
 
-It is a **conditional reduction theorem**. It contains no existential statement
-saying that a given negative face generates an element of `R160`.
+It contains no existential statement saying that an actual negative face
+generates a member of `R160`.
 
-Repository-bound source identities used by this audit:
+S01 Cycle 4 also repairs the quantifier semantics upstream of GSRC.  For an
+actual unpaid negative face `f` and a corner `p`, write
 
-- Cycle-3 atlas git blob `05e6b31700d9c570927b8d96e76750feb32ee885`;
-- Cycle-3 lineage proof git blob `2d31a464630482ea3bf145495bfd497eb19d97f2`;
-- C35 proof git blob `621cb2455dfeb71b3b078ec05ef842f5d89f26fc`;
-- C36 incoming proof git blob `1aa0158d67c1beafc04a9442792e034c72e73dc1`;
-- C48 proof git blob `2ae68b69ca5de217ea923e2dac08cd70ea2cf3fe`;
-- S01 Cycle-3 type repair git blob `fcc40a0137fe225cbc991020f75b5a1b08d76a7b`;
-- S02-B high-port audit git blob `81233ffe3a8c9addb6ed9388505720f08f08ab7c`.
+```text
+D0(f)       actual unpaid negative triangular face
+W48(f,p)    p is a corner of f and s(p)<=5
+F48(f,p)    W48(f,p) and t(p)<=5
+SG48(f,p)   W48(f,p) and t(p)>=6.
+```
+
+The exact arithmetic theorem is
+
+```text
+forall f:
+    D0(f) -> exists p W48(f,p),
+
+forall f,p:
+    W48(f,p) -> exactly_one(F48(f,p), SG48(f,p)).
+```
+
+It does **not** give a unique low-slack corner and does **not** give a
+face-level XOR between “there exists an F corner” and “there exists an SG
+corner”.  On the SG side it can also leave several singleton gaps; a selected
+gap `g` must be carried as provenance.  Thus the arithmetic-to-source state is
+relational in `(f,p[,g])`, not a single face label.
+
+Repository-bound identities consumed here are:
+
+```text
+Cycle-3 R160 atlas blob       05e6b31700d9c570927b8d96e76750feb32ee885
+Cycle-3 lineage proof blob    2d31a464630482ea3bf145495bfd497eb19d97f2
+C35 proof blob                621cb2455dfeb71b3b078ec05ef842f5d89f26fc
+C36 incoming proof blob       1aa0158d67c1beafc04a9442792e034c72e73dc1
+C48 proof blob                2ae68b69ca5de217ea923e2dac08cd70ea2cf3fe
+S01 Cycle-3 type-repair blob  fcc40a0137fe225cbc991020f75b5a1b08d76a7b
+S01 Cycle-4 witness blob      d35127a24cdc96b98c58676a4120bc0ac3318954
+S02-B high-port blob          81233ffe3a8c9addb6ed9388505720f08f08ab7c
+```
 
 No source is promoted beyond its repository verdict.
 
-## 2. Non-inversion lemma
+## 2. Registry non-inversion lemma
 
 Let `R160` be any 160-element set and suppose
 
@@ -61,12 +88,13 @@ forall s in R160, reducible(s).
 This premise does not imply
 
 ```text
-forall actual unpaid faces f, exists s in R160, occurs(f,s).
+forall actual unpaid faces f,
+    exists s in R160, occurs(f,s).
 ```
 
-A finite logical countermodel is enough. Take one face symbol `f`, keep all
-160 registry symbols, set `reducible(s)=true` for every registry symbol, and
-set the binary occurrence relation empty. The registry premise is true, while
+A finite pure-logic countermodel suffices.  Take one face symbol `f`; keep all
+160 registry symbols; set `reducible(s)=true` for every registry symbol; and
+set the occurrence relation empty.  The registry premise is true while
 
 ```text
 exists s in R160, occurs(f,s)
@@ -74,16 +102,14 @@ exists s in R160, occurs(f,s)
 
 is false.
 
-This is a countermodel to the **logical inversion**, not a planar graph
-counterexample and not a refutation of GSRC. It proves that an occurrence
-theorem needs additional mathematical premises connecting an actual negative
-face to a source state.
+This is a countermodel only to the **logical inversion**.  It is not a plane
+graph counterexample, does not assert that such an `f` exists in a graph, and
+does not refute GSRC.  It proves that an occurrence theorem needs additional
+premises linking `(f,p[,g])` to an exact embedded source state.
 
-The machine-readable obligations file freezes this countermodel explicitly.
+## 3. Why A48 cannot supply the missing implication
 
-## 3. The upstream artifacts stop before GSRC
-
-C35 deliberately distinguishes:
+C35 explicitly separates three domains:
 
 ```text
 integer arithmetic parameters
@@ -91,177 +117,209 @@ actual planar realizations
 genuine minimum-counterexample occurrences.
 ```
 
-It says arithmetic admissibility does not imply either later domain. Its six
-LLL/LLN/LNN/LLP/LNP/LPP negative families are symbolic and can have unbounded
-degree; the constructed degree-five graph is only a realizability/control
-example, not a global occurrence theorem.
+Its arithmetic negative families are symbolic and can have unbounded degree.
+The degree-five graph built there is a realizability/control example, not a
+global source-generation theorem.
 
-C48 likewise proves an arithmetic low-slack locator from every unpaid negative
-triangle:
-
-```text
-D0 -> A48 = F26 XOR singleton-gap.
-```
-
-But C48 explicitly states that the 26 cells are not thereby reducible and that
-the singleton gap does not automatically yield the later shell/cap structure.
-Arithmetic admissibility alone does not establish planar realizability or
-minimum-counterexample occurrence.
-
-S01 Cycle 3 therefore correctly retypes the live chain as
+C48 and S01 Cycle 4 sharpen the same distinction.  From `D0(f)` we may choose
+or carry a witness `p` satisfying `W48(f,p)`.  For that **fixed** witness:
 
 ```text
-D0 -> A48 -> LSRC -> GSRC -> JMAP -> SCUT,
+F48(f,p):
+    one of 26 arithmetic cells
+    -> LSRC-F(f,p,geometry)                    [OPEN]
+
+SG48(f,p):
+    choose/carry g in G48(p)
+    -> selected-gap 3-interface / 192-direction atlas
+    -> LSRC-SG(f,p,g,geometry)                 [OPEN].
 ```
 
-with `LSRC`, `GSRC`, and `JMAP` open.
+The 26 labels are arithmetic cells, not embedded parents.  The 192 labels are
+a selected-gap local atlas for `(f,p,g)`, not all source states attached to the
+face.  Multiple eligible corners, multiple singleton gaps, aliases, and
+symmetries can describe overlapping or different local states.  GSRC/JMAP must
+resolve those descriptions; A48 gives no canonical selector.
 
-There is also no repository-bound identification between C48's 192 normalized
-singleton-gap direction parents and the C37 160-parent J registry. They are
-different source normal forms. Treating one atlas as the occurrence source of
-the other would silently change complete stars, rotations, and source identity.
+There is no repository-bound identification of either the 26 arithmetic cells
+or the selected-gap 192 atlas with the C37 160-parent J registry.  Treating
+them as the same source would silently change complete stars, rotations,
+interfaces, or provenance.
 
-## 4. What C36 and R160 actually imply: selected-J escape
-
-C36 works only after fixing the C35 J-direction. In the incoming fifth-neighbour
-case it controls the complete degree-five stars and proves the four remaining
-incoming `d(7)=5` directions reducible. Combined with the separately preserved
-earlier C36 degree-four, outgoing-`d5`, and old-port cases, its own conclusion is:
+Hence the live source chain relevant to this audit is
 
 ```text
-in this selected J-direction, a minimum counterexample must have d(7)>=6.
+D0(f)
+ |
+ +-- choose/carry p with W48(f,p)
+       |
+       +-- F48(f,p)
+       |     -> LSRC-F(f,p,geometry)                  [OPEN]
+       |
+       `-- SG48(f,p)
+             -> choose/carry g
+             -> LSRC-SG(f,p,g,geometry)               [OPEN]
+                    |
+                    v
+                  GSRC
+        source/payer identity + ownership
+        + no double spending                           [OPEN]
+                    |
+                    +-- C37J specialization            [OPEN]
+                    |
+                    `-- other explicit source class    [OPEN]
+                    |
+                    v
+                  JMAP                                 [OPEN]
 ```
 
-Now assume this exact selected J-source occurs in a vertex-minimum
-counterexample and suppose `d(7)=6`.
+There is still no edge from an actual unpaid face to `R160`.
 
-At degree six, C37's exact source classification leaves exactly the five
-families in the Cycle-3 registry, with all 32 directions in each family.
-Thus the source is one of `R160`. The imported S06 catalogue, corroborated at
-candidate level by S10's clean-room consumer, gives an unconditional strict
-all-exterior strong-profile reduction for every one of those 160 exact parents.
-Minimum order then excludes the source.
+## 4. Positive result: the selected-J escape lemma
 
-Contradiction. Therefore, under the stated selected-J dependencies,
+C36 works only after fixing the C35 J-direction.  Its incoming fifth-neighbour
+candidate, together with the separately preserved earlier C36 degree-four,
+outgoing-`d5`, and old-port cases, has the scoped conclusion
 
 ```text
 selected C35/C36 J-source in a minimum counterexample
-    => d(7)>=7.
+    -> d(7)>=6.
 ```
 
-This is the strongest positive source consequence obtained in this cycle.
+Assume now that this exact selected J-source occurs in a vertex-minimum
+counterexample and suppose `d(7)=6`.
+
+C37's exact degree-six source classification then leaves precisely the five
+families
+
+```text
+D, X5, X6, Y4, Y5
+```
+
+with all 32 direction words in each family.  Therefore the exact source has one
+of the 160 Cycle-3 registry IDs.  S06 supplies a strict all-exterior
+strong-profile reduction for every one of those exact parents, and S10 gives
+candidate-level clean-room corroboration of the aggregate `160/160` result.
+
+Minimum order therefore excludes the `d(7)=6` branch.  Consequently,
+
+```text
+selected C35/C36 J-source in a vertex-minimum counterexample
+    -> d(7)>=7.
+```
+
+This is the strongest positive occurrence-related conclusion in Cycle 4.  It
+is deliberately conditional on already having the selected J-source.
 
 It is **not**
 
 ```text
-D0 => an R160 parent occurs.
+D0(f) -> exists s in R160 occurs(f,s).
 ```
 
-Indeed, inside a minimum counterexample the exact selected-J `d(7)=6` branch is
-the branch R160 forbids.
+In fact, within a minimum counterexample the exact selected-J degree-six branch
+is the branch `R160` forbids.
 
-## 5. Why degree six cannot be forced from A48
+## 5. High-port pressure confirms that degree six is not an occurrence target
 
-C48's 26 finite cells include many degrees other than six and its high-`t`
-singleton branch is unbounded. No C48 arithmetic statement forces the vertex
-that would play C37's `7` to have degree six.
+No corrected A48 witness theorem forces the vertex later called `7` to have
+degree six.  The F witness cells contain many degrees other than six, and the
+SG witness branch is unbounded.
 
-S02-B supplies additional adversarial pressure: within the C37 J-sector it
+S02-B gives additional source-level pressure: within the C37 J-sector it
 constructs arbitrarily long locally source-valid plane expansions with
 
 ```text
-d(7)=6+n,  n>=1.
+d(7)=6+n, n>=1.
 ```
 
-Those graphs are not claimed to be globally generated from an unpaid negative
-face, so they do not refute GSRC. They do refute any attempted local inference
-that source-valid J geometry itself collapses to `d(7)=6`.
+Those constructions are not globally generated from `D0(f)`, so they do not
+refute GSRC.  They do refute an attempted local shortcut saying that
+source-valid J geometry itself collapses to degree six.
 
-Thus replacing `d(7)>=6` by `d(7)=6` is an invalid mutation.
+The newer S02-B escape-rank audit further attacks history-free release and
+purely local separator ranks.  That affects the downstream `d(7)>=7` escape
+lane, not the occurrence implication proved here.
 
-## 6. Exact GSRC occurrence obligation DAG
+## 6. Exact GSRC occurrence obligations
 
-The current source-direction DAG is:
+Cycle 4 freezes the following statement statuses.
+
+Established arithmetic/source facts:
 
 ```text
-D0  actual unpaid negative face
- |
- v
-A48 arithmetic locator                         PASS candidate arithmetic
- |
- |  missing: actual rotations/faces/aliases/stars/ownership
- v
-LSRC local source realization                  OPEN
- |
- |  missing: source/payer identity + no double spending
- v
-GSRC global source generation                  OPEN
- |
- +-- missing specialization: exact C35/C36/C37 selected J-source
- |      |
- |      +-- d(7)=6 -> R160 -> strict reduction -> contradiction
- |      |
- |      `-- d(7)>=7 -> high-port / escape resolution            OPEN
- |
- `-- other explicitly typed source class                        OPEN
+D0(f) -> exists p W48(f,p)
 
-JMAP / unique L_join                                            OPEN
+for fixed (f,p):
+W48(f,p) -> exactly_one(F48(f,p), SG48(f,p))
+
+selected J-source + minimum counterexample -> d(7)>=7
 ```
 
-The registry therefore removes a leaf **after** source identification; it does
-not create the source-identification edge.
-
-The exact missing edges recorded by Cycle 4 are
+Open source-generation edges:
 
 ```text
-A48 -> LSRC
-LSRC -> GSRC
-GSRC -> C37J
-GSRC -> JMAP
+F48(f,p) -> LSRC-F(f,p,geometry)
+
+SG48(f,p) + chosen g -> LSRC-SG(f,p,g,geometry)
+
+LSRC-F / LSRC-SG -> GSRC
+    with exact payer/source identity, edge/face ownership,
+    and no double spending
+
+GSRC -> C37J specialization OR an explicit disjoint source class
+
+GSRC -> JMAP / unique L_join.
 ```
 
-No descendant edge is part of this audit.
+The registry is therefore a kill-switch **after** exact source identification;
+it cannot create the source-identification edge.
 
 ## 7. Smallest useful next theorem
 
-The smallest theorem that would make the registry relevant to GSRC occurrence
-is not `D0 -> R160`. That statement is too strong and conflicts with the
-selected-J escape conclusion in a minimum counterexample.
+The next target should not be `D0 -> R160`.  It is both unsupported and too
+narrow for the current source architecture.
 
-The appropriate target is a **GSRC source-or-escape lemma**:
+The smallest useful target is a provenance-preserving **GSRC
+source-or-escape lemma**:
 
-> Every actual unpaid negative face generates a source-faithful state with
-> exact payer/source identity and ownership, and that state either specializes
-> to the selected C37 J-source or belongs to an explicit disjoint escape class.
+> For every actual unpaid negative face `f`, and for every selected/canonical
+> low-slack witness description `(f,p[,g])` used by the construction, produce
+> an actual source-faithful embedded state with exact payer/source identity and
+> ownership; after quotienting duplicate descriptions explicitly, each generated
+> state either specializes to the selected C37 J-source or is assigned to an
+> explicit disjoint escape/source class.
 
 Then:
 
-- if the C37-J specialization reaches `d(7)=6`, R160 closes it immediately;
-- if it has `d(7)>=7`, it enters the high-port/escape lane;
-- a non-C37 source remains explicitly typed instead of being silently forced
-  into the registry.
-
-A uniqueness theorem (`JMAP`) is a separate later obligation.
+- C37J with `d(7)=6` is killed immediately by `R160`;
+- C37J with `d(7)>=7` enters the high-port/escape lane;
+- non-C37 source states remain explicitly typed instead of being silently
+  forced into the registry;
+- a separate `JMAP` theorem can later prove uniqueness/canonical ownership.
 
 ## 8. Mutation tests
 
-Cycle 4 rejects each of the following moves:
+Cycle 4 rejects these mutations:
 
-1. invert `forall s in R160, reducible(s)` into an occurrence existential;
-2. equate A48 arithmetic membership with a plane/source occurrence;
-3. equate a locally source-valid patch with global generation from `D0`;
-4. replace C36's `d(7)>=6` by `d(7)=6`;
-5. drop payer/source identity, ownership, or no-double-spending data;
-6. infer a theorem from an empty/unmerged specialist branch name;
-7. restart C40 guard-child or descendant enumeration.
+1. invert `forall s in R160 reducible(s)` into an occurrence existential;
+2. read fixed-witness `F48 XOR SG48` as face-level XOR;
+3. discard the witness corner `p`;
+4. on SG, discard the selected singleton gap `g`;
+5. identify arithmetic-cell membership with plane/source occurrence;
+6. identify a locally source-valid patch with global generation from `D0`;
+7. replace C36's `d(7)>=6` by `d(7)=6`;
+8. omit payer/source identity, ownership, or no-double-spending data;
+9. treat an unmerged/empty specialist branch name as a theorem;
+10. restart C40 guard-child or any descendant census.
 
-The static checker also requires
+The static checker requires
 
 ```text
 descendant_census_runs = 0.
 ```
 
-## 9. Reproduction and digests
+## 9. Reproduction
 
 Files:
 
@@ -271,40 +329,35 @@ research/artifacts/candidates/opg169-a01-s09-cycle4-gsrc-occurrence-check.py
 research/artifacts/candidates/opg169-a01-s09-cycle4-gsrc-occurrence-output.json
 ```
 
-Frozen candidate SHA-256 values:
-
-```text
-obligations  2842785b406a1781a39f48b4dfa7e45a3e8ea851aab9ebffb5d4bf37017075fb
-checker      f0c63c34ea906871799b60daef5288dd14289b4271778d26fd07b77e718943c2
-output       956501e11d5e1655921168f340e055ddfc08f22d912d259221a7c905df0107f1
-```
-
 Run from the candidate directory:
 
 ```bash
 python3 opg169-a01-s09-cycle4-gsrc-occurrence-check.py
 ```
 
-The checker expands no descendants and recomputes no strong-profile tables. It
-checks only the 160 registry identity/counts, the pure-logic non-inversion
-countermodel, the open occurrence edges, the conditional selected-J escape
-status, and the zero-descendant-census invariant.
+The checker expands no descendants and recomputes no strong-profile tables.  It
+checks the exact Cycle-3 registry identity, the corrected A48 witness
+quantifiers, the pure-logic non-inversion countermodel, the selected-J escape
+status, the open provenance-preserving GSRC edges, and the zero-descendant
+invariant.
 
 ## 10. Disposition
 
 ```text
 R160 exact conditional reduction registry          160/160
-registry-to-GSRC occurrence implication             INVALID inference
-D0-to-R160 occurrence edges proved                  0
-selected-J minimum-counterexample escape            d(7)>=7  [candidate]
+registry -> GSRC occurrence by inversion            INVALID inference
+D0 -> R160 occurrence theorem                       OPEN / not derived
+A48 face-level F-vs-SG XOR                          INVALID reading
+fixed-witness F48-vs-SG48 XOR                       VALID candidate arithmetic
+selected-J minimum-counterexample escape            d(7)>=7 [candidate]
 descendant census runs                              0
 GSRC occurrence                                     OPEN
-minimal next target                                 source-or-escape lemma
+minimal next target                                 GSRC source-or-escape lemma
 best_verified_result                                none
 root_closed                                         false
 ```
 
 Non-claims: GSRC is not refuted; no claim is made that an arbitrary graph cannot
 contain a C37 parent; no `d(7)>=7` classification or termination theorem is
-proved; no global `L_join`, unique mapper, EvidenceLink, Result, or root closure
-is claimed.
+proved; no canonical witness/gap selector, global `L_join`, unique mapper,
+EvidenceLink, Result, or root closure is claimed.

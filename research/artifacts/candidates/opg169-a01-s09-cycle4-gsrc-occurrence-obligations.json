@@ -1,14 +1,31 @@
 {
-  "base_revision": "a31eb9646c828e05ed9071f6830a24df28f5b64d",
+  "a48_witness_semantics": {
+    "D0": "D0(f): f is an actual unpaid negative triangular face",
+    "F48": "F48(f,p): W48(f,p) and t(p)<=5",
+    "SG48": "SG48(f,p): W48(f,p) and t(p)>=6",
+    "W48": "W48(f,p): p is a corner of f and s(p)<=5",
+    "established_quantifiers": [
+      "forall f, D0(f) -> exists p W48(f,p)",
+      "forall f,p, W48(f,p) -> exactly_one(F48(f,p),SG48(f,p))"
+    ],
+    "not_established": [
+      "unique p with W48(f,p)",
+      "face-level exactly_one(exists p F48(f,p), exists p SG48(f,p))",
+      "unique singleton gap g on an SG witness",
+      "canonical source selector"
+    ],
+    "sg_provenance": "A chosen singleton gap g in G48(p) must be carried; the 192 atlas is selected-gap local data for (f,p,g)."
+  },
+  "base_revision": "a2a9973d2f995de71095a6bea814cbe882cb7718",
   "best_verified_result": "none",
   "conditional_escape": {
     "assumptions": [
-      "The selected C35/C36 J-direction occurs in a vertex-minimum counterexample.",
-      "The preserved earlier C36 cases plus the incoming C36 case imply d(7)>=6 in that selected J-direction.",
-      "At d(7)=6, the C37 source is exactly one of the 160 registry parents after C37 structural exclusions.",
-      "All 160 exact d(7)=6 parents have unconditional strict all-exterior reductions (S06; clean-room candidate corroboration S10)."
+      "The exact selected C35/C36 J-source occurs in a vertex-minimum counterexample.",
+      "Preserved earlier C36 cases plus incoming C36 imply d(7)>=6 in that selected J-direction.",
+      "At d(7)=6, C37 classification is exactly R160.",
+      "Every R160 exact parent has a candidate-supported strict all-exterior reduction."
     ],
-    "conclusion": "Within that selected J-source in a minimum counterexample, d(7)>=7.",
+    "conclusion": "Within that selected J-source in a vertex-minimum counterexample, d(7)>=7.",
     "does_not_conclude": "That every unpaid negative face generates the selected J-source.",
     "id": "J_ESCAPE_GE7",
     "status": "PASS_CANDIDATE_DERIVATION"
@@ -19,81 +36,83 @@
     "gsrc_occurrence_edges_proved_to_R160": 0,
     "registry_parents": 160
   },
-  "format": "opg169-s09-cycle4-gsrc-occurrence-obligations-v1",
+  "format": "opg169-s09-cycle4-gsrc-occurrence-obligations-v2",
   "gsrc_occurrence_dag": {
-    "established_edges": [
-      [
-        "D0",
-        "A48"
-      ],
-      [
-        "C37J",
-        "D6_or_ESCAPE7"
-      ]
+    "established_relations": [
+      "forall f, D0(f) -> exists p W48(f,p)",
+      "forall f,p, W48(f,p) -> exactly_one(F48(f,p),SG48(f,p))",
+      "selected C37J source in a minimum counterexample -> d(7)>=7"
     ],
     "forbidden_inference": [
-      "D0->R160 from registry coverage alone",
-      "A48->R160 from arithmetic admissibility",
-      "LSRC->GSRC without payer/source ownership",
+      "D0 -> R160 from registry coverage alone",
+      "face-level F48 XOR SG48",
+      "drop witness p",
+      "drop selected SG gap g",
+      "arithmetic membership -> plane/global occurrence",
+      "local source-validity -> GSRC",
       "d(7)>=6 -> d(7)=6"
     ],
-    "missing_edges": [
-      [
-        "A48",
-        "LSRC"
-      ],
-      [
-        "LSRC",
-        "GSRC"
-      ],
-      [
-        "GSRC",
-        "C37J"
-      ],
-      [
-        "GSRC",
-        "JMAP"
-      ]
+    "missing_relations": [
+      "F48(f,p) -> LSRC_F(f,p,geometry)",
+      "SG48(f,p) with chosen g -> LSRC_SG(f,p,g,geometry)",
+      "LSRC_F/LSRC_SG -> GSRC with payer/source ownership and no double spending",
+      "GSRC -> C37J OR explicit disjoint source class",
+      "GSRC -> JMAP"
     ],
     "nodes": [
       {
         "id": "D0",
-        "meaning": "actual unpaid negative DC2 triangle",
+        "meaning": "actual unpaid negative face",
         "status": "SOURCE_ASSUMPTION"
       },
       {
-        "id": "A48",
-        "meaning": "low-slack arithmetic locator: F26 XOR SG",
-        "status": "PASS_CANDIDATE_ARITHMETIC"
+        "id": "W48",
+        "meaning": "low-slack witness relation W48(f,p)",
+        "status": "PASS_CANDIDATE_ARITHMETIC_EXISTENCE"
       },
       {
-        "id": "LSRC",
-        "meaning": "actual local plane source realization with rotations/faces/aliases/stars/ownership",
+        "id": "F48",
+        "meaning": "fixed witness p with t(p)<=5; unique one of 26 arithmetic cells",
+        "status": "PASS_CANDIDATE_ARITHMETIC_TAG"
+      },
+      {
+        "id": "SG48",
+        "meaning": "fixed witness p with t(p)>=6; choose/carry singleton gap g",
+        "status": "PASS_CANDIDATE_ARITHMETIC_TAG"
+      },
+      {
+        "id": "LSRC_F",
+        "meaning": "actual embedded source realization from F witness (f,p)",
+        "status": "OPEN"
+      },
+      {
+        "id": "LSRC_SG",
+        "meaning": "actual embedded source realization from selected SG gap (f,p,g)",
         "status": "OPEN"
       },
       {
         "id": "GSRC",
-        "meaning": "global generation from D0 with exact payer/source identity and no double spending",
+        "meaning": "global generation with source/payer identity, ownership, and no double spending",
         "status": "OPEN"
       },
       {
         "id": "C37J",
-        "meaning": "prove the generated source is the selected C35/C36/C37 J-source",
+        "meaning": "generated source specializes to exact selected C35/C36/C37 J-source",
         "status": "OPEN_SPECIALIZATION"
       },
       {
         "id": "D6",
-        "meaning": "C37 J-source with d(7)=6, mapped into R160 and reducible",
+        "meaning": "C37J with d(7)=6 maps into R160 and is reducible",
         "status": "FORBIDDEN_IF_REACHED"
       },
       {
         "id": "ESCAPE7",
-        "meaning": "same J-source with d(7)>=7 or a different explicitly typed source escape",
+        "meaning": "C37J with d(7)>=7 or another explicitly typed disjoint source escape",
         "status": "OPEN"
       },
       {
         "id": "JMAP",
-        "meaning": "unique L_join/source selector",
+        "meaning": "unique L_join / canonical source selector",
         "status": "OPEN"
       }
     ]
@@ -124,6 +143,10 @@
       "git_blob_sha": "fcc40a0137fe225cbc991020f75b5a1b08d76a7b",
       "path": "research/artifacts/candidates/opg169-a01-s01-cycle3-source-cut-repair-20260910.md"
     },
+    "s01_cycle4": {
+      "git_blob_sha": "d35127a24cdc96b98c58676a4120bc0ac3318954",
+      "path": "research/artifacts/candidates/opg169-a01-s01-cycle4-a48-witness-bridges-20260910.md"
+    },
     "s02b": {
       "git_blob_sha": "81233ffe3a8c9addb6ed9388505720f08f08ab7c",
       "path": "research/artifacts/candidates/opg169-a01-s02b-high-port-chain-20260910.md"
@@ -131,24 +154,39 @@
   },
   "minimal_next_theorem": {
     "name": "GSRC source-or-escape lemma",
-    "statement": "Every actual unpaid negative face generates a source-faithful state which either specializes to the exact selected C37 J-source or is placed in an explicit disjoint escape class, with payer/source identity and ownership preserved.",
-    "why_minimal": "If the C37 branch has d(7)=6 it is immediately eliminated by R160; if it has d(7)>=7 it moves to the high-port/escape lane. No descendant census is needed."
+    "statement": "For every actual unpaid negative face and each selected/canonical witness description (f,p[,g]), generate an actual source-faithful embedded state preserving source/payer provenance and ownership; explicitly quotient duplicate descriptions; then place each generated state either in the exact selected C37 J-source or in an explicit disjoint escape/source class.",
+    "why_minimal": "C37J at d(7)=6 is killed by R160; d(7)>=7 moves to high-port/escape; other source classes remain typed without descendant census."
   },
-  "mission": "Audit whether the exact C37 160-parent reduction registry can be inverted into GSRC occurrence from an actual unpaid negative DC2 face; do not enumerate descendants.",
+  "mission": "Audit reverse occurrence from exact C37 R160 conditional reductions toward GSRC from an actual unpaid negative face, using corrected A48 witness semantics and zero descendant census.",
   "mutation_tests": [
     {
       "expected": "REJECT",
-      "mutation": "infer existence of an R160 occurrence from forall s in R160 reducible(s)",
+      "mutation": "infer R160 occurrence from total registry reduction",
       "name": "invert_registry"
     },
     {
       "expected": "REJECT",
-      "mutation": "treat A48 arithmetic cell membership as a plane/source occurrence",
+      "mutation": "read fixed-witness F48/SG48 XOR as face-level XOR",
+      "name": "face_level_xor"
+    },
+    {
+      "expected": "REJECT",
+      "mutation": "discard low-slack witness corner p",
+      "name": "drop_witness_p"
+    },
+    {
+      "expected": "REJECT",
+      "mutation": "discard selected singleton gap g on SG branch",
+      "name": "drop_gap_g"
+    },
+    {
+      "expected": "REJECT",
+      "mutation": "arithmetic cell/atlas membership is an embedded/global occurrence",
       "name": "arithmetic_is_occurrence"
     },
     {
       "expected": "REJECT",
-      "mutation": "treat a locally source-valid patch as globally generated from D0",
+      "mutation": "locally source-valid patch is globally generated from D0",
       "name": "local_is_global"
     },
     {
@@ -158,24 +196,25 @@
     },
     {
       "expected": "REJECT",
-      "mutation": "map a negative face to a source without payer/source ownership and no-double-spend data",
+      "mutation": "omit payer/source identity, ownership, or no-double-spending",
       "name": "drop_payer_identity"
     },
     {
       "expected": "REJECT",
-      "mutation": "use an unmerged/empty branch name as a GSRC theorem",
-      "name": "pretend_s13_branch_name_is_evidence"
+      "mutation": "use empty/unmerged specialist branch name as theorem",
+      "name": "pretend_branch_name_is_evidence"
     },
     {
       "expected": "REJECT",
-      "mutation": "restart C40 guard-child enumeration instead of proving occurrence",
+      "mutation": "restart C40 guard-child/descendant enumeration",
       "name": "descendant_census"
     }
   ],
   "non_claims": [
-    "No claim that GSRC is false.",
-    "No claim that no actual negative face can ever realize a C37 parent in an arbitrary graph.",
+    "GSRC is not refuted.",
+    "No claim that an arbitrary graph cannot contain a C37 parent.",
     "No d(7)>=7 classification or termination theorem.",
+    "No canonical witness/gap selector.",
     "No global L_join or unique mapper.",
     "No EvidenceLink, Result, or root closure."
   ],
@@ -189,12 +228,12 @@
     "premise_registry_total_reduction": true,
     "reducible_for_every_registry_parent": true,
     "registry_parent_count": 160,
-    "scope": "Shows only that registry-total reduction alone cannot imply GSRC occurrence."
+    "scope": "Refutes only inference from total conditional reduction coverage to an occurrence existential."
   },
   "problem_contract_sha256": "719230edd088c52a5468eed8090579e5eef1bf85d8a56e633350063108f345ec",
   "registry_statement": {
-    "does_not_assert": "that any actual unpaid negative face globally generates any parent in the registry",
-    "domain": "exact C37 selected J-source with d(7)=6",
+    "does_not_assert": "any occurrence/global generation relation from an actual unpaid negative face",
+    "domain": "exact selected C37 J-source with d(7)=6",
     "families": [
       "D",
       "X5",
@@ -202,15 +241,15 @@
       "Y4",
       "Y5"
     ],
-    "known_relation": "for each exact parent, an unconditional strict all-exterior strong-profile reduction is candidate-supported",
+    "known_relation": "each exact parent has candidate-supported unconditional strict all-exterior reduction",
     "parents": 160,
     "words_per_family": 32
   },
   "root_closed": false,
   "target_occurrence_claim": {
     "id": "GSRC160",
-    "reason": "conditional reduction coverage has the wrong logical direction; upstream artifacts explicitly separate arithmetic admissibility, local realizability, and global occurrence.",
-    "statement": "For every actual unpaid negative DC2 face f in a selected minimum counterexample, some exact source parent s in R160 is globally generated from f with source/payer identity and ownership preserved.",
+    "reason": "R160 is conditional reduction coverage; corrected A48 supplies witness arithmetic, not embedded/global source occurrence.",
+    "statement": "Every actual unpaid negative face f globally generates some exact parent s in R160 with source/payer identity and ownership preserved.",
     "status": "OPEN_NOT_DERIVED"
   },
   "verdict": "candidate_only"
